@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .list{
+            margin: 100px auto;
+            /*background: yellowgreen;*/
+            width: 452px;
+            border: 1px solid #000;
+        }
+        .list>li{
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background: pink;
+            color: #fff;
+            float: left;
+        }
+        /* +  相邻兄弟选择器
+            ~  后边所有兄弟
+          */
+        .list>li + li{
+            border-left: 1px solid #000;
+        }
+        .clearFix{
+            /*  兼容ie   haslayout    */
+            *zoom: 1;
+        }
+        .clearFix::after{
+            /*  伪元素中content属性 可以为空 但是不能不写 如果不写这个伪元素压根不会渲染*/
+            content: '';
+            /* 因为clear属性 只能在块级元素身上生效  */
+            display: block;
+            clear: both;
+        }
+        .item{
+            border: 1px solid #ccc;
+            display: none;
+            /*opacity: 0;*/
+            /*transition: 1s;*/
+        }
+        .item>li{
+            width: 150px;
+            height: 40px;
+            background: skyblue;
+            line-height: 40px;
+            text-align: center;
+        }
+        .item>li + li{
+            border-top: 1px solid #ccc;
+        }
+        /*.list>li:hover .item{*/
+            /*display: block;*/
+            /*opacity: 1;*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+<ul class="list clearFix">
+    <li>男装
+        <ul class="item">
+            <li>衬衫</li>
+            <li>裤子</li>
+            <li>鞋</li>
+        </ul>
+    </li>
+    <li>女装
+        <ul class="item">
+            <li>衬衫</li>
+            <li>裤子</li>
+            <li>鞋</li>
+        </ul>
+    </li>
+    <li>电器
+        <ul class="item">
+            <li>衬衫</li>
+            <li>裤子</li>
+            <li>鞋</li>
+        </ul>
+    </li>
+</ul>
+<script type="text/javascript">
+    window.onload = function () {
+//       获取一级li的集合
+        var liNodes = document.querySelectorAll('.list>li');
+//        获取二级ul的集合
+        var items = document.querySelectorAll('.item');
+        console.log(liNodes);
+        console.log(items);
+
+        for (var i = 0; i < liNodes.length; i++) {
+//          给每一个li添加索引
+            liNodes[i].index = i;
+//            liNodes[i].onclick = function () {
+//              console.log(this.index)
+//            }
+            liNodes[i].onmouseenter = function () {
+//              根据当前移入的li的索引（事件源的索引）  去ul的集合当中 让这个索引对应的ul显示
+                items[this.index].style.display = 'block';
+            };
+            liNodes[i].onmouseleave = function () {
+                items[this.index].style.display = 'none';
+            };
+        }
+
+    }
+</script>
+</body>
+</html>

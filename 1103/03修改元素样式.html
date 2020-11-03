@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            /*background: pink;*/
+            transition: 1s;
+        }
+        #inner{
+            width: 100px;
+            height: 100px;
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+<div id="box" style="background: pink">
+    <div id="inner"></div>
+</div>
+
+<script type="text/javascript">
+    window.onload = function () {
+        var boxNode = document.getElementById('box');
+//      通过js修改的样式  都为行内样式     为了能够让用户行为所操作的效果 保证一定生效
+//      设置样式在行内   读取样式时也只能读取行内样式
+//      所有原本样式名称上带有横杠的（中划线）  一律转换成小驼峰写法
+        console.log(boxNode.style.backgroundColor);
+        boxNode.onmouseenter = function () {
+            console.log('移入');
+            this.style.background = 'skyblue';
+            this.style.marginLeft = '100px'
+        }
+        boxNode.onmouseleave = function () {
+            console.log('移出');
+            this.style.background = 'pink';
+        }
+
+    }
+</script>
+</body>
+</html>

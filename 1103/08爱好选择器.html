@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="checkbox" class="checkAllBox">全选/全不选
+<br>
+<input type="checkbox" class="item">学习
+<input type="checkbox" class="item">买东西
+<input type="checkbox" class="item">滑雪
+<input type="checkbox" class="item">打游戏
+<br>
+<button class="btn1">全选</button>
+<button class="btn2">全不选</button>
+<button class="btn3">反选</button>
+
+<script type="text/javascript">
+  window.onload = function () {
+//    获取全选全不选的复选框
+      var checkAllBox = document.querySelector('.checkAllBox');
+//    获取所有爱好的复选框集合
+      var items = document.querySelectorAll('.item');
+//    获取三个按钮
+      var btn1 = document.querySelector('.btn1');
+      var btn2 = document.querySelector('.btn2');
+      var btn3 = document.querySelector('.btn3');
+
+//    全选功能    给btn1绑定单击事件  然后将爱好的复选框集合 和全选全不选复选框 都设置为选中状态
+      btn1.onclick = function () {
+          checkAllBox.checked = true;
+//        因为爱好的复选框为集合 是在伪数组对象当中  所以我们需要通过循环 依次访问每一个进行设置
+          for (var i = 0; i < items.length; i++) {
+              items[i].checked = true;
+          }
+      }
+//    全不选功能 给btn2绑定单击事件 然后将爱好的复选框和全选全不选的复选框 都设置为不选中状态
+      btn2.onclick = function () {
+          checkAllBox.checked = false;
+          for (var i = 0; i < items.length; i++) {
+              items[i].checked = false;
+          }
+      }
+//    反选功能 给btn3绑定单击事件 然后依次判断当前每一个爱好的复选框是否选中 然后设置为相反的状态
+      btn3.onclick = function () {
+          for (var i = 0; i < items.length; i++) {
+              items[i].checked = !items[i].checked;
+          }
+//        当点击反选按钮之后会有一个特殊情况 就是 原本爱好都没有选中 点击反选按钮之后实现了全选的状态
+//        我们需要更新checkAllBox的选中状态      选中爱好的长度 如果和总长度相等 则为全选
+//        统计当前选中的个数
+          checkAll();
+      }
+//    点击爱好时  如果满足全选状态 我们需要更新checkAllBox的选中状态
+      for (var i = 0; i < items.length; i++) {
+          items[i].onclick = function () {
+              checkAll();
+          }
+
+      }
+//    封装全选判断函数
+      function checkAll() {
+          //        统计当前选中的个数
+          var num = 0;
+//        遍历爱好的集合   checked属性为true  则让num++；
+
+          for (var j = 0; j < items.length; j++) {
+              if(items[j].checked){
+                  num++;
+              }
+          }
+          console.log(num);
+//          if(num == items.length){
+//            checkAllBox.checked = true;
+//          }else{
+//              checkAllBox.checked = false
+//          }
+          checkAllBox.checked = num === items.length;
+      }
+
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text">
+<script type="text/javascript">
+    window.onload = function () {
+        var inputNode = document.querySelector('input');
+//      键盘事件分为onkeyup（键盘抬起）和onkeydown（键盘按下）两种
+//      在我们实际的开发中 onkeyup相对而言用的多一些  因为在一次交互的逻辑中  抬起事件 只会被触发一次 不会反复调用回调函数
+//      但是onkeydown事件 如果不抬起键盘的话 会一直触发
+//      与其说我们需要学习键盘事件   不如说我们需要去判断用户究竟按了哪一个按键
+//      我们需要通过事件对象上的一个叫做keycode的属性 来判断当前的按键
+//      在高级浏览器当中 事件对象会作为事件回调函数的第一个形参 传递过来 供我们使用  常见名字 event  ev   e
+        
+        inputNode.onkeyup = function (event) {
+//          通常我们使用键盘事件 并且判断按键时  直接写一个if  对按键进行判断 然后将后续的逻辑都写在这个if里边
+            if(event.keyCode == 13){
+                this.value = '';
+                alert('你们要气死我啦!!!')
+            }
+        }
+
+
+    }
+</script>
+</body>
+</html>

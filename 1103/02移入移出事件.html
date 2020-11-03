@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            transition: 1s;
+        }
+        #inner{
+            width: 100px;
+            height: 100px;
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="inner"></div>
+</div>
+
+<script type="text/javascript">
+    window.onload = function () {
+        var boxNode = document.getElementById('box');
+//      与css当中使用hover伪类实现的移入移出相比
+//      js当中的移入和移出 是分开操作的  如果移入修改了某些内容 移出时是不会自动还原的
+        boxNode.onmouseenter = function () {
+            console.log('移入');
+//            this.style.background = 'skyblue';
+        }
+        boxNode.onmouseleave = function () {
+            console.log('移出');
+//            this.style.background = 'pink';
+        }
+//        boxNode.onmouseout = function () {
+//            console.log('移出')
+//        }
+//        boxNode.onmouseover = function () {
+//          console.log('移入')
+//        }
+    }
+</script>
+</body>
+</html>

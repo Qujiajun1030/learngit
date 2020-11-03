@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            /* 设置过渡 一定要给对应的样式设置初始值吗？
+               当你通过过渡来操作元素的样式时  是否需要设置初始值 是由这个样式的默认值是否能够参与过渡来决定
+            */
+            width: 200px;
+            /*width: auto;*/
+            height: 200px;
+            background: pink;
+            transition: 1s;
+            /*渐变不能参与过渡   因为渐变的本质是绘制了一张背景图片*/
+            /*background-image: linear-gradient();*/
+        }
+        .box:hover{
+            width: 500px;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+</body>
+</html>

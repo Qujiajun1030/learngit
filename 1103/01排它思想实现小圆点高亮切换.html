@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      width: 20px;
+      height: 20px;
+      border: 1px solid #ccc;
+      background: pink;
+      border-radius: 50%;
+      float: left;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    li.active {
+      background: yellowgreen;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li class="active"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <script type="text/javascript">
+    window.onload = function () {
+      var list = document.querySelectorAll("ul>li");
+
+      //        循环绑定事件
+      for (var i = 0; i < list.length; i++) {
+        //          依次访问每一个li   绑定单击事件
+        list[i].onclick = function () {
+          //                先将所有的li 的class清空
+          for (var i = 0; i < list.length; i++) {
+            list[i].className = "";
+          }
+          //                给当前点击的li添加active这个class
+          this.className = "active";
+        };
+      }
+    };
+  </script>
+</body>
+
+</html>

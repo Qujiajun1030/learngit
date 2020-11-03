@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" value="今天天气真不错">
+
+<script type="text/javascript">
+    window.onload = function () {
+        var inputNode = document.querySelector('input');
+//      获得焦点  和失去焦点
+//      当这个输入框 得到焦点的时候 背景色变成pink  文字颜色变成yellowgreen
+//      当这个输入框 失去焦点的时候 背景颜色和文字颜色全随机
+        inputNode.onfocus = function () {
+            console.log('获得焦点');
+            this.style.backgroundColor = 'pink';
+            this.style.color = 'yellowgreen';
+        };
+        inputNode.onblur = function () {
+//            console.log('失去焦点')
+            var r = Math.floor(Math.random()*256);
+            var g = Math.floor(Math.random()*256);
+            var b = Math.floor(Math.random()*256);
+
+            var r2 = Math.floor(Math.random()*256);
+            var g2 = Math.floor(Math.random()*256);
+            var b2 = Math.floor(Math.random()*256);
+            console.log(r,g,b);
+//            this.style.backgroundColor = 'rgb('+r+','+g+','+b+')';
+            this.style.backgroundColor = 'rgb('+r+','+g+','+b+')'
+            this.style.color = 'rgb('+r2+','+g2+','+b2+')'
+
+
+
+        };
+
+
+
+    }
+</script>
+
+</body>
+</html>

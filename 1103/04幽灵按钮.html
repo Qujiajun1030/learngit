@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            color: #fff;
+            font-size: 36px;
+            font-weight: bold;
+            background: yellowgreen;
+            position: absolute;
+            left:50%;
+            top:50%;
+            margin-left: -150px;
+            margin-top: -40px;
+            transition: 1s;
+        }
+        .top,.bottom{
+            position: absolute;
+            width: 0;
+            height: 4px;
+            background: yellowgreen;
+            transition: 1s;
+        }
+        .top{
+            top:0;
+            left:0;
+        }
+        .bottom{
+            bottom: 0;
+            right:0;
+        }
+        /*.box:hover{*/
+            /*background: #fff;*/
+            /*color: yellowgreen;*/
+        /*}*/
+        /*.box:hover .top , .box:hover .bottom{*/
+            /*width: 100%;*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+<div class="box">
+    HTML
+    <div class="top"></div>
+    <div class="bottom"></div>
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        var boxNode = document.querySelector('.box');
+        var topNode = document.querySelector('.top');
+        var bottomNode = document.querySelector('.bottom');
+
+//      给box元素绑定移入移出事件 我们需要操作box的背景颜色 文字颜色  top和bottom的宽度
+        boxNode.onmouseenter = function () {
+            this.style.background = '#fff';
+            this.style.color = 'yellowgreen';
+            topNode.style.width = '100%';
+            bottomNode.style.width = '100%';
+        };
+        boxNode.onmouseleave = function () {
+            this.style.background = 'yellowgreen';
+            this.style.color = '#fff';
+            topNode.style.width = '0';
+            bottomNode.style.width = '0';
+
+        };
+
+
+
+    }
+</script>
+</body>
+</html>
