@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script type="text/javascript">
+    window.onload = function () {
+        var boxNode = document.querySelector('.box');
+//      高级浏览器
+//      dom2级事件的绑定  一共可以接受三个参数   1：事件类型(字符串传递 并且不带on)  2：回调函数       3：事件是否冒泡
+//      有些事件是不能通过dom0级事件的绑定方式去绑定 只能用dom2级事件    比如transtionEnd
+//        boxNode.addEventListener('click',fn1);
+//        function fn1() {
+//            console.log('点击1')
+//        }
+//       dom2级事件 是允许给一个事件类型 指定多个回调函数的   高级浏览器触发的顺序是 由上至下
+//        boxNode.addEventListener('click',function () {
+//            console.log('点击2')
+//        })
+//      dom2级事件的解绑   一共可以接受三个参数  1：事件类型(字符串传递 并且不带on)  2：回调函数 3：事件是否冒泡
+//      在dom2级事件的解绑当中   必须和绑定时传入的参数 一模一样   函数地址必须保持一致
+//      所以如果我们需要解绑dom2级事件    回调函数就必须在外边定义成 有名函数
+//        boxNode.removeEventListener('click',fn1)
+
+//      低级浏览器
+//        attachEvent    第一个参数事件类型 （字符串传递  且带on） 第二个参数回调函数
+        boxNode.attachEvent('onclick',fn2);
+        function fn2() {
+            console.log('点击1')
+        }
+//      在低级浏览器当中 如果一个事件类型 指定多个回调函数 触发的顺序为由下至上
+//        boxNode.attachEvent('onclick',function () {
+//            console.log('点击2')
+//        })
+//      和高级相同 解绑的时候  也一定要保证参数和绑定时完全一致
+        boxNode.detachEvent('onclick',fn2)
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box">
+    hahahaha
+    <h2>哈哈哈</h2><p>今天中午吃点啥</p>
+    <span>大米饭</span>
+    <div>明天我休息了</div>
+    <!--今天挺冷的-->
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        var boxNode = document.querySelector('.box');
+//      换行符也会被当做一个文本节点
+
+//      查找元素的子节点
+        console.log(boxNode.childNodes);
+//                  nodeName     nodeType    NodeValue
+//      文本节点     #text          3        文本内容
+//      元素节点  全大写英文名      1          null
+//      注释节点     #comment       8         注释内容
+
+//      封装一个筛选所有子元素节点的方法
+//        node : 要获取子元素的父元素
+        function allChildElementNodes(node) {
+//          声明一个数组     作为储存所有子元素节点的容器
+            var arr = [];
+//          遍历当前所有所有的子节点  然后通过判断nodeType 是否为1   来确定是否让入到数组当中
+            for (var i = 0; i < node.childNodes.length; i++) {
+                if(node.childNodes[i].nodeType === 1){
+                   arr.push(node.childNodes[i]);
+                }
+            }
+            return arr
+        }
+        var result = allChildElementNodes(boxNode);
+        console.log(result);
+
+//      获取子元素节点       返回所有子元素节点     低版本浏览器返回的结果会包含注释节点
+        console.log(boxNode.children);
+
+    }
+</script>
+</body>
+</html>

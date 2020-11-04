@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script type="text/javascript">
+    window.onload = function () {
+        var boxNode = document.querySelector('.box');
+
+//      dom0级事件的绑定
+        boxNode.onclick = function () {
+            console.log('点击1')
+        };
+//      在dom0级事件中 我们就是对一个元素的事件属性 赋值一个回调函数
+//      所以我们只能设置一个回调函数 如果设置多个 就是覆盖操作   最有最后一个会生效
+        boxNode.onclick = function () {
+            console.log('点击2')
+        }
+//      dom0级事件如何解绑？  dom0级事件解绑的本质 就是断开事件属性 与 事件回调函数的链接
+        boxNode.onclick = null;
+    }
+</script>
+</body>
+</html>

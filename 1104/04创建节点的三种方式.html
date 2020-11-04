@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box">
+    <h2>哈哈哈</h2>
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        var boxNode = document.querySelector('.box');
+
+//      创建节点的第一种方式    这种方式我们现在已经不用了  因为覆盖页面
+//        document.write('<h1>今天屋里有点热</h1>')
+
+//      创建节点的第二种方式
+//        boxNode.innerHTML += '<h1>今天屋里有点热</h1>';
+//        boxNode.innerHTML += '<h1>今天屋里有点热</h1>';
+//        boxNode.innerHTML += '<h1>今天屋里有点热</h1>';
+//        boxNode.innerHTML += '<h1>今天屋里有点热</h1>';
+//        boxNode.innerHTML = boxNode.innerHTML + '<h1>今天屋里有点热</h1>';
+
+//      创建节点的第三种方式      实际开发当中我们使用最多的方式    适用于循环的结构
+//      1. 创建节点     createElement   传递的参数为：标签名称   这个方法返回的就是创建好的这个标签的dom对象
+        var hNode = document.createElement('h1');
+//      2.操作这个节点
+        hNode.innerHTML = '我是新创建出来的';
+//      3.将这个dom对象放入到页面当中
+        boxNode.appendChild(hNode)
+
+
+    }
+</script>
+</body>
+</html>

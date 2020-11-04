@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul class="list">
+        <li>泰坦泰尼克号</li>
+        <li>变形金刚</li>
+        <li class="test">钢铁侠</li>
+        <li>蜘蛛侠</li>
+        <li>美国队长</li>
+    </ul>
+<script type="text/javascript">
+    window.onload = function () {
+        var list = document.querySelector('.list');
+
+//      追加节点    最后
+//      由父元素调用   传递一个参数    要添加的子元素
+//        var liNode = document.createElement('li');
+//        liNode.innerHTML = '超人大战蝙蝠侠';
+//        list.appendChild(liNode);
+
+//      插入节点   兄弟节点
+        var testNode = document.querySelector('.test');//  参照物
+        var liNode = document.createElement('li');//   新增节点  要插入的节点
+        liNode.innerHTML = '超人大战蝙蝠侠';
+//      由父元素调用   传递两个参数  第一个参数为：新增节点     第二个参数为：参照节点   如果参照物传null 则等同于追加元素
+        list.insertBefore(liNode,testNode);
+
+//      替换节点
+//        var testNode = document.querySelector('.test');// 参照物
+//        var liNode = document.createElement('li');//  替换的节点
+//        liNode.innerHTML = '阿凡达';
+////      由父元素调用   传递两个参数 第一个参数为：替换的节点  第二个参数为：参照物
+//        list.replaceChild(liNode,testNode);
+
+//      删除节点    删除子元素
+        var testNode = document.querySelector('.test');
+//      由父元素调用  只需要传递 要删除的子元素
+//        list.removeChild(testNode)
+
+//        testNode.remove();  //  IE里不让用
+
+
+
+    }
+</script>
+</body>
+</html>

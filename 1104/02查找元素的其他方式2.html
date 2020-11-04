@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box">
+    hahahaha
+    <h2>哈哈哈</h2><p>今天中午吃点啥</p>1
+    <span class="spanNode">大米饭</span>2
+    <div>明天我休息了</div>
+    <!--今天挺冷的-->
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        var boxNode = document.querySelector('.box');
+        var spanNode = document.querySelector('.spanNode');
+
+//      第一个子节点      所有浏览器都认识
+        console.log(boxNode.firstChild);
+//      第一个子元素节点     只有高版本浏览器认识
+        console.log(boxNode.firstElementChild);
+
+//      最后一个子节点
+        console.log(boxNode.lastChild);
+//      最后一个子元素节点
+        console.log(boxNode.lastElementChild);
+//      上一个兄弟节点
+        console.log(spanNode.previousSibling);
+//      上一个兄弟元素节点
+        console.log(spanNode.previousElementSibling);
+//      下一个兄弟节点
+        console.log(spanNode.nextSibling);
+//      下一个兄弟元素节点
+        console.log(spanNode.nextElementSibling)
+
+
+//      获取父节点
+        console.log(spanNode.parentNode);
+//      获取父元素节点
+        console.log(spanNode.parentElement)
+//      我们在获取某个元素的父元素时  以上两个方法   得到的结果一模一样
+//      所有获取元素节点的方式 都是高级浏览器生效  低级浏览器不能使用
+//      所有获取节点的方式（不分类型的）    都是所有浏览器通用的
+    }
+</script>
+</body>
+</html

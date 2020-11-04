@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box">
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        var box = document.querySelector('.box');
+        var arr = ['吃饭','睡觉','滑雪','打鼓','桌游','桌游','桌游','桌游','桌游'];
+//
+//        var str = '<ul>';
+//        for (var i = 0; i < arr.length; i++) {
+//            str += '<li>'+arr[i]+'</li>';
+////          当循环执行完之后   我们str的内容应该是这样的
+////          <ul><li>吃饭</li><li>睡觉</li><li>滑雪</li><li>打鼓</li><li>桌游</li>
+//        }
+//        str += '</ul>';
+////        console.log(str)
+//        box.innerHTML = str;
+
+//        通过创建节点的方式实现
+//      创建外部容器  后续所有的li都是追加到这个ul容器当中
+        var ulNode = document.createElement('ul');
+//      遍历数组   每次都创建一个新的li  修改内容为当前元素的值 然后追加到ul当中
+        for (var i = 0; i < arr.length; i++) {
+//          每次循环执行 都创建一个li
+            var liNode = document.createElement('li');
+//          将当前数组当中元素的值 设置给这个li
+            liNode.innerHTML = arr[i];
+//          将这个li追加给ul
+            ulNode.appendChild(liNode);
+        }
+//        console.log(ulNode)
+//      将拼装好的ul的结构   追加到div当中
+        box.appendChild(ulNode);
+
+
+
+
+    }
+</script>
+</body>
+</html>

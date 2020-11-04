@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box">
+    hahahaha
+    <h2>哈哈哈</h2><p>今天中午吃点啥</p>1
+    <span class="spanNode">大米饭</span>2
+    <div>明天我休息了</div>
+    <!--今天挺冷的-->
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+
+        var boxNode = document.querySelector('.box');
+        console.log(getFirstElementChild(boxNode))
+        function getFirstElementChild(node) {
+
+            if(node.firstElementChild){
+//              高级浏览器
+                return node.firstElementChild
+            }else{
+//              低级浏览器
+//              先获取当前元素的第一个子节点 然后进行判断 如果是元素则返回 如果不是 查找当前result元素的下一个兄弟
+                var result = node.firstChild;
+//              for循环 和 while 循环的使用场景的区别
+//              for循环常用于 已知循环次数的逻辑    大多数情况我们都是一个数组或者元素集合的长度 作为我们循环的次数
+//              而while循环  常用于 未知循环次数的逻辑
+                while (result!== null && result.nodeType !== 1){
+//                    如果进入这个循环体 说明当前result不是元素节点 我们需要去判断result的下一个兄弟节点
+//                    直接将result变量的值  覆盖成下一个兄弟节点
+                    result = result.nextSibling
+                }
+//              最终的查询结果  无非就是两种情况 当前元素内没有子元素节点 返回null   如果有 则返回第一个子元素
+                return result;
+
+
+
+
+            }
+
+        }
+    }
+//    封装获取最后一个子元素节点的方法
+</script>
+</body>
+</html>

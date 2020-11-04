@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script type="text/javascript">
+    window.onload = function () {
+        var boxNode = document.querySelector('.box');
+        addEvent(boxNode,'click',function () {
+            console.log('点击')
+        })
+
+//      我们需要三个参数   1：要绑定的元素  2：要绑定的事件 3：事件的回调函数
+        function addEvent(node,eventName,callback) {
+//          如果在写兼容性的函数的时候   需要通过判断一个方法时候能够使用     写访问而不要写调用
+            if(node.addEventListener){
+//               高级浏览器
+                node.addEventListener(eventName,callback)
+                console.log('高级')
+            }else{
+//                低级浏览器
+                node.attachEvent('on'+eventName,callback)
+                console.log('低级')
+            }
+          
+        }
+
+    }
+</script>
+</body>
+</html>
