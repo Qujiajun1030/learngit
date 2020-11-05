@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let arr = ['孙悟空', '猪八戒', '沙和尚'];
+        let arr2 = ['白骨精', '蜘蛛精'];
+        let arr3 = ['张飞', '老刘'];
+
+
+        /*
+        * concat()
+        *   - 可以用来连接两个或多个数组
+        *   - 不会影响到原数组，而是将元素添加到一个新数组中返回
+        *
+        * indexOf()
+        *   - 返回元素在数组中第一次出现的位置
+        *   - 参数：
+        *       第一个参数：要查询的元素
+        *       第二个参数：查询的起始位置，默认为0
+        *   - 返回值：
+        *       如果找到了，返回其第一次出现的位置
+        *       如果没有找到，返回-1
+        *
+        * lastIndexOf()
+        *   - 返回元素在数组中最后一次出现的位置
+        *
+        * join()
+        *   - 将一个数组连接为一个字符串
+        *   - 参数：
+        *       可以指定一个分隔符作为参数，
+        *           如果不指定，默认使用,作为分隔符
+        *
+        * reverse()
+        *   - 反转数组，它是一个破坏性的方法
+        *       调用后原数组会受到影响
+        *
+        * sort()
+        *   - 用来对一个数组进行排序，它也是一个破坏性的方法
+        *
+        * */
+        let result = arr.concat(arr2);
+        result = arr.concat(arr2, arr3);
+        result = arr.concat(arr2, arr3, "老张");
+
+        arr = ['孙悟空', '猪八戒', '沙和尚', '猪八戒'];
+        result = arr.indexOf('猪八戒');
+        result = arr.indexOf('猪八戒', 2);
+        result = arr.indexOf('猪老九');
+
+        result = arr.lastIndexOf('猪八戒');
+        result = arr.lastIndexOf('猪八戒', 2);
+
+        arr = ['a', 'b', 'c'];
+        result = arr.join('-');
+        result = arr.join('@-@');
+        result = arr.join('');
+
+
+        arr = ['孙悟空', '猪八戒', '沙和尚'];
+        arr = ['a', 'b', 'c', 'd', 'e'];
+        arr.reverse();
+        /*
+        *
+        * sort()
+        *   - 用来对一个数组进行排序，它也是一个破坏性的方法
+        *       调用后，原数组的顺序就会被改变
+        *   - 但是，它默认的排序规则是按照Unicode编码进行排序的，
+        *       即使是对数字排序时。
+        *   - 如果不希望按照Unicode编码进行排序，
+        *       则可以通过传递一个回调函数来自定义排序规则
+        *   - 如果希望升序排列（从小到大），传:
+        *       function(a, b){
+        *           return a - b;
+        *       }
+        *
+        *    - 如果希望降序排列（从大到小），传：
+        *       function(a, b){
+        *           return b - a;
+        *       }
+        *
+        * */
+        arr = ['c', 'd', 'a', 'b', 'e'];
+        arr = [3, 1, 2, 5, 6, 7, 9, 8, 10, 4];
+        // arr.sort(function (a, b) {
+        //     return a - b;
+        // });
+
+        arr.sort(function (a, b) {
+            return b - a;
+        });
+
+        console.log(arr);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

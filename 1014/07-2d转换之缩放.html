@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 280px;
+				height: 330px;
+				border: 1px solid #000;
+				margin: 100px auto;
+				overflow: hidden;
+			}
+			.box img{
+				transition: all .5s;
+			}
+			.box:hover img{
+				/*
+				 缩放
+				 */
+				/*  宽度和高度的系数 */
+				/* transform: scale(1.5); */
+				/* 宽度系数 高度系数 */
+				/* transform: scale(1.5,3); */
+				
+				transform: scale(1.2);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/liuzhiyuan.jpg" >
+		</div>
+	</body>
+</html>

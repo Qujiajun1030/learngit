@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            display: inline-block;
+            width: 100px;
+        }
+
+    </style>
+    <script>
+
+        /*
+             在浏览器窗口中，打印99乘法表：
+
+                1x1=1
+                1x2=2 2x2=4
+                1x3=3 2x3=6 3x3=9
+                ....
+                                    9x9=81
+
+
+            求100以内所有的质数！
+        */
+
+        // 创建一个外层循环，控制图形的高度
+        for(let i=1; i<=9; i++){
+            // 创建一个内层循环来控制图形的宽度
+            for(let j=1; j<i+1; j++){
+                document.write('<span>'+j+'×'+i+'='+i*j+'</span>');
+            }
+
+            // 打印换行
+            document.write('<br>');
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

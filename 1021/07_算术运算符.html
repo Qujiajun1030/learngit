@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        let result = 10 + 5;
+
+        //  10 - 1
+        result = 10 - true;
+
+        /*
+        *   如果对非数值进行算术运算时，JS会将其转换为数字然后再运算（除了字符串的加法）
+        *       - 利用这个特性，可以为任意值 -0，*1 来将其转换为数字
+        *           它的原理和Number()是一样的
+        *
+        * */
+
+        // 1 + 0
+        result = true + false;
+        // 10 - 5  隐式类型转换
+        result = 10 - '5';
+        // 10 - 0
+        result = 10 - null;
+        // 10 - NaN
+        result = 10 - undefined;
+
+        let a = '1';
+
+        // console.log(result);
+        // a = Number(a);
+        // a = a - 0;
+
+        // console.log(a, typeof a);
+
+        /*
+        *   对字符串进行加法运算符，它会将两个字符串拼接为一个字符串
+        *       任何值与字符串做加法运算，都会被转换为字符串，然后和字符串进行拼串
+        *       - 利用这个特点，可以为任意值加上一个空串来将其转换为字符串，
+        *           其原理和String()函数是一样，但是更加简洁
+        * */
+        let b = 'hello' + 'world';
+        // 'hello' + '123'
+        b = 'hello' + 123;
+
+        // 'NaN' + 'abc'
+        b = NaN + 'abc';
+
+        // '12' + '3' = '123'
+        // b = 1 + '2' + 3;
+
+        let c = true;
+
+        console.log(c, typeof c);
+
+        c = c + ''; // 隐式类型转换
+
+        console.log(c, typeof c);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

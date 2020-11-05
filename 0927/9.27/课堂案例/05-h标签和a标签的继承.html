@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			h标签和a标签的继承: h标签和a标签默认分别自带了设置字号和颜色的属性,所以会层叠掉
+			从父辈元素继承的相同属性
+			 */
+			.box{
+				font-size: 40px;
+				color: red !important;
+			}
+			.box p{
+				color:yellow;
+			}
+			/* h1{
+				font-size: 20px;
+			} */
+			a{
+				color:red;
+				/* 鼠标样式 
+				   pointer 小手
+				*/
+				cursor:  copy;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<span>我是span</span>
+			<i>我是i</i>
+			<h1>我是h1</h1>
+			<h2>我是h2</h2>
+			<p>我是段落
+				<b>加粗</b>
+			</p>
+			<a href="##">超链接</a>
+		</div>
+	</body>
+</html>

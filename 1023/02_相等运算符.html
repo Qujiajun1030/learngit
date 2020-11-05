@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+        *   ==
+        *       - 相等运算符
+        *           - 如果两个值相等返回true，否则返回false
+        *           - 如果比较的两个值的类型不同，它会将其转换为相同的类型，然后再比较，
+        *               通常情况下两个不同类型的值都会转换为number，然后比较
+        *               null 和 undefined做相等比较时，会返回true
+        *
+        *   ===
+        *       - 全等运算符 (*****)
+        *           - 如果两个值全等返回true，否则返回false
+        *           - 全等不会进行自动的类型转换，如果两个值的类型不同，直接返回false
+        *           - null 和 undefined相等但是不全等
+        *           - NaN不和任和值相等，包括它自己
+        *
+        * !=
+        *   - 不相等运算符
+        *   - 如果两个值不相等返回true，相等返回false
+        *   - 会做自动的类型转换
+        *
+        * !==
+        *   - 不全等（*****）
+        *   - 如果两个不全等返回true，否则返回false
+        *   - 不会做自动的类型转换
+        * */
+
+        let result = 10 == 10; // true
+
+        result = 3 == 5; // false
+
+        result = '3' == 3; // true
+
+        result = true == '1'; // true
+
+        result = null == undefined; // true
+
+        result = 10 === 10; // true
+        result = 10 === '10'; // false
+        result = true === '1'; // false
+        result = null === undefined; // false
+
+        result = NaN == 1; // false
+        result = NaN === NaN; // false
+
+
+        let a = 'hello';
+        a = 123;
+
+        // console.log(typeof a === 'string');
+
+        a = NaN;
+        a = 123;
+
+        // 检查一下 a 是不是NaN
+        // console.log(a === NaN);
+
+        // 可以通过 isNaN()函数来检查一个值是否是NaN
+        console.log(isNaN(a));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

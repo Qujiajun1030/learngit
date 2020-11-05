@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+       /* function outer() {
+            let a = 0;
+            function inner() {
+                a++;
+                console.log(a);
+            }
+            return inner;
+        }
+
+        let fn = outer();
+
+        let a = 33;
+        fn();*/
+
+       /*var a = 10;
+       let b = 20;
+       // console.log(a, b);*/
+
+
+
+
+       (function () {
+           /*
+           * 1.let不能重复声明变量 var可以
+           * 2.let不能在初始化前访问变量 var可以
+           * 3.var声明的全局变量会添加到window对象中，let不会
+           * 4.let声明的变量有块作用域 var没有
+           *
+           * */
+
+           console.log(a);
+           let a = 20;
+
+            // let a = 10;
+            // let b = 20;
+            // function fn() {
+            //
+            // }
+            // fn();
+            // console.log('hello');
+       })();
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

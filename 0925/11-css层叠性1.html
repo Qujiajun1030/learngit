@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 css层叠性:当给一个标签设置选择器和属性时,不同的属性都可以实现,相同的属性,当权重相同时,后定义的会层叠先
+			 定义的,当权重不同时,谁的权重高实现谁的
+			 
+			 权重:
+			  标签选择器 < 类选择器 < id选择器 < 行内样式 < !important
+			 */
+			#yellowgreen{
+				color:yellowgreen;
+			}
+			.pink{
+				color:pink;
+			}
+			.yellow{
+				text-align: center;
+				color:yellow;
+			}
+			div{
+				color:red !important;
+				
+			}
+			div{
+				font-size: 60px ;
+			}
+			div{
+				font-weight: 700;
+			}
+			.gray{
+				color:gray;
+			}
+			div{
+				color:green !important;
+			}
+			div{
+				font-family: "宋体";
+			}
+			div{
+				color:blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class=" pink gray yellow" id="yellowgreen" style="color:brown">盒子</div>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let a = 'hello';
+        let b = 123;
+
+        /*
+        *   对象属于可变类型，对象中所存储的属性是可以被修改的
+        * */
+        // let c = Object();
+
+        // 修改变量时，由于变量与变量是相互独立，修改一个绝对不会影响其他变量
+        //  x = yy   x++  x += yy
+        a = 10;
+        b = a;
+        a++;
+
+        // console.log('a =', a);
+        // console.log('b =', b);
+
+
+        /*
+        *   修改一个对象时，如果有其他的变量也指向该对象，
+        *       则其它的变量也会被影响到
+        *
+        *   a.b = xxx
+        *   a.b++
+        *
+        * */
+        // let obj = Object();
+        // obj.name = '孙悟空';
+        // let obj2 = obj;
+        //
+        // obj2.name = '猪八戒';
+
+        // console.log('obj =', obj);
+        // console.log('obj2 =', obj2);
+
+
+        let obj = Object();
+        obj.name = '孙悟空';
+        let obj2 = obj;
+        obj = null;
+
+        console.log('obj =', obj);
+        console.log('obj2 =', obj2);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

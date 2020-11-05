@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *   原型（prototype）
+        *       - 每一个函数都有一个属性叫做prototype,
+        *           这个属性指向的是一个对象，这个对象就是 原型对象
+        *       - 如果函数作为普通函数调用，则原型对象没有用
+        *       - 如果函数作为构造函数调用，那么它所创建的对象都会有一个隐含（__proto__）的属性
+        *           也指向该原型对象
+        *       - 原型对象就相当于是一个公共的区域，可以被类及该类的所有实例访问
+        *
+        *       - 原型链
+        *       - 当我们要获取一个对象的属性时，浏览器会先在对象自身中寻找，
+        *           如果有则直接使用，如果没有则去对象的原型中寻找，
+        *           找到了则使用，如果没有找到则去原型的原型中寻找
+        *           以此类推，直到找到Object的原型，如果依然没有找到则返回undefined
+        *
+        *
+        *       - Object的原型是所有对象的原型，它的原型没有原型
+        *
+        *       - 可以将对象中共有的属性（方法）同一存储在原型对象中，
+        *           这样只需要设置一次，即可让所有的实例都具有该属性（方法）
+        *
+        *
+        *       - 结论：
+        *           以后在创建构造函数时，
+        *               对象中独有的属性，在构造函数内通过this.xxx的形式来设置
+        *               对象中共有的属性，在构造函数外，通过原型来设置 Xxx.prototype.xxx
+        *
+        * */
+
+        function MyClass() {
+
+        }
+
+
+        // console.log(MyClass.prototype);
+        // console.log(mc3.__proto__ === MyClass.prototype);
+
+
+        let mc = new MyClass();
+        let mc2 = new MyClass();
+        let mc3 = new MyClass();
+
+        // 向MyClass的原型中添加name属性
+        MyClass.prototype.name = '原型中name';
+
+        mc.name = '孙悟空';
+
+        // console.log(mc.name);
+        // console.log(mc2.name);
+
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        // 向原型中添加sayHello
+        Person.prototype.sayHello = function () {
+            alert('Hello, 大家好，我是'+this.name);
+        };
+
+        let p = new Person('小王', 5);
+        let p2 = new Person('小张', 7);
+
+        p.sayHello();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

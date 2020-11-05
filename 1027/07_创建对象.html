@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        // 创建一个表示人的对象
+        /*let per = {
+            name:'孙悟空',
+            age:18,
+            gender:'男'
+        };
+
+        let per2 = {
+            name: '猪八戒',
+            age: 28,
+            gender: '男'
+        };
+
+        let per3 = {
+            name: '沙和尚',
+            age: 38,
+            gender: '男'
+        };
+
+        let per4 = {
+            name: '唐僧',
+            age: 16,
+            gender: '男'
+        };
+
+        console.log(per);*/
+
+        /*
+        * 创建一个函数，专门用来创建人的对象                              
+        *   使用工厂方法来创建对象
+        * */
+        function createPerson(name, age, gender) {
+            return {
+                name: name,
+                age:age,
+                gender:gender
+            };
+        }
+        let per = createPerson('孙悟空', 18, '男');
+        let per2 = createPerson('猪八戒', 28, '男');
+
+        console.log(per);
+        console.log(per2);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

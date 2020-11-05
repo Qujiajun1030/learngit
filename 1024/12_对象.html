@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *   基本数据类型
+        *       string
+        *       number
+        *       boolean
+        *       null
+        *       undefined
+        *
+        *   对象（Object）
+        *       - 对象是一种新的数据类型
+        *       - 之前所学习的数据类型都是一个一个独立的值,
+        *           它们不适合表示一些更复杂的数据
+        *       - 对象就相当于一个容器，在对象中可以存放多种不同类型数据
+        *       - 对象是一种符合数据类型
+        *       - 使用typeof检查一个对象时，会返回 object
+        *       - 对象中可以存储不同类型的数据，
+        *           对象中存储的数据被成为属性
+        * */
+
+        // 创建对象
+        // let obj = new Object();
+        let obj = Object();
+
+        /*
+        *   向对象中添加属性：
+        *       语法：
+        *           对象.属性名 = 属性值
+        * */
+        obj.name = '孙悟空';
+        obj.age = 18;
+        obj.gender = '男';
+        // obj.gender = '女';
+
+        /*
+        *   获取对象中的属性
+        *       语法：
+        *           对象.属性名
+        *   如果读取的属性不在对象中，
+        *       它不会报错，而是返回undefined
+        * */
+        // console.log(obj.name);
+
+        /*
+        * in
+        *   - 可以用来检查对象中是否含有某个属性
+        *   - 语法：
+        *       '属性名' in 对象
+        * delete
+        *   - 用来删除对象中的指定属性
+        *   - 语法：
+        *       delete 对象.属性名
+        * */
+
+        delete obj.name;
+
+        console.log(obj.name);
+        console.log('name' in obj);
+        // console.log('address' in obj);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

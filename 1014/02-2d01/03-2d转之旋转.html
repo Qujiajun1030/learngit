@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			旋转: 
+			 */
+			.box{
+				width: 280px;
+				height: 330px;
+				border: 1px solid red;
+				margin: 200px auto;
+			
+			}
+			.box img{
+				transition: all 100s;
+			}
+			.box:hover img{
+				/* 单位:角度deg 
+				   沿着z轴旋转,正直是顺时针,负值时逆时针
+				*/
+				transform: rotateY(-36000000deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/liuzhiyuan.jpg" >
+		</div>
+		<div class="box">
+			<img src="img/fengche.png" >
+		</div>
+	</body>
+</html>

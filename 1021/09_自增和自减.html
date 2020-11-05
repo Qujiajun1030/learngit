@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *   ++(自增)
+        *       - 自增分为前++（++a）和后++（a++）
+        *       - 无论是++a还是a++，调用后都会使原变量立刻增加1
+        *       - 不同的是a++和++a的值不同：
+        *           a++的值是变量自增前的值，变量的旧值（原值）
+        *           ++a的值是变量自增后的值，变量的新值
+        *
+        *   --(自减)
+        *       - 自减分为前--（--a） 和 后--（a--）
+        *       - 无论是--a还是a--，都会使原变量立刻减小1
+        *       - 不同的使a--和 --a的值不同
+        *           a--，是原值，自减前的值
+        *           --a，是新值，自减后的值
+        *
+        * */
+
+        let a = 5;
+
+        //          5  + 7  + 7
+        let result = a++ + ++a + a;
+
+        a = 10;
+
+        // a = 10
+        a = a++;
+
+        // console.log(a++);
+        // console.log(++a);
+        // console.log(result);
+
+        // console.log(a);
+
+        let b = 10;
+
+        console.log(--b)
+
+        console.log(b);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

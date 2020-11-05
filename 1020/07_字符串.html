@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        // 引号不能跨行使用
+        let s = 'hello';
+
+        // s = '今天天气\
+        //     真不错！';
+
+        let name = '猪八戒';
+
+        /*
+        *   模板字符串
+		* 
+        *       - 模板字符串需要使用 反单引号（`） 引起来
+        *       - 特点：
+        *           1.模板字符串可以换行
+        *           2.模板字符串中可以直接引入变量
+        *               - 语法：${变量}
+        *
+        *   - 以上内容都属于新的特性，在老版本浏览器中不要使用
+        * */
+        s = `今天天气真不错`;
+
+        s = `你好，${name}`;
+
+        console.log(s);
+
+    </script>
+</head>
+<body>
+
+<!--<button onmouseenter="alert('123')"></button>-->
+
+</body>
+</html>

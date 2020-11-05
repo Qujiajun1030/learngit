@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+
+        }
+        .pItem{
+
+        }
+        #p1{
+
+        }
+    </style>
+</head>
+<body>
+<p id="p1" class="pItem">11111</p>
+<p id="p2" class="pItem">22222</p>
+<p id="p3" class="pItem">33333</p>
+<p id="p4" class="pItem">44444</p>
+<p id="p5" class="pItem">55555</p>
+<div id="p6" class="pItem">66666</div>
+<div class="box">
+    <p>今天晚上吃点啥</p>
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+//      通过id获取元素     名字（id class） 都是咱们根据实际的情况
+//      自己设置的语义相关的名称  和元素本身没啥关系  谁叫这个名字就找谁
+//        var p6Node = document.getElementById('p6');
+//        console.log(p6Node);
+//      通过class 获取元素   返回一个伪数组对象 内部包含的是 含有这个class名的 元素集合(nodeList)
+//      当我们遇到元素集合时  如果想使用dom对象的方法或属性时是不能直接使用的
+//       我们需要通过遍历 或者 索引取值的方式访问内部的dom对象
+//        var pItems = document.getElementsByClassName('pItem');
+//        console.log(pItems);
+//       通过标签名称获取元素   返回一个伪数组对象 内部包含的是 这个标签名称的 元素集合(nodeList)
+//      当我们遇到元素集合时  如果想使用dom对象的方法或属性时是不能直接使用的
+//       我们需要通过遍历 或者 索引取值的方式访问内部的dom对象
+//        var pList = document.getElementsByTagName('p');
+//        console.log(pList);
+//      我们通过类名或者标签名称去查找元素时（所有能够获取集合的方式）,
+//      无论你的查询结果是一个还是集合 都是以伪数组对象返回
+//      我们真正使用的方式 起始不是以上三种   有更好的办法
+//        querySelector 和  querySelectorAll  这两个方法 都是直接使用选择器来查询元素
+//        querySelector  用来查找单个元素  返回结果  直接为dom对象
+//        就算选择器的范围 是一个集合 但是使用querySelector 得话   只返回第一个
+        var pNode = document.querySelector('#p2');
+        console.log(pNode);
+//        querySelectorAll  用来查询元素集合  无论查询的结果为几个  都是将匹配的dom对象 放在伪数组当中
+        var pList = document.querySelectorAll('#p2');
+        console.log(pList);
+
+        var boxNode = document.querySelector('.box');
+//      可以使用已经获取过的dom对象 调用我们所学习的查询元素的方法  就是在这个dom对象的内部进行查找
+        var p2 = boxNode.querySelector('p');
+        console.log(p2)
+
+    }
+</script>
+</body>
+</html>

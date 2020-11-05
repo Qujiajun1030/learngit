@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 定义一个Person类
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        // 创建对象
+        let p1 = new Person('孙悟空', 18);
+        let p2 = new Person('猪八戒', 28);
+        let p3 = new Person('牛魔王', 58);
+        let p4 = new Person('红孩儿', 8);
+        let p5 = new Person('白骨精', 16);
+        let p6 = new Person('蜘蛛精', 14);
+
+        // 将对象添加到数组中
+        let perArr = [p1, p2, p3, p4, p5, p6];
+
+        /*
+        *   定义一个函数，函数需要一个存有Person对象的数组作为参数，
+        *       函数可以将数组中的所有成年对象保存到一个新的数组中返回
+        *
+        * */
+        function getAdult(arr) {
+            // 创建一个新数组
+            let newArr = [];
+
+            // 遍历arr
+            for(let i=0; i<arr.length; i++){
+                // arr[i] 是否满18岁
+                if(arr[i].age >= 18){
+                   // 满18岁，将其放入到新数组中
+                   newArr.push(arr[i]);
+                }
+            }
+
+            // 将新数组返回
+            return newArr;
+        }
+
+        let result = getAdult(perArr);
+
+        console.log(result);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

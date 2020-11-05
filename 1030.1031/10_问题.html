@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+        function fn() {
+            console.log('hello');
+            console.log('你好');
+
+            function f() {
+                alert('f执行了');
+            }
+
+            return f;
+        }
+
+        let result = fn();
+        // alert(fn() === 123);
+        fn()();
+
+        // console.log(result);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

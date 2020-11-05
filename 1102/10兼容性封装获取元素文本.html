@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*p{*/
+            /*visibility: hidden;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<p id="pNode">今天晚上吃点啥</p>
+<button id="btn">按钮</button>
+<script type="text/javascript">
+    window.onload = function () {
+//      封装一个函数 既能获取一个元素的文本也能设置一个元素的文本
+//      在设置和获取的时候  能够使用textContent的情况下 优先使用textContent  如果不能使用 再使用innerText
+        var pNode = document.getElementById('pNode');
+        var btnNode = document.getElementById('btn');
+        btnNode.onclick = function () {
+//           读取操作
+//            console.log(setOrGetContent(pNode))
+//            设置操作
+            setOrGetContent(pNode,'今天吃火锅')
+        };
+//      在读取操作时 我们只需要知道我们要读取的元素是哪一个就可以了  我们需要一个参数
+//      在设置操作时 我们需要知道要给哪个元素设置成什么内容   所以我们需要两个参数
+//      参数1：node  传入的要操作的元素   参数2：content 要设置的内容
+//      arguments  内部存储的是函数调用时 传递的实参的集合 是一个伪数组对象  它的长度属性 就是当前调用传递实参的个数
+        function setOrGetContent(node,content) {
+            if(arguments.length == 1){
+//              读取操作
+                if(node.textContent){
+//                  只要能够进入这个if当中则说明当前浏览器能够使用textContent来访问元素的内容  是高级浏览器
+                    return node.textContent;
+                }else{
+//                   低级浏览器
+                    return node.innerText;
+                }
+            }else if(arguments.length == 2){
+//              设置操作
+                if(node.textContent){
+//                  高级浏览器
+                    node.textContent = content;
+                }else{
+//                   低级浏览器
+                    node.innerText = content;
+                }
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

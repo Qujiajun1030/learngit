@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // var a;
+
+        /*
+        *   变量的提升
+        *       - 在JS中所有使用var声明的变量，会在所有的代码执行前被声明
+        *           也就是说我们可以在一个变量声明前就对其进行使用
+        *           变量的提升只会提前声明，而不会提前赋值
+        *       - 不使用var声明的变量不会被提升，所以不能在声明前使用
+        *
+        *   函数的提升
+        *       - 在JS中所有以function开头的函数，会在所有的代码执行前被创建，
+        *           所以我们可以在函数声明前就对其进行调用
+        *       - 使用函数表达式所定义的函数不会被提升，所以无法在声明前进行调用
+        *
+        *
+        *   JS的代码时如何执行的？
+        *       1.预解析代码
+        *           - 找到代码中所有的使用var声明的变量，以function开头的函数
+        *           - 对var声明的变量进行提前声明，对于function开头的函数进行创建
+        *       2.逐行执行代码
+        *
+        * */
+        // console.log(a)
+        // 声明变量时可以省略var或let
+        // window.a = 10;
+        // a = 10;
+        var a = 10;
+
+        fn();
+
+        function fn() {
+            console.log('我是函数fn');
+        }
+
+        var fn2 = function () {
+            console.log('fn2()');
+        };
+
+        /*
+
+        console.log(a);
+
+        var a = 10;
+
+        console.log(a);
+
+        function fn(){}
+
+        var fn2 = function(){}
+
+
+
+        ----------------------
+
+        var a;
+        var fn2;
+        function fn(){}
+        console.log(a);
+        a = 10;
+        fn2 = function(){}
+
+
+        */
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

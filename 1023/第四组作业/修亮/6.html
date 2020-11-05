@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/*
+			假设银行一年的存款利率为 5%
+			编写代码，求1000块存几年能变成5000块
+			*/
+			let startMoney = 1000;
+			let rate = 0.05;
+			sum = startMoney;
+			n = 0;
+			while(sum <= 5000){
+				sum = sum + sum * rate;
+				n = n + 1;
+			}
+			alert(`1000块存${n}年能变成5000块`);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

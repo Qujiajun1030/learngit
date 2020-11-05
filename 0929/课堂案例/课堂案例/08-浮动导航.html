@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			/*
+			 1.有5个a标签,a标签宽度100,高度30,背景色是yellow,字体是green,去掉下划线,文本水平垂直居中
+			 2.鼠标移入a标签,背景色yellowgreen,字体是color,加下划线
+			 3.5个a标签水平居中于box,box是背景色是pink
+			 */
+			.box{
+				background: pink;
+			}
+			.box ul{
+				background: blue;
+				width: 550px;
+				margin: 0 auto;
+			}
+			.box ul li{
+				float:left;
+				margin-left: 10px;
+				margin-bottom: 10px;
+			}
+			.box ul li a{
+				display: block;
+				width: 100px;
+				height: 30px;
+				background: yellow;
+				text-align: center;
+				line-height: 30px;
+				text-decoration: none;
+				
+			}
+			.box ul li a:hover{
+				background: yellowgreen;
+				color:red;
+				text-decoration: underline;
+			}
+			.clearFix::after{
+				content: "";
+				display: block;
+				clear: both;
+			}
+			.footer{
+				height: 200px;
+				background: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box ">
+			<ul class="clearFix">
+				<li style="margin-left: 0;">
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				<li>
+					<a href="##">导航</a>
+				</li>
+				
+			</ul>
+		</div>
+		<div class="footer">
+			
+		</div>
+	</body>
+</html>

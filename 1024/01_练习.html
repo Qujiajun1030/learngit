@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        * 假设银行一年的存款利率为 5%
+        *   编写代码，求1000块存几年能变成5000块
+        * */
+
+        // 创建一个变量来表示钱
+        let money = 1000;
+        // 创建一个计数器，来记录循环执行的次数
+        let count = 0;
+
+        // 创建一个循环来模拟存钱的状态
+        while(money < 5000){
+            money *= 1.05;
+
+            // 对count进行自增
+            count++;
+        }
+
+        console.log(count);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

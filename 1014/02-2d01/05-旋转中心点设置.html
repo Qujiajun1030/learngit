@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			旋转: 
+			 */
+			.box{
+				width: 280px;
+				height: 330px;
+				border: 1px solid red;
+				margin: 200px auto;
+			
+			}
+			.box img{
+				transition: all 1s;
+				/* 旋转中心点
+				   水平: left center right
+				   垂直: top  center  bottom
+				   还可以是数值
+				   
+				   z轴的旋转中心点是由x和y轴确定的
+				   X轴的旋转中心点时由y轴确定的
+				   Y轴的旋转中心点时由X轴确定的
+				 */
+				/* 水平位置  垂直位置 */
+			/* 	transform-origin:right top; */
+			/* 	transform-origin: top; */
+				transform-origin: 100px 10px;
+			}
+			.box:hover img{
+			
+				transform: rotateY(180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/liuzhiyuan.jpg" >
+		</div>
+		
+	</body>
+</html>

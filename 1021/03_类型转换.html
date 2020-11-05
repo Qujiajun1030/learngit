@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+        * 类型转换：
+        *   类型转换只将其他的数据类型转换字符串（string）、数值（number）或布尔值（boolean）
+        *
+        * 将其他的类型转换为字符串：
+        *
+        * */                                                                                                       
+        let a = 10;
+
+        /*
+        *   方式一：
+        *       - 可以调用被转换类型的toString()方法来将其转换为字符串
+        *           - 由于null和undefined中没有toString()方法，所以这种方式不适用于null和undefined
+        *   方式二（*****）：
+        *       - 可以调用String()函数，来将其转换字符串
+        *           - 原理：
+        *               对于有toString()方法的类型，也是在内部调用toString()来完成转换
+        *               对于null和undefined，没有toString() String()函数会直接对其进行转换
+        *                   null --> 'null'
+        *                   undefined --> 'undefined'
+        *
+        *   调用方法：
+        *       - 调用xxx的yyy方法 ---> xxx.yyy()
+        *   调用函数：
+        *       - 调用xxx函数 ---> xxx()
+        *
+        * */
+
+
+        a = 10; // 10 --> '10'
+        a = true; // true ---> 'true;
+        a = NaN; // NaN --> 'NaN'
+        a = 123; // 123 --> '123'
+        a = null; // null --> 'null'
+        a = undefined; // undefined  --> 'undefined '
+
+        console.log(a, typeof a);
+        // a = a.toString();
+        a = String(a);
+
+        console.log(a, typeof a);
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

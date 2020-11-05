@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        * 正则表达式
+        *   - 电子邮件： xxx@yyy.com
+        *   - 正则表达式用来描述一个字符串的规则，
+        *       程序可以根据这个规则来检查一个字符串是否符合规则
+        *       或者将符合规则的内容从字符串中提取出来
+        *   - 使用typeof检查一个正则表达式会返回 'object'
+        *
+        *   a 表示找字符串中是否含有a
+        * */
+
+        // 创建一个正则表达式的对象
+        // 创建对象：new RegExp('正则','匹配模式');
+        let re = new RegExp('a');
+        let str = 'bcabc';
+
+        re = new RegExp('ab', 'i');
+        str = 'bcAbc';
+
+        //test() 是正则表达式的方法，用来检查一个字符串是否符合正则表达式
+        alert(re.test(str));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

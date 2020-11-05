@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *   数值（number）
+        *       - 在js中所有的数字包括整数和浮点数都是number类型
+        * */
+        let n = 10;
+        let s = '10';
+
+        /*
+        *   typeof 运算符
+        *       - 可以用来检查一个变量的类型
+        *       - 使用typeof检查一个数值时，会返回 number
+        *           检查一个字符串时，会返回 string
+        * */
+        // alert(typeof n);
+        // alert(typeof s);
+        // console.log(n);
+        // console.log(s);
+
+        /*
+        *   数值（number）
+        *       - 在js中所有的数字包括整数和浮点数都是number类型
+        *       - js中的大部分整数可以精确表示,但是超过了一定范围后可能得到一个近似值
+        *           再大就会使用科学计数法表示, 如果再超过一定范围会返回Infinity,表示无穷
+        *           - 如果需要做较大的整数运算并且需要精确结果时,不要JS中算
+        *       - 在js中进行小数运算时,可能会得到一个不精确的结果,不要直接在js中进行对精度要求较高的运算
+        *       - 特殊的数值:
+        *           Infinity 无穷
+        *           NaN (Not a Number)  非法的数字
+        * */
+        n = 10;
+        n = 10.5;
+
+        n = 911111111111123 ** 911111111111123;
+
+        n = Infinity;
+
+        n = 0.1 + 0.2;
+
+        n = 10 - 'a'; // NaN
+
+        console.log(n, typeof n);
+
+    </script>
+</head>
+<body>
+</body>
+</html>

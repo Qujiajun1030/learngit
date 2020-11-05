@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .p1{
+            background: pink;
+        }
+        .p2{
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+<p id="pNode" class="p1" aa="1000">今天天气真不错</p>
+<button id="btn">按钮</button>
+<script type="text/javascript">
+    window.onload = function () {
+        var pNode = document.getElementById('pNode');
+        var btnNode = document.getElementById('btn');
+//      根据这个属性是否天生就存在于元素身上的情况 我们可以将属性分为两类
+//       1.固有属性（天生属性）  2.自定义属性（自己随便添加的）
+//       对于固有属性 我们可以通过  .属性名 或者[属性名]  来获取或者设置
+//       但是对于自定义属性  就没办法使用以上两种方式了   只能通过两个固定的方法 来操作
+//       setAttribute  设置自定义属性   两个参数 参数1：要设置的属性名称  参数2：要设置的属性值
+//       getAttrbute   获取自定义属性  一个参数：要读取的属性名称  返回对应的属性值    返回结果为字符串
+        btnNode.onclick = function () {
+
+//            pNode.aa = 'bb';
+//            pNode['aa'] = 'bb'
+//            pNode.setAttribute('aa','bb')
+//            console.log(pNode.getAttribute('aa'));
+//            console.log(1000)
+//          所有的固有属性 都可以使用setAttribute和getAttribute这两个方法来操作 可以说这两个方法对于操作属性来说是万能的
+//          但是我们一般不会这么去使用   固有属性 还是使用 . 操作居多
+//          如果使用setAttribute和getAttribute 操作元素的类名得话    直接使用class来获取或者设置  不使用className
+            pNode.setAttribute('class','p2');
+        }
+
+
+    }
+</script>
+</body>
+</html>

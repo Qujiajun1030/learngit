@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script> /*- 练习2：
+           编写一个程序，检查任意一个年份是否是闰年。
+             如果一个年份可以被4整除不能被100整除，或者可以被400整除，这个年份就是闰年*/
+    let year = +prompt('请输入年份')
+    if (isNaN(year)||year<0||year%1!==0)
+    {
+        alert('请输入正确格式')}
+    else if (year%4===0&&year%100!==0)
+    {
+        alert('这是一个闰年')
+    }else alert('这是一个平年')
+    </script>
+</head>
+<body>
+
+</body>
+</html>

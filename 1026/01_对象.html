@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        let obj = Object();
+
+        /*
+        *   obj.name 中的name被称为属性名
+        *       属性名没有任何要求，任何值都可以作为对象的属性名
+        *       如果属性名太特殊了，则需要使用一个特殊的方式来设置：
+        *           语法：
+        *               对象['属性名'] = 属性值;
+        *676666667
+        *           虽然如此，建议我们设置属性名时最好也遵循标识符的规范
+        * */
+        obj.name = '孙悟空';
+        // obj.alert = '哈哈';
+        // obj.let = '嘻嘻';
+        // obj.123123#!@#!@#!@abcdefg = '吹吧！';
+        // obj['123123#!@#!@#!@abcdefg'] = '还真行！';
+
+
+        /*
+        *
+        *   读取属性：
+        *       对象['属性名']
+        * */
+
+        let n = 'name';
+        // console.log(obj[n]);
+        // console.log(obj.name);
+
+        /*
+        *   JS中的对象的属性值可以是任意类型的数据，
+        *       啥都行，也可以是一个对象
+        * */
+        obj.age = 18;
+        obj.test = Object();
+        obj.test.name = '猪八戒';
+        obj.test.tt = Object();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

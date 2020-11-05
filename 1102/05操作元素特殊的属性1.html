@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--   不可用状态
+       置灰状态
+-->
+<input type="checkbox"  id="checkNode" >
+
+<button id="btn">按钮</button>
+<script type="text/javascript">
+    window.onload = function () {
+      var checkNode = document.getElementById('checkNode');
+      var btnNode = document.getElementById('btn');
+      var flag = false;
+      btnNode.onclick = function () {
+          checkNode.checked = !checkNode.checked;
+      }
+      // var obj = {
+      //     name :'zhubajie'
+      // };
+      // obj.name = 'sunwukong';
+      // console.log(obj.name)
+//      btnNode.onclick= function () {
+////        只要遇到属性名称和属性值相同的属性 我们统一转换成布尔值操作
+//          if(flag){
+////            只要能够进入这个if当中 说明当前flag为true  对应选中状态 我们要切换为不选中
+//              checkNode.checked = false;
+//          }else{
+//              checkNode.checked = true;
+//          }
+//          flag = !flag;
+//
+//      }
+
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+        *   递归，就是函数自己调用自己
+        * */
+
+        // 定义一个函数，用来求任意数的阶乘
+        /*
+        *   4! = 4 x 3 x 2 x 1
+        *  10! = 10 x 9 x 8 x 7 .... x 1
+        * */
+        function jieCheng(num) {
+            // 求num的阶乘
+            // 创建一个变量存储结果
+            let result = 1;
+
+            //for循环
+            for(let i=2; i<=num; i++){
+                result *= i;
+            }
+
+            return result;
+        }
+
+        /*
+        *  如何使用递归去处理阶乘的问题：
+        *       - 递归的核心思想就是将一个大的问题拆分为一个个小问题，
+        *           递归的作用和循环十分类似，基本上是一样，
+        *           递归能做的事，循环也可以做。反之亦然。
+        *           for循环编写起来相对麻烦一些，但是性能比较好
+        *           递归编写起来简单一些好理解，但是性能要差一些
+        *
+        *   6! = 6 x 5!
+        *   5! = 5 x 4!
+        *   4! = 4 x 3!
+        *   3! = 3 x 2!
+        *   2! = 2 x 1
+        *
+        * */
+
+        /*
+        *   求num的阶乘
+        *       - 运行流程：
+        *           jieCheng2(6)
+        *              1. 6 * jieCheng2(5)
+        *              2. 5 * jieCheng2(4)
+        *              3. 4 * jieCheng2(3)
+        *              4. 3 * jieCheng2(2)
+        *              5. 2 * jieCheng2(1)
+        *              6. 1
+        * */
+        function jieCheng2(num) {
+            // 基线条件，设置递归停止的条件
+            if(num === 1){
+                return 1;
+            }
+            // 递归条件，设置如何对问题进行拆分
+            return num * jieCheng2(num-1);
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

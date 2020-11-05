@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            /*不占位隐藏*/
+            /*display: none;*/
+            /*占位隐藏*/
+            visibility: hidden;
+            /*溢出隐藏*/
+            /*overflow: hidden;*/
+            /*width: 0;*/
+            /*height: 0;*/
+            /*opacity: 0;*/
+            /*position: absolute;*/
+            /*left:10000px;*/
+            /*z-index: 1;*/
+            /*font-size: 0;*/
+            /*transform: translate(10000px,10000px);*/
+            /*transform: scale(0);*/
+            /**/
+        }
+    </style>
+</head>
+<body>
+<p id="pNode"><span>今天晚上吃点啥</span></p>
+<button id="btn">按钮</button>
+<script type="text/javascript">
+    window.onload = function () {
+        var pNode = document.getElementById('pNode');
+        var btnNode = document.getElementById('btn');
+
+        btnNode.onclick = function () {
+//            innerText  在获取元素内容是 只会获取文本  不会获取到元素内部的标签
+//            在设置元素内容时 如果设置的文本当中有标签的结构 会被作为文本被渲染  标签不会解析
+//            console.log(pNode.innerText);
+//            pNode.innerText = '<span>我也不知道</span>'
+//            innerHTML  在获取元素内容时  是可以获取元素内部所有内容的 标签 + 文本
+//            在设置元素内容时  如果设置的文本当中有标签的结构 标签能够被正常的渲染
+//            这也被我们作为 向页面当中添加元素的方式之一
+//            console.log(pNode.innerHTML);
+//             pNode.innerHTML = '<span>我也不知道</span>'
+//            当我们设置或者读取的内容 都是纯文本的情况下  这两个属性是没有任何区别的
+
+//          获取或设置元素的内容  标签不会被渲染或者获取  所有浏览器都认识   只对可见元素有效
+            console.log(pNode.innerText);
+            //获取或设置元素的内容  标签不会被渲染或者获取   高级浏览器才认识  对隐藏元素也有效
+            console.log(pNode.textContent);
+//          这两个属性所指的对可见元素是否有效 说的是占位隐藏
+
+
+
+        }
+
+
+    }
+</script>
+</body>
+</html>

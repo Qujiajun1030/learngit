@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			弹性布局: 弹性盒子 伸缩布局  flex布局
+			弹性布局是父元素与子元素之间的关系
+			
+			父元素是弹性空间
+			子元素是弹性元素 弹性项
+			主轴:默认是水平方向,左边是开始,右边是结束,弹性元素是按照主轴从开始到结束的顺序依次排列
+			侧轴(交叉轴,垂轴,辅轴):默认是垂直方向,上边是开始,下边是结束,弹性元素沿着侧轴换行
+			 */
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box1,.box2{
+				border:5px solid red;
+				display: flex;
+				flex-direction:column;
+				flex-wrap:wrap;
+				/* 弹性元素在侧轴方向的位置分布(按当前行) 
+				   flex-strat: 居当前行开始
+				   center: 居当前行中间
+				   flex-end: 居当前行结束
+				   stretch(默认值): 当主轴是水平方向时,弹性元素在不设置固定高度时,
+				   弹性元素的高度和当前行的高度一样
+									当主轴是垂直方向时,弹性元素在不设置固定宽度时,
+				   弹性元素的宽度和当前行的宽度一样
+				*/
+				align-items: stretch;
+			}
+			.box2{
+				width: 1500px;
+				height: 300px;
+				margin-top: 10px;
+				border-color: #000;
+			}
+			.box1>div,.box2>div{
+				width: 100px;
+				height: 100px;
+				
+			}
+			.box1>div:nth-of-type(1),.box2>div:nth-of-type(1){
+				background: yellow;
+			}
+			.box1>div:nth-of-type(2),.box2>div:nth-of-type(2){
+				background: green;
+			}
+			.box1>div:nth-of-type(3),.box2>div:nth-of-type(3){
+				background: orangered;
+			}
+			.box1>div:nth-of-type(4),.box2>div:nth-of-type(4){
+				background: skyblue;
+			}
+			.box1>div:nth-of-type(5),.box2>div:nth-of-type(5){
+				background: purple;
+			}
+			.box1>div:nth-of-type(6),.box2>div:nth-of-type(6){
+				background: gold;
+			}
+			.box1>div:nth-of-type(7),.box2>div:nth-of-type(7){
+				background: darkcyan;
+			}
+			.box1>div:nth-of-type(8),.box2>div:nth-of-type(8){
+				background: greenyellow;
+			}
+			.box1>div:nth-of-type(9),.box2>div:nth-of-type(9){
+				background: #000;
+			}
+			.box1>div:nth-of-type(10),.box2>div:nth-of-type(10){
+				background: deeppink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+			<div>10</div>
+		</div>
+		<div class="box2">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+			<div>10</div>
+		</div>
+	</body>
+</html>

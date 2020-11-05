@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			媒体查询语句: 元素根据浏览器的宽度,进行自适应的布局,还是css语句,所以具备css特征
+			 */
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.one{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+			
+			/* 
+			@media定义条件关键字
+			min-width 最小宽度    大于等于800px   
+			 */
+			
+			/* 定义一个条件 */
+/* 			@media (min-width:800px) {
+				.one{
+					width: 500px;
+					height: 500px;
+					background: blue;
+				}
+			}
+ */			
+			/* max-width 最大宽度    小于等于800px*/
+/* 			@media (max-width:800px) {
+				.one{
+					width: 100px;
+					height: 100px;
+					background: yellow;
+				}
+			}
+ */		
+			/*
+			 and 条件连接关键字,左右最少一个空格,否则报错
+			 screen 彩屏设备
+			 */
+			/* 在800px-1200px之间 */
+          /*  @media screen and  (min-width:800px) and (max-width:1200px) {
+            	.one{
+            		width: 100px;
+            		height: 100px;
+            		background: yellow;
+            	}
+            } */
+			/*
+			 orientation 横竖屏
+			 landscape 横屏
+			 portrait 竖屏
+			 */
+			@media (orientation:portrait) {
+				.one{
+					width: 100px;
+					height: 100px;
+					background: yellow;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one"></div>
+	</body>
+</html>

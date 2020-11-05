@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .p1{
+            background: pink;
+        }
+        .p2{
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <p id="pNode" class="p1">今天天气真不错</p>
+<script type="text/javascript">
+    //   通过切换类名 实现p标签背景颜色的改变
+    window.onload = function () {
+      var pNode = document.getElementById('pNode');
+
+      pNode.onclick = function () {
+//          alert(1)
+//        pNode.class = 'p2';
+//        pNode['class'] = 'p2';
+//        因为class这个关键字 最早为保留字  在es6当中成为了 类的关键字  所以我们不能通过访问class这个属性 来操作元素的类名
+//        我们需要使用 className
+//          pNode.className = 'p2';
+          pNode['className'] = 'p2'
+
+      }
+
+    }
+
+</script>
+</body>
+</html>

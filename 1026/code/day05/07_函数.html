@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+        * 函数表达式
+        *   - 语法：
+        *       const 变量 = function(){
+        *           语句...
+        *       };
+        * */
+
+        let fn = function() {
+            console.log('我是函数中存储的代码！');
+        };
+
+        function fn2() {
+            console.log('fn2');
+        }
+
+        // 函数对象()
+
+        /*
+        *   立即执行函数（IIFE）
+        *       - 立即执行函数会在函数定义完毕后立即调用，只会调用一次
+        *       - 语法：
+        *           (function(){语句...})()
+        *           (function(){语句...}())
+        * */
+        (function() {
+            console.log('我是一个匿名函数~~');
+        }());
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

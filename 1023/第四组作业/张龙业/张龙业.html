@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+       /* 练习2：*/
+/*        let year = prompt (`请输入年份：`);
+        if(year % 4 ===0 && year % 100 !==100 || year % 400 === 0){
+       alert (year+`年是闰年，你就不能百度？`)
+        }
+        else{
+            alert (year+`年不是闰年！给爷爬！`);
+        }*/
+
+/*练习3*/
+       /* let year = +prompt (`你这狗子多大了:`);
+        let manYear;
+        if(year > 0) {
+            if (year <= 2) {
+                manYear = year * 10.5;
+            } else {
+                manYear = 10.5 * 2 + (year - 2) * 4;
+            }
+        }else{
+               alert (`你会打字吗，重新打！`);
+            }
+        alert (year+`岁的狗相当于`+manYear+`岁的你`);*/
+       /* 练习4*/
+    /* let num = +prompt(`输入考试分数`);
+     if(num ===100){
+         alert(`奖励你一枚I9-10980XE`);
+     }else if(num >= 80){
+         alert(`奖励你一张RTX3090火神`);
+     }else if(num >=60){
+         alert(`奖励你一套《五年高考三年模拟》`);
+     }else if(num < 60){
+         alert(`奖励你一局男女混合双打`);
+     }*/
+
+/*       /!*练习5*!/
+        let height = +prompt (`请老实人输入你的身高（厘米）：`);
+        let money = +prompt (`请老实人输入你的存款（万元）`);
+        let face = +prompt (`请老实人为你的颜值打分（0-100）：`);
+        if(height >= 180 && money > 1000 && face >= 500){
+            alert (`我爱的是你的人不是你的钱，我要嫁给你！`);
+        }else if(height >= 180 || money > 1000 || face >= 500){
+            alert (`我想嫁给你这样的好人，接盘吧，我还给你准备了一顶绿帽子作为定情信物`);
+        }else{
+            alert (`瘌蛤蟆想吃炖大鹅，爬`);
+        }*/
+       let money = 1000;
+       let rate = 0.05;
+       let y = 0;
+       while (money < 5000){
+           money = money + rate * money
+           y = y+1
+       }
+       alert (`需要${y}年`);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

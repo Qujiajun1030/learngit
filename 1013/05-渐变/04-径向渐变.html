@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			径向渐变:是从圆心到半径之间某个颜色过渡到某个颜色,
+			默认半径是从圆心到最远角的距离
+			
+			图形: 正方向只能是圆
+			长方形: 默认是椭圆,可以设置成圆  circle
+			
+			设置圆心:
+			at 半径水平位置  半径垂直位置
+			
+			半径距离:
+			farthest-corner
+			closest-corner
+			farthest-side
+			closest-side
+			 */
+			.one{
+				width: 300px;
+				height: 300px;
+				border: 1px solid #000;
+				/*       图形 半径的距离 at 半径水平位置  半径垂直位置,颜色 数值,颜色 数值.......... */
+				background-image: radial-gradient( ellipse closest-side at 50px 50px,red 20%,yellow 50%,blue 80%);
+			}
+			.two{
+				width: 300px;
+				height: 200px;
+				border: 1px solid #000;
+				background-image: radial-gradient(circle,red 20%,yellow 50%,blue 80%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one"></div>
+		<div class="two"></div>
+		
+	</body>
+</html>

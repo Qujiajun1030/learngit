@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *   方法（method）
+        *       - 对象的属性也可以是一个函数
+        *       - 当一个对象的属性是函数时，我们就称这个函数是当前对象的方法
+        *           调用函数，称为调用对象的方法
+        *       - 函数和方法只是称呼上的不同，没有什么太本质的区别
+        * */
+
+        let obj = {};
+
+        obj.name = '孙悟空';
+        obj.age = 18;
+        obj.sayHello = function () {
+            alert('大家好，我是孙悟空！');
+        };
+
+        // console.log(obj.sayHello);
+        obj.sayHello();
+        // console.log();
+        // obj.toString();
+
+        // alert();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

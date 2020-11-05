@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+<a href="http://baidu.com" id="aNode">百度一下</a>
+<img src="1.jpg" alt="" id="imgNode">
+<button id="btn">按钮</button>
+<script type="text/javascript">
+    window.onload = function () {
+//        通过id获取元素的dom对象
+      var btnNode = document.getElementById('btn');
+//        通过id获取a标签的dom对象
+      var aNode = document.getElementById('aNode');
+//        通过id获取img标签的dom对象
+      var imgNode = document.getElementById('imgNode');
+//    标志位   使用标志位的时候
+//          我们如果在没有语义的情况下起始不会过度的关注标志位变量的默认值 而是区分好标志位不同状态对应的逻辑
+      var flag = true;//  true对应图片1  false对应图片2
+//    给按钮绑定单击事件
+      btnNode.onclick = function () {
+//        操作a标签的href属性
+//          aNode.href = 'http://www.jd.com';
+//          aNode['href'] = 'http://www.taobao.com';
+//          imgNode.src = '2.jpg';
+//          imgNode['src'] = '2.jpg';
+
+      }
+
+    }
+</script>
+</body>
+</html>

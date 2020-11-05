@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			css继承性: 后代元素可以继承(优先继承离自己最近的)父辈元素的关于设置文本的属性.
+			继承的权重值是0
+			 */
+			
+			.box{
+				color:red !important;
+				/* font-size: 40px;
+				font-weight: 700;
+				height: 100px;
+				font-family: "宋体";
+				width: 200px; */
+			}
+			i{
+				color:blue;
+			}
+			.green{
+				color:green;
+			}
+			/* p{
+				background: yellow;
+			} */
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<i class="green">倾斜</i>
+			<p>
+				段落
+				<span>我是span</span>
+			</p>
+		</div>
+	</body>
+</html>

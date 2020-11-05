@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        let arr = [1,2,3,1,1,4,3,2,5,6,7];
+
+        // 编写代码去除数组中重复的数字
+
+        // 创建一个循环获取要比较的数字
+        for(let i=0; i<arr.length; i++){
+            // 创建一个循环获取arr[i]后边的所有数字
+            // console.log(arr[i]);
+            for(let j=i+1; j<arr.length; j++){
+                // console.log('\t'+arr[j]);
+                // 比较arr[i] 和 arr[j]是否相等
+                if(arr[i] === arr[j]){
+                    // 删除j位置的数字
+                    arr.splice(j, 1);
+                    // 删除了一个元素，后边的元素自动上移
+                    // 希望将当前位置再比较一遍
+                    j--;
+                }
+            }
+        }
+
+        // console.log(arr);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

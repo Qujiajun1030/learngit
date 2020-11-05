@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 单属性:一个属性名对应一个属性值
+			 复合属性:一个属性名对应多个属性值
+			 */
+			.box{
+				width: 500px;
+				height: 500px;
+				background: pink;
+				
+				color:red;
+				/* font-size: 40px;
+				font-weight: 700;
+				font-style: italic;
+				font-family: "宋体";
+				line-height: 500px; */
+				
+				/*   是否倾斜 是否加粗 字号/行高 字体*/
+				/* font: italic 700 40px/500px "宋体"; */
+				
+				/* 字号和字体是必写项 */
+			/* 	font:   40px "宋体"; */
+				
+				/* 当复合属性和单属性同时存在时,先写复合属性,再写单属性 */
+				font: 40px "宋体";
+				font-style: italic;
+				font-weight: 700;
+				line-height: 500px;
+			
+			}
+			i{
+				/* 字体的样式
+				   italic 倾斜
+				   normal 正常
+				 */
+				font-style: normal;
+			}	
+		</style>
+	</head>
+	<body>
+		<div class="box">复合属性之font</div>
+		<i>倾斜</i>
+	</body>
+</html>

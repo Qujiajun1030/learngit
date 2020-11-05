@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+        * 非布尔值的逻辑运算
+        *   - 当对非布尔值进行逻辑运算，它会先将其转换为布尔值，
+        *       然后进行逻辑运算，最终返回原值。
+        *
+        *   - 与运算：
+        *       - 第一个值是false，直接返回第一个，
+        *           第一个值是true，返回第二个
+        *
+        *   - 或运算：
+        *       - 第一个值是true，直接返回第一个
+        *           第一值是false，返回第二个
+        * */
+
+        //          true && true
+        let result = 1 && 2; // 2
+        //          true && true
+        result = 2 && 1; // 1
+
+        //      false && true
+        result = 0 && 1; // 0
+
+        //   true && false
+        result = 1 && 0; // 0
+
+        //  false && false
+        result = 0 && NaN; // 0
+        result = NaN && 0; // NaN
+
+
+
+        result = null || 123; // 123
+        result = null || 'haha'; // 'haha'
+        result = null || undefined; // undefined
+        result = 'hello' || undefined; // 'hello'
+        result = 'hello' || 123; // 'hello'
+        result = 'hello' || true; // 'hello'
+
+
+        console.log(result);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

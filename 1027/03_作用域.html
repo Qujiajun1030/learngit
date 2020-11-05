@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*let a = 10;
+        function fn() {
+            console.log(a);
+            let a;
+        }
+        fn();
+        console.log(a);*/
+
+
+        // 函数的作用域由函数的定义位置决定，和函数的调用位置无关
+        let a = 10;
+
+        function fn() {
+            console.log(a);
+        }
+
+        function fn2(){
+            let a = 20;
+            fn();
+        }
+
+        fn2();
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			显示模式:
+			块级显示模式:设置宽高起作用,单独占一行,当不设置固定宽度时,和父元素一样宽
+			块元素:div h1-h6 p hr ul ol li dl dt dd form
+			
+			行内显示模式:设置宽高不起作用,一行可以有多个,是由内容决定元素的宽高,沿着基线对齐
+			当盒子之间有一个或多个空格时,会出现一个默认等宽的间距
+			行内元素: span b strong i em u ins s del a
+			
+			行内块显示模式::设置宽高起作用,一行可以有多个,宽高默认由图片原始大小决定,沿着基线对齐
+			当盒子之间有一个或多个空格时,会出现一个默认等宽的间距
+			行内块元素: img 表单标签 例如: input
+			 */
+			div {
+				/* width: 200px; */
+				height: 200px;
+				background: red;
+			}
+
+			i {
+				width: 1000px;
+				height: 10000px;
+				background: green;
+				font-size: 60px;
+			}
+
+			b {
+				background: yellow;
+			}
+			img{
+				/* width: 50px; */
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<i>倾斜</i><i>倾斜</i><b>加粗</b><b>加粗</b><img src="liuzhiyuan.jpg"><br>
+		<img src="liuzhiyuan.jpg" >
+	</body>
+</html>

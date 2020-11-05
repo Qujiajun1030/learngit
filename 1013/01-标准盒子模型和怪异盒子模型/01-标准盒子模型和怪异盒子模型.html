@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			标准盒子模型:盒子尺寸 = content+padding+border,当盒子设置padding后,盒子的
+			尺寸会变大
+			
+			怪异盒子模型(内减模式): 盒子尺寸 = content+padding+border,当盒子设置padding和
+			border后,盒子的尺寸不会变,会自动的从content的区域减去padding和border撑开
+			尺寸,尺寸和width,height一样.
+			注意:必须设置固定宽高
+			 */
+			.one{
+				width: 200px;
+				height: 200px;
+				background: pink;
+				margin: 0 auto 5px;
+				padding: 10px;
+				border:10px solid red;
+			}
+			.two{
+				width: 200px;
+				height: 200px;
+				background: pink;
+				margin: 0 auto 5px;
+				padding: 10px;
+				border:10px solid red;
+				/* 怪异盒子模型 
+				   content-box 标准盒子模型
+				   border-box  怪异盒子模型
+				*/
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one">哈哈</div>
+		<div class="two">哈哈</div>
+	</body>
+</html>

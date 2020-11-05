@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+        *
+        * do-while
+        *   语法：
+        *       do{
+        *           语句...
+        *       }while(条件表达式)
+        *
+        *   执行流程：
+        *       do-while在执行时，它会先执行do后的循环体，
+        *          执行完毕对while后的条件表达式进行求值判断
+        *           如果为false，则语句直接结束
+        *           如果为true，则继续执行循环体，以此类推
+        *
+        *       while是先判断后执行，do-while是先执行后判断
+        *           do-while可以确保循环可以至少执行一次
+        *
+        * */
+
+
+        //初始化表达式
+        let i = 5;
+
+        do{
+            console.log(i);
+
+            // 更新表达式
+            i++;
+        }while (i < 5)
+
+        // i = 5;
+        // // 条件表达式
+        // while (i < 5){
+        //     console.log(i);
+        //
+        //     // 更新表达式
+        //     i++;
+        // }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

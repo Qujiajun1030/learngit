@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /** 假设银行一年的存款利率为 5%
+        *   编写代码，求1000块存几年能变成5000块*/
+
+        let lilv = 0.05 ;
+        let sourceMoney = 1000 ;
+        let maxMoney = 5000 ;
+        let year = 0;
+        // for ( ; ; year++ ){
+        //     if (sourceMoney <= maxMoney){
+        //         sourceMoney *= 1 + lilv ;
+        //     }else {
+        //         alert(`求1000块存${year}年能变成5000块`)
+        //         break;
+        //     }
+        // }
+        while (sourceMoney <= maxMoney ){
+            sourceMoney *= 1 + lilv ;
+            year++;
+        }
+        alert(`求1000块存${year}年能变成5000块`)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

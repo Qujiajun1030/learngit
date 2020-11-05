@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>闰年还是平年</title>
+		<!-- 练习2：
+		编写一个程序，检查任意一个年份是否是闰年。
+		如果一个年份可以被4整除不能被100整除，或者可以被400整除，这个年份就是闰年 -->
+		<script type="text/javascript">
+			let num = +prompt('请输入一个整数');
+			if (num > 0) {
+				if ((num % 4 === 0 && 100 % num !== 0) || 400 % num === 0) {
+					alert(`${num}年是闰年！`);
+				} else {
+					alert(`${num}年是平年！`);
+				}
+			} else {
+				alert('请重输!!!')
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

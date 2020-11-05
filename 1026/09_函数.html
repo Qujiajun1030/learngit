@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function sum(a, b) {
+            return a + b;
+        }
+
+        let b = sum(123, 456);
+
+        let c = b + 33;
+
+
+        /*
+        *   返回值
+        *       - 返回值是函数的执行结果
+        *       - 在函数可以使用return 来设置函数的返回值
+        *       - 返回值可以是任意的数据类型
+        *       - 如果return后不跟任何值，
+        *           或不写return则相当于return undefined
+        *       - return 执行函数就结束了，
+        *           return后的所有的代码都不会执行
+        *
+        *
+        * */
+        function fn() {
+            // return {};
+
+            return;
+
+            // console.log('hello');
+        }
+
+        let a = fn();
+
+        // console.log('a =', a)
+
+        function fn2() {
+            console.log('函数执行了');
+
+            for(let i=0; i<5; i++){
+
+                if(i === 2){
+                    // break;
+                    // continue;
+                    return;
+                }
+
+                console.log(i);
+            }
+
+            console.log('函数执行结束了');
+        }
+
+        fn2();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

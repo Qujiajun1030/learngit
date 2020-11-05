@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *   逻辑运算符，用来进行逻辑判断
+        *
+        *   !
+        *       - 逻辑非
+        *       - 可以用来对一个布尔值进行取反操作
+        *           true 变 false
+        *           false 变 true
+        *       - 对于非布尔值进行逻辑非运算，会先将其转换为布尔值，
+        *           然后再取反
+        *       - 利用这个特点，可以对一个非布尔值取两次反，来将其转换为布尔值，
+        *           原理和Boolean()函数一样，但是更简单（隐式类型转换）
+        *   &&
+        *       - 逻辑与
+        *       - && 用来对两个值进行与运算
+        *       - 当两个值同时为true时，才会返回true，否则返回false
+        *       - 与是找false的
+        *       - 与运算是短路的与，如果第一个值是false，则不会看第二个值
+        *   ||
+        *       - 逻辑或
+        *       - || 用来对两个值进行或运算
+        *       - 两端只要有一个true，就返回true，都是false才返回false
+        *       - 或是找true
+        *       - 或运算是短路的或，如果第一个值是true，则不看第二个值
+        * */
+        let a = false;
+        a = !a;
+
+        /*let b = 10;
+        console.log(b, typeof b);
+        b = !!b;
+        console.log(b, typeof b);*/
+
+        let result = true && true; // true
+        result = true && false; // false
+        result = false && true; // false
+        result = false && false; // false
+
+
+        result = true || true; // true
+        result = true || false;// true
+        result = false || true;// true
+        result = false || false;// false
+
+        // console.log(result);
+
+        // true && alert('你猜我出来吗？'); 第一个值是true，会看第二个值
+        // false && alert('你猜我出来吗？'); 第一个值是false，不会看第二个值
+
+        // false || alert('你猜我出来吗？'); 第一个值是false，会看第二个值
+        // true || alert('你猜我出来吗？'); 第一个值是true，不会看第二个值
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

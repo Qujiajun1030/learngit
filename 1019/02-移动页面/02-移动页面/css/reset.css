@@ -1,0 +1,73 @@
+/* 基础设置 */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+p,
+form,
+button,
+input {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+img {
+  /* 解决底部留白 */
+  display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* 父元素字号的百分比 */
+  font-size: 100%;
+}
+b,
+strong {
+  font-weight: 400;
+}
+i,
+em {
+  font-style: normal;
+}
+table {
+  width: 300px;
+  height: 300px;
+  border: 1px solid red;
+  /* 单元格与单元格之间的间距  相当于cellspacing */
+  border-spacing: 0;
+  /* 1px边框 */
+  border-collapse: collapse;
+}
+td,
+th {
+  border: 1px solid red;
+  text-align: center;
+}
+.clearFix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+input,
+button {
+  /* 去除轮廓线 */
+  outline: none;
+}
+button {
+  border: none;
+}

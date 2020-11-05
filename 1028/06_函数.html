@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function fn(a, b, c) {
+            /*
+            *   除了this，函数中还有一个隐含的参数叫做arguments
+            *       arguments是一个类数组对象（伪数组）
+            *   它具有length属性，同时也可以通过索引来操作元素，但是它的类型不是Array
+            *
+            *   arguments是用来存储实参的对象，所有的实参都存储arguments对象,
+            *       通过arguments，我们不定义形参就可以直接使用实参
+            * */
+            // alert(arguments instanceof Array);
+
+            alert(arguments[1]);
+        }
+
+        // fn('hello', true, 123);
+
+        // 定义一个函数，可以求任意个数字的和
+        function sum() {
+
+            // 定义一个变量，用来存储结果
+            let result = 0;
+
+            // 遍历所有的参数
+            for(let i=0; i<arguments.length; i++){
+                result += arguments[i];
+            }
+
+            return result;
+        }
+
+        console.log(sum(123, 456, 678));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

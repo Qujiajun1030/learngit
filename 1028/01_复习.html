@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        let a = 10;
+
+        function fn() {
+            console.log(a);
+        }
+
+        function fn2() {
+            let a = 20;
+            fn();
+        }
+
+
+
+        function fn3() {
+            let b = 20;
+            return function () {
+                console.log(b);
+            };
+        }
+
+        let fn4 = fn3();
+
+        let b = 10;
+        // fn4();
+
+        const obj = {name:'孙悟空'};
+        obj.name = '猪八戒';
+
+        // obj = {};
+
+        // console.log(obj);
+
+        let arr = ['孙悟空', '猪八戒', '沙和尚'];
+
+        // console.log(arr[arr.length - 2]);
+
+        // for(let i=arr.length-1; i>=0; i--){
+        //     console.log(arr[i]);
+        // }
+
+        // for(let ele of arr){
+        //     console.log(ele);
+        // }
+
+        arr = ['孙悟空', '猪八戒', '沙和尚', '唐僧'];
+
+        /*
+        *   forEach() 是数组对象的方法，可以用来对数组进行遍历，
+        *       它需要一个函数作为参数
+        *
+        *       传递给forEach()的函数会调用多次，
+        *           数组中有几个元素就会调用几次
+        *           每次调用时，会将元素的信息以参数的形式传递进行函数
+        *           forEach的回调函数有三个参数：
+        *               第一个：item 当前遍历的元素
+        *               第二个：index 当前遍历的元素的索引
+        *               第三个：array 当前正在遍历数组
+        *
+        *       像这种函数由我们定义，但是不由我们调用，
+        *           这种函数我们称为回调函数（callback）
+        * */
+
+        arr.forEach(function(item, index, array){
+            console.log(index, item);
+        });
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

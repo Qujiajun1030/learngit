@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			2d转换之位移:根据当前自身的位置进行位移,类似于相对定位
+			 */
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				
+				background: red;
+				/*                       水平位置  垂直位置*/
+				/* transform: translate(100px, 100px); */
+				/*                   自身宽度的百分比 自身高度的百分比 */
+				/* transform: translate(-50%, -50%); */
+				
+				/* 水平垂直居中 */
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+			.box2{
+				width: 200px;
+				height: 200px;
+				background: blue;
+				
+			}
+			.box3{
+				width: 300px;
+				height: 300px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box3">
+				
+			</div>
+		</div>
+		<div class="box2"></div>
+	</body>
+</html>

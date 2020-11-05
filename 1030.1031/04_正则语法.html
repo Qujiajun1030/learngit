@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 创建一个正则表达式检查字符串中是否含有 .
+        /*
+        *
+        *   . 表示任意字符
+        *       - 在正则表达式中，使用\作为转义字符
+        *       \. --> .
+        *       \w  任意的单词字符，相当于 [A-Za-z0-9_]
+        *       \W  除了单词字符，相当于 [^A-Za-z0-9_]
+        *       \d  任意数字 [0-9]
+        *       \D  除了数字 [^0-9]
+        *       \b  单词边界
+        *       \B  除了单词边界
+        *       \s  空格
+        *       \S  除了空格
+        *
+        * */
+        let re = /\./;
+        re = new RegExp('\\.');
+
+        re = /\w/;
+        re = /\W/;
+        re = /\d/;
+
+        let str = 'hello child';
+
+        //创建一个正则表达式，检查str中是否含有child这个单词
+        re = /\bchild\b/;
+        // alert(re.test(str));
+
+        /*
+        * 编写一个正则表达式，检查一个字符串是否是合法的电子邮件地址
+        * aaaa@aaa.com.cn
+        *
+        * */
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

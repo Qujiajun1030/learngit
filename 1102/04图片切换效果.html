@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+<a href="http://baidu.com" id="aNode">百度一下</a>
+<img src="1.jpg" alt="" id="imgNode">
+<button id="btn">按钮</button>
+<script type="text/javascript">
+    window.onload = function () {
+//        通过id获取元素的dom对象
+        var btnNode = document.getElementById('btn');
+//        通过id获取img标签的dom对象
+        var imgNode = document.getElementById('imgNode');
+//    标志位   使用标志位的时候
+//          我们如果在没有语义的情况下起始不会过度的关注标志位变量的默认值 而是区分好标志位不同状态对应的逻辑
+        var flag = true;//  true对应图片1  false对应图片2
+        var num = 0;
+        btnNode.onclick = function () {
+            num++;
+//           1 2 3 4 5 6 7
+//           1 0 1 0 1 0 1`
+            imgNode.src = num % 3 + 1 +'.jpg';
+        }
+
+//    给按钮绑定单击事件
+//        btnNode.onclick = function () {
+//            if(flag){
+////              只要能够进入这个if当中 说明flag当前的值为 true
+////              现在页面显示的图片是1.jpg   我们要将图片切换到2.jpg  切换图片后  一定要将标志的状态进行更新
+//                imgNode.src = '2.jpg';
+////                flag = false;
+//            }else{
+//                imgNode.src = '1.jpg';
+////                flag = true;
+//            }
+////          上边的逻辑   无论flag是true还是false  当点击发生之后 都是切换到自身当前相反的状态
+//            flag = !flag;
+//        }
+
+    }
+</script>
+</body>
+</html>

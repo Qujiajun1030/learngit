@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			旋转: 
+			 */
+			.box{
+				width: 280px;
+				height: 330px;
+				border: 1px solid red;
+				margin: 200px auto;
+			
+			}
+			.box img{
+				transition: all 1s;
+			}
+			.box:hover img{
+				/* 
+				旋转轴:
+				rotateX 沿着X轴旋转, 从屏幕右侧往左看,正直是顺时针,负值是逆时针
+				rotateY 沿着Y轴旋转, 从屏幕底下往上看,正直是顺时针,负值是逆时针
+				rotateZ或者rotate沿着z轴旋转,向右转是顺时针,向左转是逆时针正直是顺时针,负值时逆时针
+				*/
+				transform: rotateY(-180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/liuzhiyuan.jpg" >
+		</div>
+		
+	</body>
+</html>

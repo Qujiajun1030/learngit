@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: #555;
+			}
+			.box{
+				width: 400px;
+				height: 250px;
+				/* background: pink; */
+				margin: 200px auto;
+				/* 为a开启3d */
+				transform-style: preserve-3d;
+				perspective: 1000px;
+			}
+			.box a{
+				display: block;
+				width: 100%;
+				height: 100%;
+				background: url(07.jpg) no-repeat 0 0;
+				transform: rotateX(0deg);
+				position: relative;
+				/* 为a开启3d */
+				transform-style: preserve-3d;
+				transition: all 1s;
+			}
+			/* 下半身盒子 */
+			.box a::before{
+				content: "";
+				width: 100%;
+				height: 40px;
+			/* 	border: 2px solid red ; */
+				background: url(07.jpg) no-repeat 0 bottom;
+				position: absolute;
+				left:0;
+				bottom:0px;
+				transform-origin: bottom;
+				transform: rotateX(90deg);
+			}
+			/* 下半身盒子上面的文本 */
+			.box a span{
+				width: 100%;
+				height: 40px;
+				background: rgba(0,0,0,.5);
+				position: absolute;
+				left:0;
+				bottom:-40px;
+				transform-origin: top;
+				transform: rotateX(-90deg);
+				color:#fff;
+				text-align: center;
+				line-height: 40px;
+				font-size: 30px;
+				
+			}
+			
+			/* 影子 */
+			.box a::after{
+				content: "";
+				width: 100%;
+				height: 100%;
+				background: yellow;
+				position: absolute;
+				left:0;
+				top:0;
+				transform: translateZ(-200px) translateY(200px) rotateX(90deg) scale(.7);
+			}
+			
+			.box:hover a{
+				transform: rotateX(80deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<a href="##">
+				<span>真相只有一个</span>
+			</a>
+		</div>
+	</body>
+</html>

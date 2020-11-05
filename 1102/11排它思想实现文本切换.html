@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>哈哈哈1</p>
+    <p>哈哈哈2</p>
+    <p>哈哈哈3</p>
+    <p>哈哈哈4</p>
+    <p>哈哈哈5</p>
+    <p>哈哈哈6</p>
+
+<script type="text/javascript">
+    window.onload = function () {
+        var pList = document.querySelectorAll('p');
+//    循环事件绑定
+        for (var i = 0; i < pList.length; i++) {
+            pList[i].onclick = function () {
+//              先将p标签的集合当中每一个元素的内容 改成 呵呵呵
+                for (var i = 0; i < pList.length; i++) {
+                    pList[i].innerHTML = '呵呵呵'
+                }
+//              this在事件的回调当中 指向当前触发事件的事件源
+                this.innerHTML = '嘿嘿嘿';
+//              在使用排它思路 去处理如高亮切换等逻辑是  一定是先操作集合 后操作当前事件源
+
+            }
+
+        }
+    }
+</script>
+</body>
+</html>

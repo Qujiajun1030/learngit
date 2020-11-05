@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			过渡:在设定的时间内,某个属性从一个值过渡到另一个值就是过渡
+			
+			如果希望过渡有来有去,要将过渡属性写下默认状态下
+			注意: 只有属性值是数值变换的才能有过渡效果
+			 */
+			.box{
+				width: 1200px;
+				height: 500px;
+				border: 1px solid #000;
+			}
+			.box p{
+				width: 200px;
+				height: 200px;
+			}
+			.box p:nth-of-type(1){
+				background: red;
+				/* 过渡单属性 */
+				
+				/* 过渡的属性 */
+				/* transition-property: width,height,background-color,opacity,display; */
+				/* all是全部能过渡的属性*/
+				transition-property: all;
+				/* 过渡的时间 单位 秒s   毫秒ms   1秒=1000毫秒*/
+				transition-duration:1s ;
+				/* 过渡的方式 
+				 linear： 线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0) 
+				 ease： 平滑过渡。等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0) 
+				 ease-in： 由慢到快。等同于贝塞尔曲线(0.42, 0, 1.0, 1.0) 
+				 ease-out： 由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0) 
+				 ease-in-out： 由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0) 
+				 贝赛尔曲线:
+				 https://cubic-bezier.com/#0,-0.53,1,1.74
+				*/
+				transition-timing-function:cubic-bezier(0,-0.53,1,1.74);
+				/* 过渡的延时时间 */
+				transition-delay: 500ms;
+			}
+			.box p:nth-of-type(2){
+				background: blue;
+				/* 过渡的复合属性 */
+				/* 过渡的属性  过渡的时间 过渡方式 过渡的延时时间*/
+				/* transition: all 1s linear .5s; */
+				/* 复合属性分别设置单个过渡属性时,要分组写,组之间用逗号隔开 */
+				/* transition: width 1s linear .5s,height 1s ease-in 1s; */
+				transition: all 1s linear;
+				transition-property: width,height;
+			}
+			.box:hover p:nth-of-type(1){
+				width: 1200px;
+				height: 500px;
+				background-color: #000;
+				/* opacity: 0; */
+				
+				
+			}
+			.box:hover p:nth-of-type(2){
+				width: 1200px;
+				height: 500px;
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<p></p>
+			<p></p>
+		</div>
+	</body>
+</html>

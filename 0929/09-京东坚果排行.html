@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			body {
+				background: #f4f4f4;
+			}
+
+			.box {
+				width: 290px;
+				height: 340px;
+				background: #fff;
+				margin: 100px auto 0;
+			}
+
+			.box h2 {
+				overflow: hidden;
+
+			}
+
+			.box h2 a {
+				display: block;
+				background: pink;
+				text-decoration: none;
+				margin: 13px 0 0 19px;
+				width: 100px;
+			}
+
+			.box h2 a .circle {
+				width: 15px;
+				height: 15px;
+				border: 1px solid red;
+				float: left;
+				/* 圆角属性 */
+				border-radius: 50%;
+				font-size: 12px;
+				color: red;
+				text-align: center;
+				line-height: 15px;
+				margin: 7px 0 0 10px;
+			}
+
+			.box h2 a span {
+				float: left;
+				font-size: 24px;
+				color: #333;
+			}
+
+			.clearFix::after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+
+			.box .list01 {
+				margin-top: 11px;
+			}
+
+			.box .list01 li {
+				float: left;
+				margin-right: 8px;
+			}
+
+			.box .list01 li a {
+				display: block;
+				width: 62px;
+				height: 20px;
+				background: #f6f6f6;
+				color: #999;
+				font-size: 12px;
+				text-decoration: none;
+				border-radius: 10px;
+				text-align: center;
+				line-height: 20px;
+			}
+			.box .list02{
+				margin-top: 15px;
+			}
+			.box .list02 li {
+				height: 70px;
+				background: yellow;
+				padding: 0 15px;
+				margin-bottom: 10px;
+			}
+
+			.box .list02 li a {
+				display: block;
+				height: 70px;
+				background: yellowgreen;
+			}
+
+			.box .list02 li a .top {
+				width: 28px;
+				height: 41px;
+				background: url(top_03.png) no-repeat 0 0;
+				float: left;
+				margin-top: 15px;
+			}
+
+			.box .list02 li a img {
+				float: left;
+				width: 70px;
+				margin: 0 10px 0 12px;
+			}
+
+			.box .list02 li a p {
+				float: left;
+				width: 133px;
+				color: #333;
+				font-size: 14px;
+				margin-top: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h2>
+				<a href="##" class="clearFix">
+					<span>排行榜</span>
+					<div class="circle">></div>
+				</a>
+			</h2>
+			<ul class="list01 clearFix">
+				<li style="margin-left: 9px;">
+					<a href="##">吸顶灯</a>
+				</li>
+				<li>
+					<a href="##">吸顶灯</a>
+				</li>
+				<li>
+					<a href="##">吸顶灯</a>
+				</li>
+				<li>
+					<a href="##">吸顶灯</a>
+				</li>
+			</ul>
+			<ul class="list02">
+				<li>
+					<a href="##">
+						<div class="top"></div>
+						<img src="jianguo.webp">
+						<p>好吃好吃好吃好吃好吃好吃好吃好吃好吃</p>
+					</a>
+				</li>
+				<li>
+					<a href="##">
+						<div class="top"></div>
+						<img src="jianguo.webp">
+						<p>好吃好吃好吃好吃好吃好吃好吃好吃好吃</p>
+					</a>
+				</li>
+				<li>
+					<a href="##">
+						<div class="top"></div>
+						<img src="jianguo.webp">
+						<p>好吃好吃好吃好吃好吃好吃好吃好吃好吃</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</body>
+</html>

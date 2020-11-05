@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			弹性布局: 弹性盒子 伸缩布局  flex布局
+			弹性布局是父元素与子元素之间的关系
+			
+			父元素是弹性空间
+			子元素是弹性元素 弹性项
+			主轴:默认是水平方向,左边是开始,右边是结束,弹性元素是按照主轴从开始到结束的顺序依次排列
+			侧轴(交叉轴,垂轴,辅轴):默认是垂直方向,上边是开始,下边是结束,弹性元素沿着侧轴换行
+			 */
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box1,.box2{
+				border:5px solid red;
+				/* 开启弹性空间 */
+				display: flex;
+				/* 主轴的方向 
+				row默认值:主轴是水平方向,左边是开始,右边是结束,侧轴是垂直方向,上边是开始,下边是结束 
+				row-reverse:主轴是水平方向,左边是结束,右边是开始,侧轴是垂直方向,上边是开始,下边是结束
+				column: 主轴是垂直方向,上边是开始,下边是结束,侧轴是水平方向,左边是开始,右边是结束
+				column-reverse: 主轴是垂直方向,上边是结束,下边是开始,侧轴是水平方向,左边是开始,右边是结束
+				*/
+				flex-direction: column-reverse;
+			}
+			.box2{
+				height: 1500px;
+			}
+			.box1>div,.box2>div{
+				width: 100px;
+				height: 100px;
+				
+			}
+			.box1>div:nth-of-type(1),.box2>div:nth-of-type(1){
+				background: yellow;
+			}
+			.box1>div:nth-of-type(2),.box2>div:nth-of-type(2){
+				background: green;
+			}
+			.box1>div:nth-of-type(3),.box2>div:nth-of-type(3){
+				background: orangered;
+			}
+			.box1>div:nth-of-type(4),.box2>div:nth-of-type(4){
+				background: skyblue;
+			}
+			.box1>div:nth-of-type(5),.box2>div:nth-of-type(5){
+				background: purple;
+			}
+			.box1>div:nth-of-type(6),.box2>div:nth-of-type(6){
+				background: gold;
+			}
+			.box1>div:nth-of-type(7),.box2>div:nth-of-type(7){
+				background: darkcyan;
+			}
+			.box1>div:nth-of-type(8),.box2>div:nth-of-type(8){
+				background: greenyellow;
+			}
+			.box1>div:nth-of-type(9),.box2>div:nth-of-type(9){
+				background: #000;
+			}
+			.box1>div:nth-of-type(10),.box2>div:nth-of-type(10){
+				background: deeppink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+			<div>10</div>
+		</div>
+		<div class="box2">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+			<div>10</div>
+		</div>
+	</body>
+</html>

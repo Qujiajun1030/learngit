@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        let arr = ['孙悟空', '猪八戒', '沙和尚'];
+
+        function fn(array) {
+
+            // 对array进行浅复制
+            array = array.slice();
+
+            // 需要一个数组作为参数，调用函数后会向数组中添加一个新元素
+            array.push('唐僧');
+
+            return array;
+        }
+
+        let result = fn(arr);
+
+        // console.log(arr);
+        // console.log(result);
+
+        let arr2 = [{name:'孙悟空'}, {name:'猪八戒'}];
+
+        // 对arr2进行浅复制
+        let arr3 = arr2.slice();
+
+        arr2[0].name = '沙和尚';
+
+        // console.log(arr2[0] === arr3[0]);
+
+
+        arr = [1,2,3,1,1,4,3,2,5,6,7];
+
+        // 创建一个新数组
+        let newArr = [];
+
+        // 对arr进行遍历
+        for(let i=0; i<arr.length; i++){
+            if(newArr.indexOf(arr[i]) === -1){
+                newArr.push(arr[i]);
+            }
+        }
+
+        console.log(newArr);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

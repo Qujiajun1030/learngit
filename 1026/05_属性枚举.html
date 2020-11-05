@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        let obj = {
+            name:'孙悟空',
+            age:18,
+            gender:'男',
+            address:'火锅山'
+        };
+
+        // 获取obj中的属性
+        /*
+        *   for-in
+        *       - for-in来枚举对象中的属性
+        *       - 语法：
+        *          for(let 变量 in 对象){
+        *               语句...
+        *           }
+        *
+        *       for-in会执行多次，
+        *           对象中有几个属性就执行几次
+        *           每次执行时都会将一个属性名赋值给变量
+        * */
+
+        for(let n in obj){
+            console.log(n, obj[n]);
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

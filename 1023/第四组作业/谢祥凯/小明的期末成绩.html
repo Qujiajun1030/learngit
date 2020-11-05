@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>小明的期末成绩</title>
+		<!-- 练习4：
+		从键盘输入小明的期末成绩:
+		当成绩为100时，'奖励一辆BMW'
+		当成绩为[80-99]时，'奖励一台iphone'
+		当成绩为[60-79]时，'奖励一本参考书'
+		其他时，什么奖励也没有 -->
+		<script type="text/javascript">
+			let num = +prompt('请输入成绩');
+			if (num === 100) {
+				alert('奖励一辆BMW');
+			} else if (num <= 99 && num >= 80) {
+				alert('奖励一台iphone');
+			} else if (num <= 79 && num >= 60) {
+				alert('奖励一本参考书');
+			} else {
+				alert('死去吧!!!');
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

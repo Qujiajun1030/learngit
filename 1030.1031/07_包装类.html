@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        * 包装类
+        *   - JS中有三个包装类：
+        *       String() Number() Boolean()
+        *   - 它们可以将一个本数据类型包装为一个对象
+        *       String()可以包装字符串对象
+        *       Number()可以包装数值对象
+        *       Boolean()可以包装布尔值对象
+        *       - 但是我们千万不要用它们
+        *
+        *   - 当我们调用一个基本数据类型的属性或方法时，
+        *       浏览器会临时使用包装类将基本数据类型转换为对象，
+        *       然后调用对象的属性或方法，操作完毕临时对象即销毁
+        *
+        * */
+
+        let str = 'hello';
+
+        /*let s = new String('hello');
+        let s1 = new String('hello');
+        let bool = new Boolean(false);
+        alert(bool);
+        if(bool){
+            alert('我执行了~~');
+        }*/
+
+        str.name = '孙悟空';
+        // alert(str.name);
+
+        let num = 20;
+        num = num.toString();
+
+        /*let a = null;
+        a.toString();*/
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

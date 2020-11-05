@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 显示模式转换:
+			 1. 将其它显示模式的元素转换成行内块显示模式  display:inline-block;
+			 2. 将其他显示模式的元素转换成块级显示模式    display:block;
+			 */
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+				/* 转换行内块 */
+				display: inline-block;
+			}
+			span{
+				width: 100px;
+				height: 100px;
+				background: green;
+				/* 转换块元素 */
+				display: block;
+			}
+			img{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<span></span>
+		<span></span>
+		<img src="liuzhiyuan.jpg" >
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 300px;
+				height: 300px;
+				border: 1px solid #000;
+				margin: 0 auto 10px;
+				/* 线性渐变: 沿着一条轴线从某个颜色过渡到某个颜色,渐变最少两种颜色*/
+				/* 
+				方向:
+			    to bottom(默认值) 由上至下
+				to top  由下至上
+				to right 由左至右
+				to left 由右至左
+				
+				to left top 向左上
+				to right top 向右上
+				to left bottom 向左下
+				to right bottom 向右下
+				
+				角度 单位deg
+				 */
+				/* background-image: linear-gradient(-90deg,red,yellow,blue) ; */
+
+
+				/*
+				从0px-50px是red,从50px-150px是red到yellow之间的渐变,从150px-200px是
+				yellow到blue之间的渐变,从200px-300px是blue
+				  */
+				/* background-image: linear-gradient(to right,red 50px,yellow 150px,blue 200px) ; */
+				/* background-image: linear-gradient(to right,red 0px,red 50px,yellow 150px,blue 200px,blue 300px) ; */
+				/* 				background-image: linear-gradient(to right,red 0px,red 50px,yellow 150px,blue 200px,green 300px) ;
+	
+ */
+				/*
+				 从0%-20%是red,从20%-50%是red到yellow的渐变, 从50%-80%是yellow到blue的渐变,从80%-100
+				 %是blue
+				 */
+		/* 		background-image: linear-gradient(to right, red 20%,yellow 50%,blue 80%); */
+		/*  用渐变模拟一半红一半蓝 */
+				background-image: linear-gradient(to right,red 50%,blue 50%);
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

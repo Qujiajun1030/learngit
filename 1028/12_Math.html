@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+        *   Math
+        *       - Math是一个工具类，无法用来创建对象
+        *       - Math里边包含了一些数学运算相关的常量和方法
+        *
+        *       Math.PI 圆周率
+        *       Math.abs() 求一个值的绝对值
+        *       Math.ceil() 向上取整
+        *       Math.floor() 向下取整
+        *       Math.round() 四舍五入取整
+        *       Math.max() 获取多个值中的较大值
+        *       Math.min() 获取多个值中的较小值
+        *       Math.pow(x, y) 求x的y次幂
+        *       Math.sqrt() 求一个数的平方根
+        *       Math.random() 生成一个0-1之间的随机数
+        *
+        * */
+
+        // console.log(Math.PI);
+        // console.log(Math.abs(10));
+
+        let result = Math.ceil(3.1);
+        result = Math.ceil(-3.1);
+        result = Math.floor(4.999);
+        result = Math.floor(-4.999);
+        result = Math.round(4.5);
+        result = Math.round(4.4);
+
+
+
+        result = Math.max(10,20,30,55);
+        result = Math.min(10,20,30,55);
+
+        result = Math.pow(3, 3);
+        result = Math.sqrt(2);
+
+        /*
+        *
+        * Math.random() 生成一个0-1之间的随机数
+        *       不包括0 也不包括1
+        *
+        * 生成一个指定范围的随机数
+        *   0 - 5之间的随机数
+        *       - 0-x之间的随机数：
+        *           Math.round(Math.random() * x)
+        *       - x-y之间的随机数
+        *           Math.round(Math.random() * (y-x)  + x)
+        * */
+        /*result = Math.random()
+        console.log(result);*/
+
+        for(let i=0; i<100; i++){
+            console.log(Math.round(Math.random() * 10  + 20));
+        }
+
+        // let arr = [1,2,3,4,5,6,7,8,9,10];
+        //
+        // arr.sort(function (a, b) {
+        //     return Math.random() - Math.random();
+        // });
+        //
+        // console.log(arr);
+
+        let arr = ['张三', '李四', '王五', '王旭', '孙悟空'];
+
+        let index = Math.round(Math.random()*(arr.length-1));
+
+        document.write('<h1>'+arr[index]+'</h1>');
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

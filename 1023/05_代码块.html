@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+        * 在JS中使用{}来创建代码块，
+        *   代码块用来为代码进行分组
+        *   同一代码块中代码为一组代码，要么都执行，要么都不执行
+        *
+        * 使用let声明的变量具有块作用域，
+        *   代码块内部的变量不能被外部访问
+        * 使用var声明的变量不具有块作用域
+        * */
+
+        /*{
+            alert(123);
+            console.log('hello');
+        }*/
+
+        let c = 33;
+
+        {
+            let a = 10;
+            var b = 3;
+
+            // console.log(c);
+        }
+
+        // console.log(a, b);
+
+        console.log(b);
+
+
+        // document.write('真好！');
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

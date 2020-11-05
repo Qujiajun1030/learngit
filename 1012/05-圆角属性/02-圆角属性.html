@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+				margin: 0 auto 5px;
+				/* 圆角单属性 
+				   数值
+				   百分比: 宽和高的百分比
+				*/
+				/* 左上 */
+				/* border-top-left-radius: 100px; */
+				/* 右上 */
+				/* border-top-right-radius: 50%; */
+				/* 右下 */
+				/* border-bottom-right-radius: 100px; */
+				/* 左下                    宽度  高度 */
+				/* border-bottom-left-radius: 50px 20px; */
+				
+				/* 圆角复合属性 */
+				/* 一个值: 左上右上右下左下 */
+				/* border-radius: 100px; */
+				/* 两个值:  左上右下   右上左下*/
+				/* border-radius:10px 20px ; */
+				/* 三个值:     左上  右上左下  右下*/
+				/* border-radius: 10px 20px 30px; */
+				/* 四个值: 左上 右上 右下 左下 */
+				/* border-radius: 10px 20px 30px 40px; */
+				/*          宽度/高度  */
+				/* border-radius: 10px/50px; */
+				/*                             宽度/高度 */
+				/* border-radius: 10px 10px 10px 10px/ 50px 50px 50px 50px; */
+			}
+			div:nth-child(2){
+				height: 100px;
+				border-radius: 100px 100px 0 0;
+			}
+			div:nth-child(3){
+				border-radius: 200px 0 0 0;
+			}
+			div:nth-child(4){
+				height: 100px;
+				/* border-radius: 50%; */
+				border-radius: 100px/50px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div>
+			啊哈哈
+		</div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

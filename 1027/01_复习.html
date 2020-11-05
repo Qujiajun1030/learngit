@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*(function () {
+            alert('hello 我是函数1');
+        })();
+
+        (function () {
+            alert('hello 我是函数2');
+        })();*/
+
+        function fn() {
+
+            return function () {
+                alert('我是函数的内部函数！');
+            };
+
+        }
+
+        // let result = fn();
+        // result();
+        // fn()();
+
+        function fn2() {
+            return 10;
+        }
+
+        // fn2 fn2()
+
+        // console.log(fn2);
+        // console.log(fn2());
+
+        function fn3(a) {
+            console.log(a);
+        }
+
+        // fn3(function(){});
+
+
+        let a = 10;
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

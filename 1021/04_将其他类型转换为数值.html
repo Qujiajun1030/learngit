@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        * 将其他类型转换为数值
+        *
+        * - 方式一：
+        *     - 使用Number()函数来将其转换为数值
+        *     - 转换的情况：
+        *           字符串：
+        *               - 对于字符串来说，如果字符串是一个合法的数值，
+        *                   则直接转换为对应的数值
+        *               - 如果不是一个合法的数值，则转换为NaN
+        *               - 空串和纯空格的字符串都会转换为0
+        *
+        *           布尔值：
+        *               true --> 1
+        *               false --> 0
+        *
+        *           null --> 0
+        *
+        *           undefined --> NaN
+        *
+        *  - 专门用来对付字符串的两种方式：
+        *       parseInt()
+        *           - 将一个字符串转换为整数
+        *           - parseInt()在解析一个字符串时，
+        *               它会自左向右一位一位的解析，直到获取所有合法整数
+        *       parseFloat()
+        *           - 将一个字符串转换为小数
+        *           - parseFloat()在解析一个字符串时，
+        *               它会自左向右一位一位的解析，直到获取所有合法浮点数
+        * */
+
+        let a = '123'; // '123' --> 123
+        a = '3.5'; // '3.5' --> 3.5
+        a = 'a'; // 'a' --> NaN
+        a = '123px'; // '123px' --> NaN
+        a = ''; // 0
+        a = '         '; // 0
+
+
+        a = true; // 1
+        a = false; // 0
+
+        a = null; // 0
+        a = undefined; // NaN
+
+        a = 'Infinity';
+
+        // console.log(a, typeof a);
+        //
+        // a = Number(a);
+        // console.log(a, typeof a);
+
+
+        a = '123px';
+        a = true;
+        a = 12.5;
+
+        console.log(a, typeof a);
+        a = parseInt(a);
+        console.log(a, typeof a);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

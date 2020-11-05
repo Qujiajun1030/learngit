@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+				基础选择器: 标签选择器 类选择器 id选择器
+				复合选择器: 
+				后代选择器: 选中祖先元素的后代元素
+				
+				权重:
+				标签选择器 < 类选择器 < id选择器 < 行内样式 < !important
+				    1          10         100       1000       无穷大
+			 */
+		/* 	.h5 .teacher{
+				color:red;
+			} */
+		
+			/* .stu{
+				color:yellowgreen ;
+			} */
+			/* .h5 h3{
+				color: yellowgreen;
+			} */
+			/* .h5 h1 span{
+				color:yellow;
+			} */
+			/* #web h3{
+				color:yellowgreen;
+			} */
+			.java .zz{
+				color:green
+			}
+			.java h3{
+				color: blue;
+			}
+			.zz{
+				color:yellow;
+			}
+			h3{
+				color:red;
+			}
+			
+			.h5 p span{
+				color:pink;
+			}
+			.h5 span{
+				color:gray;
+			}
+			
+			
+			.h5 h3{
+				color: yellow;
+			}
+			.h5 .zz{
+				color:blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="h5" id="web">
+			<h1 class="teacher">老刘
+				<span>法拉利</span>
+				<p>
+					<span>保时捷</span>
+				</p>
+			</h1>
+			<h3 class="zz">组长</h3>
+			<h3>前端0922学员</h3>
+			<h3>前端0922学员</h3>
+			<h3>前端0922学员</h3>
+			<span>步行</span>
+		</div>
+		<div class="java">
+			<h1 class="teacher">老王</h1>
+			<h3 class="zz">组长</h3>
+			<h3>java学员</h3>
+			<h3>java学员</h3>
+			<h3>java学员</h3>
+		</div>
+	</body>
+</html>

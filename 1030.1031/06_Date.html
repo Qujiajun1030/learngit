@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *  Date
+        *   - 在JS中所有的和时间相关的信息都通过Date对象来表示
+        *
+        * */
+
+        // 创建一个Date对象
+        // 如果直接使用new Date()则会创建一个表示当前时间的对象
+        let dt = new Date();
+
+        // 可以通过传递时间字符串来指定要创建的时间
+        // 格式： 月/日/四位年 时:分:秒
+        dt = new Date('12/20/2018 14:33:22');
+
+        /*
+        *   getDay() 获取当前日期对象是周几
+        *       返回值 0-6
+        *           0 表示周日
+        *           1 表示周一
+        *           ...
+        *
+        *   getMonth() 获取当前日期对象是几月
+        *       返回值 0 - 11
+        *           0 表示一月
+        *           1 表示二月
+        *
+        *   getDate() 获取当前日期对象是几号
+        *   getFullYear() 获取当前日期对象的年份
+        *
+        *
+        *
+        * */
+        let day = dt.getDay();
+        // 创建一个数组
+        let dayArr = ['周日','周一','周二','周三','周四','周五','周六'];
+
+        // console.log(dt);
+        // console.log(dayArr[day]);
+
+        dt = new Date();
+        let month = dt.getMonth();
+        let date = dt.getDate();
+        let year = dt.getFullYear();
+        // console.log(year);
+
+        /*
+        *   getTime()
+        *       - 获取当前日期对象的时间戳
+        *       - 时间戳指自1970年1月1日0时0分0秒，到当前时间所经历的毫秒数
+        *       - 时间在计算机底层都是以时间戳的形式存储的
+        *
+        *   Date.now()
+        *       - 用来获取当前的时间戳
+        *
+        * */
+        dt = new Date();
+        let t = dt.getTime();
+
+        console.log(t);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

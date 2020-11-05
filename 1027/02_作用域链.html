@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+        *
+        * 当我们访问一个变量时，JS会先在当前的作用域中寻找，
+        *   如果有，则直接使用
+        *   如果没有，则去上一层作用域中寻找
+        *   如果有，则使用
+        *   如果没有，则继续去上一层寻找，以此类推
+        *   直到找到全局作用域，如果依然没有找到，则报错 xxx is not defined
+        *   这就是作用域链
+        *
+        * */
+
+        // let a = 10;
+
+        /*function fn() {
+            function test(){
+                console.log(a);
+            }
+
+            test();
+        }
+
+        fn();*/
+
+
+        // let a = 10;
+        // function fn(){
+        //     a = 20;
+        //     console.log(a); // 20
+        // }
+        // fn();
+        // console.log(a); // 20
+
+
+        /*let a = 10;
+        function fn(){
+            let a = 20;
+            console.log(a); // 20
+        }
+        fn();
+        console.log(a); // 10*/
+
+
+
+        /*var a = 10;
+        function fn(){
+            console.log(a); // undefined
+            var a = 20;
+
+        }
+        fn();
+        console.log(a); // 10*/
+
+
+        /*let a = 10;
+        function fn(){
+            console.log(a); // 报错
+            let a = 20;
+
+        }
+        fn();
+        console.log(a);*/
+
+
+        /*let a = 10;
+        function fn(a){
+            a = 20;
+            console.log(a); // 20
+        }
+        fn();
+        console.log(a); // 10*/
+
+
+        /*
+        练习：
+
+let a = 10;
+function fn(){
+    console.log(a); // 10
+}
+fn();
+
+
+let a = 10;
+function fn(){
+    a = 20;
+    console.log(a); // 20
+}
+fn();
+console.log(a); // 20
+
+
+let a = 10;
+function fn(){
+    let a = 20;
+    console.log(a); // 20
+}
+fn();
+console.log(a); // 10
+
+
+var a = 10;
+function fn(){
+    console.log(a); // undefined
+    var a = 20;
+
+}
+fn();
+console.log(a); // 10
+
+let a = 10;
+function fn(){
+    console.log(a); // 报错
+    let a = 20;
+
+}
+fn();
+console.log(a);
+
+
+
+let a = 10;
+function fn(a){
+    a = 20;
+    console.log(a); // 20
+}
+fn();
+console.log(a); // 10
+
+
+
+let a = 10;
+function fn(a){
+    console.log(a); // undefined
+    a = 20;
+    console.log(a); // 20
+}
+fn();
+console.log(a); // 10
+
+
+let a = 10;
+function fn(a){
+    console.log(a); // 33
+    a = 20;
+    console.log(a); // 20
+}
+fn(33);
+console.log(a); // 10
+
+
+
+
+        */
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

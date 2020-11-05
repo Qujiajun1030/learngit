@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			css精灵:也叫css sprite,css雪碧图,css精灵图
+			css精灵作用: 是背景图的技术,如今网速非常快,加载一张大图或者一张小图的时间差不多,但是服务器的求情链接数
+			是有限的,将一张一张的小图拼在一张大图中,一次性进行下载,再通过background移动图片的位置
+			实现网页小图的显示,此时减少对服务器的压力.
+			 */
+			.one{
+				width: 108px;
+				height: 108px;
+				border: 1px solid #000;
+				background: url(abcd.jpg) no-repeat -372px -277px;
+			}
+			.two{
+				width: 104px;
+				height: 106px;
+				background-position:-254px -561px ;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one"></div>
+		<div class="one two"></div>
+	</body>
+</html>

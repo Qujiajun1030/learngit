@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        let a = 10;
+        
+        function fn() {
+            console.log('a =', a);
+        }
+
+
+
+        /*
+        * 作用域（scope）
+        *   - 作用域就是指变量的作用范围
+        *   - JS中有两种作用域：
+        *       全局作用域
+        *       局部作用域
+        *           - 块作用域
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+		* 
+        *           - 函数作用域
+        *
+        *   - 全局作用域
+        *       - 全局作用域在网页打开时创建，在网页关闭时销毁
+        *       - 所有的直接写在script标签中的内容都位于全局作用域
+        *           全局作用域中的所有变量，被称为全局变量，可以在页面的任意位置被访问
+        *           全局作用域中的所有函数，被称为全局函数，可以在页面的任意位置被调用
+        *       - 在JS中有一个全局对象（global object）叫做window，
+        *           在全局作用域中所有使用var声明的变量都会作为window对象的属性保存
+        *           在全局作用域使用function定义的函数会作为window对象的方法保存
+        *               函数实际上就相当于window对象的方法
+        *
+        *
+        * */
+
+        var c = 44;
+        let d = '嘻嘻';
+
+        // alert(window);
+        // console.log('c =', c);
+        // window.c = '哈哈';
+        // console.log(window.d);
+
+        function fn2() {
+            alert('hello');
+        }
+
+        fn2();
+        window.fn2();
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

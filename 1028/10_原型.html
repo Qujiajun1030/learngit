@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function MyClass() {
+
+        }
+
+        MyClass.prototype.age = 18;
+
+        let mc = new MyClass();
+        mc.name = '孙悟空';
+
+        // 使用in检查一个属性时，无论属性在原型中还是在对象本身都会返回true
+        // console.log('age' in mc);
+
+        // hasOwnProperty() 检查属性是否存在于对象自身中
+
+        // console.log(mc.hasOwnProperty('hasOwnProperty'));
+        // console.log(mc.__proto__.__proto__.hasOwnProperty('hasOwnProperty'));
+
+        // Object的原型的是所有原型的原型
+        // console.log(mc instanceof Object);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

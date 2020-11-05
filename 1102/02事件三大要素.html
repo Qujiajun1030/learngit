@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">按钮</button>
+<script type="text/javascript">
+   //    事件三大要素
+   //    事件的承受方 为事件源
+//       事件的类型  ：  单击   移入  移出   移动   键盘     获得焦点 失去焦点
+//       事件源承受事件后  给出的反馈：回调函数
+//   页面加载完成的回调函数
+    window.onload = function () {
+//        获取页面元素  （事件源）
+        // 通过id值来访问页面元素  返回的结果是一个对象 我们称之为dom对象
+        var btnNode = document.getElementById('btn');
+        var num = 0;
+//      事件源.事件名称 = 回调函数
+        btnNode.onclick = function () {
+            num++;
+            console.log(num)
+        }
+    }
+</script>
+</body>
+</html>

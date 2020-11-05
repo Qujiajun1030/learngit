@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+        * 练习6：
+                求100以内所有的奇数之和
+        * */
+
+        // 创建一个变量，用来存储结果
+        let result = 0;
+        // 获取到100以内所有的整数
+        /*for(let i=0; i<=100; i++){
+            // console.log(i);
+            // 判断i是否是奇数
+            if(i % 2 !== 0){
+                // console.log(i);
+                result += i;
+            }
+        }
+        console.log(result);*/
+
+        result = 0;
+
+        /*
+        *   result += 1 --> 1
+        *   result += 3 --> 4
+        *   result += 5 --> 9
+        **/
+        // 获取到100以内所有的奇数
+        for(let i=1; i<100; i+=2){
+            // console.log(i);
+            result += i;
+        }
+        // console.log(result);
+
+        /*
+        *
+            练习7：
+                求100以内所有7的倍数之和，以及个数
+        * */
+
+        result = 0;
+        // 创建一个计数器
+        let count = 0;
+
+        // 获取所有的7的倍数
+        for(let i=7; i<100; i+=7){
+            result += i;
+            count++;
+        }
+
+        console.log('100以内7的倍数有'+count+'个，之和是'+result);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

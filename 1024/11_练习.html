@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+        *
+        * 优化前：
+        *   10000以内  357ms
+        *   100000以内 40988ms
+        *
+        * 第一次优化：
+        *   10000以内  45ms
+        *   100000以内 3260ms
+        *   1000000以内 249215ms
+        *
+        * 第二次优化：
+        *   10000以内  8ms
+        *   100000以内 100ms
+        *   1000000以内 2334ms
+        *
+        *
+        *
+        *  36
+        *   1  36
+        *   2  18
+        *   3  12
+        *   4  9
+        *   6  6
+        *
+        *
+        *
+        *
+        * */
+
+        // console.time() 可以用来开启一个计时器
+        console.time();
+
+        for(let i=2; i<10000; i++){
+            let flag = true;
+            for(let j=2; j<=i**0.5; j++){
+                if(i % j === 0){
+                    flag = false;
+
+                    // 进入判断说明i一定不是质数，
+                    // 循环不需要继续执行
+                    break;
+                }
+            }
+            if(flag){
+                // console.log(i);
+            }
+        }
+
+        // console.timeEnd(); 关闭计时器
+        console.timeEnd();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

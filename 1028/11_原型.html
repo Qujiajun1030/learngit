@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function MyClass() {
+
+        }
+
+        let mc = new MyClass();
+
+        // MyClass.prototype 显式原型
+        /*
+        *   显示原型一定是通过类去访问的，
+        *       显示原型是给类的实例去使用
+        * */
+        // mc.__proto__  隐式原型
+        /*
+        *  隐式原型是通过实例对象来访问，
+        *       隐式原型是给实例自己用的
+        *
+        *   实例的隐式原型指向类的显式原型
+        *
+        * */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

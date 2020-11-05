@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 300px;
+				height: 30px;
+				background: yellowgreen;
+				margin: 300px auto;
+				
+				/* 动画单属性 */
+				/* 动画名称 */
+				animation-name: donghua;
+				/* 动画时间 */
+				animation-duration: 2s;
+				/* 动画方式 
+				   和过渡方式一样
+				*/
+				animation-timing-function: linear;
+				/* 动画延时时间 */
+				animation-delay: 1s;
+				/* 动画次数 默认是1  infinte 无限次*/
+				animation-iteration-count: 2;
+				/*  动画的方向
+					reverse 方向,从结束向开始执行动画
+					alternate 有来有去,需要2次
+					alternate-reverse 先去后来 
+				*/
+				animation-direction: alternate-reverse ;
+				
+				/* 复合属性 */
+				/*      动画名称 动画时间 动画方式 动画延时 动画次数 动画方向 */
+				animation: donghua 2s ease 1s infinite alternate;
+			}
+			
+			/* 定义关键帧区间 */
+			
+			@keyframes donghua{
+				/* 动画的开始 */
+				from{
+					/* transform: rotate(45deg); */
+				}
+				/* 动画的 结束 */
+				to{
+					transform: rotate(360deg);
+				}
+				
+				/* 可以将关键帧区间拆成若干份,用百分比表示 */
+				/* 0%{
+					transform: rotate(45deg);
+					background: yellow;
+				}
+				20%{
+					transform: translate(3000px,3000px);
+					background: #000;
+				}
+				40%{
+					opacity: 0;
+					
+				}
+				60%{
+					height: 800px;
+					transform: rotate(45000deg);
+				}
+				80%{
+					font-size: 200px;
+				}
+				100%{
+					width: 100px;
+					height: 100px;
+					
+				} */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">动画</div>
+	</body>
+</html>

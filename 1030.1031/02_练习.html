@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+        *   创建一个函数，用来检查一个字符串是否是回文（用两种方式来解决）
+        *
+        *   - 一个字符串从前往后读 和从后往前读是一样的，那么它就是回文
+        *   abcba
+        *       - 如果字符串两头的字符相等，且中间的字符串是个回文，这个字符串就是回文
+        *       - aa相等 且bcb是回文
+        * */
+
+        function huiWen(str) {
+            // 基线条件
+            if(str.length < 2){
+                return true;
+            }
+
+            // 递归条件
+            return str[0] === str[str.length-1] && huiWen(str.slice(1, -1))
+
+        }
+
+        /*let result = huiWen('hello');
+        result = huiWen('abcba');
+        console.log(result);*/
+
+        function huiWen2(str) {
+            // 将str反转，反转后如果还等于str，那么它就是回文
+            // str.reverse();
+            return str === str.split('').reverse().join('');
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

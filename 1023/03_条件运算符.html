@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>                                                               
+
+        /*
+        *   条件运算符（三元运算符、三目运算符）
+        *       语法：条件表达式 ? 语句1 : 语句2
+        *       执行流程：
+        *           条件运算符再执行时，它会先对条件表达式进行求值判断，
+        *               如果判断结果为true，则执行语句1
+        *               如果判断结果为false，则执行语句2
+        * */
+
+        // false ? alert('语句1') : alert('语句2');
+
+        let a = 115;
+        let b = 33;
+        let c = 198;
+
+        // a > 10 ? alert('a比10还大！'): alert('a没有10大');
+
+        // 获取 a 和 b中的较大值
+        let max = a > b ? a : b;
+        max = max > c ? max : c;
+
+        alert(max);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

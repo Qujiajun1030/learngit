@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+			行内块元素横向布局的问题:由于行内块元素是和文本的基线对齐,也可以说是底对齐,此时
+			给行内块元素设置垂直方向的内外边距时会影响周围的元素
+			行内元素方向布局的问题: 由于行内元素是用来包裹文本的,文本在每行是沿着基线对齐,
+			此时行内元素垂直方向的内外边距不起作用的
+			 */
+			* {
+				margin: 0;
+				padding: 0;
+
+			}
+
+			.one {
+				width: 100px;
+				height: 100px;
+				background: red;
+				/* display: inline-block */
+			}
+
+			.two {
+				width: 200px;
+				height: 200px;
+				background: green;
+				/* display: inline-block */
+			}
+			.three {
+				width: 300px;
+				height: 300px;
+				background: blue;
+			/* display: inline-block */
+			}
+			span{
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one"></div>
+		<div class="two"></div>
+		<div class="three"></div>
+		<span>span1</span>
+		<span>span2</span>
+		<span>span3</span>
+	</body>
+</html>

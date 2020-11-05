@@ -1,0 +1,40 @@
+ ---·2·····<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        let obj = Object();
+        obj.name = '孙悟空';
+        let obj2 = obj;
+        obj = Object();
+        obj.name = '猪八戒';
+
+        // console.log('obj =',obj);
+        // console.log('obj2 =',obj2);
+
+        /*
+        *   比较两个对象是否相等（全等）时比较的是对象的内存地址
+        * */
+
+        let obj3 = Object();
+        obj3.name = '沙和尚';
+        let obj4 = Object();
+        obj4.name = '沙和尚';
+
+        // console.log('obj3 =',obj3);
+        // console.log('obj4 =',obj4);
+
+        // console.log(obj3 === obj4);
+        // console.log(obj3 == obj4);
+        console.log(obj3 === obj3);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

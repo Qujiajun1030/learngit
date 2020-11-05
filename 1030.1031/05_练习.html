@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<script>
+			/*
+            daliang.wu@foxmail.com
+
+        * 编写一个正则表达式，检查一个字符串是否是合法的电子邮件地址
+        *   aaaa              .ddd                               @      aaa               .com.cn
+        *   任意单词字符一位以上   .任意单词字符一位以上（有没有都行）     @      任意字母数字-一位以上  .任意字母2-5位（1-2次）
+        *   \w+    (\.\w+)*    @     [A-Za-z0-9]+   (\.[A-Za-z]{2,5}){1,2}
+        * */
+
+			let emailReg = /^\w+(\.\w+)*@[A-Za-z0-9]+(\.[A-Za-z]{2,5}){1,2}$/;
+
+			alert(emailReg.test('707337862@qq.com'));
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+        1.可以将js代码编写在script标签中
+            script标签可以编写在head中或body中
+    -->
+    <!--<script>
+        alert('Hello 老王！');
+    </script>-->
+
+    <!--
+        2. 可以将js代码编写到外部的js文件中，
+            然后通过script标签对其进行引入
+
+            script 标签同时只能有一个功能，要么引入要么写代码
+    -->
+    <!--<script src="script.js"></script>
+    <script>
+        alert('我是内部的js代码！');
+    </script>-->
+
+</head>
+<body>
+
+<!--
+    3.可以将js代码编写在标签的指定属性中
+-->
+<button onmouseenter="alert('你点我干啥！');">点我一下</button>
+
+<br><br>
+
+<a href="javascript:alert('我是超链接');">超链接</a>
+
+<br><br>
+
+<a href="javascript:;">超链接</a>
+
+</body>
+</html>
+

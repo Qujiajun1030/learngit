@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+        let name = '牛魔王';
+
+        let obj = {
+            name:'孙悟空', // obj.name
+            sayHello: function () {
+                console.log(name);
+                // console.log(this.name);
+            }
+        };
+
+        // obj.sayHello();
+
+
+        /*
+        *   垃圾回收（GC）
+        *       - 就和现实生活一样，生活总会产生一些生活垃圾，
+        *           垃圾的存在会严重的影响到生活的质量
+        *       - 程序运行了一段时间也会产生垃圾，垃圾的存在会严重的影响到程序的性能
+        *           必须对程序中的垃圾进行及时的清理
+        *       - 如果一个对象没有任何的变量对其进行引用那么这个对象就是垃圾对象
+        *           垃圾对象我们无法获取，但是依然占据内存必须及时清理
+        *       - JS中拥有自动的垃圾回收机制，垃圾对象会被JS引擎自动回收，
+        *           我们不需要手动处理，我们只需要将不再使用变量的设置为null即可
+        *
+        * */
+
+        let a = {};
+        b = a;
+        a = null;
+        b = null;
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

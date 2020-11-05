@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 设置网页基本样式 */
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			/* 设置ul样式,居中,大小 */
+			ul {
+				margin: 0 auto;
+				margin-top: 100px;
+				height: 300px;
+				width: 600px;
+				background-color: white;
+			}
+
+			ul li {
+				/* 设置li大小,间隔,浮动,圆,背景色 */
+				height: 30px;
+				width: 30px;
+				margin-left: 10px;
+				float: left;
+				border-radius: 50%;
+				background-color: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script type="text/javascript">
+			//在body中调用js
+			window.onload = function() {
+				//声明一个变量，用于选择所有li标签
+				var dnclick = document.querySelectorAll('li');
+				// 遍历标签,每次操作时执行一次函数
+				for (var i = 0; i < dnclick.length; i++) {
+					// 设置点击时起作用的动作函数
+					dnclick[i].onclick = function() {
+						// 遍历这个动作函数
+						for (var a = 0; a < dnclick.length; a++) {
+							// 点击时,被点击的对象背景色变灰
+							dnclick[a].style.background = "gray";
+						}
+						// this指向触发改变背景色的事件源(单击)
+						this.style.background = 'red';
+					}
+
+				}
+
+			}
+		</script>
+	</body>
+</html>

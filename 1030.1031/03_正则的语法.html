@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        // 创建一个正则表达式，来检查一个字符串是否以a开头
+        let re = /a/;
+
+        /*
+        *  ^ 表示字符的开头
+        *  $ 表示字符的结尾
+        *  如果一个正则表达式以 ^开头 以$结尾，
+        *   则要求字符串要和正则表达式完全匹配
+        *
+        *
+        * */
+        re = /^a/;
+        re = /^[A-Za-z]/;
+        re = /a$/;
+        re = /^a$/;
+        re = /^a{4}$/;
+
+        // alert(re.test('aaa'));
+
+        /*
+        *   创建一个正则表达式，来检查一个字符串是否是手机号
+        *
+        *   1         3         654679095
+        *
+        *   以1开头   3-9任意1位  任意9位数字
+        *   ^1       [3-9]      [0-9]{9}$
+        *
+        *
+        * */
+
+        let str = '13654679095';
+        let phoneRe = /^1[3-9][0-9]{9}$/;
+        phoneRe = /1[3-9][0-9]{9}/;
+
+        alert(phoneRe.test(str));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

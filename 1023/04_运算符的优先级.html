@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+        * 和数学一样，JS中的运算符也有优先级
+        *   像 先乘除 后 加减 等等...
+        *   JS中有一个优先级的表格，所有的运算符的优先级都可以在表格中查询
+        *       在表格中位置越靠上的优先级越高，优先级越高越先计算，优先级一样，自左向右运算
+        *       优先级表格不需要记忆，如果遇到拿不准的，使用()改变优先级
+        *
+        *  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+        * */
+        let a = 1 + 2 * 3;
+
+        // a = 1 + (2 && 3);
+
+        // alert(a);
+
+        /*
+        *   ? 可选链
+        *       - 调用一个属性或方法，如果有就调用，没有就返回undefined
+        *   ?? 空值合并
+        *
+        *
+        * */
+        let b = null;
+
+        b = b?.toString()
+
+        // console.log(b, typeof b);
+
+        let c = '哈哈';
+        c = null;
+        c = undefined;
+        c = NaN;
+
+        let d = c ?? 'c没有值';
+
+        console.log(d);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

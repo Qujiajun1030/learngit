@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //    页面加载完成事件   加载完所有外部资源  html  css  js
+//           当页面加载完成后 window.onload的回调函数 会自动执行
+//        你定义的 你没调用 最终执行了
+        window.onload = function () {
+            var pNode = document.getElementById('pNode');
+            pNode.innerHTML = '今天中午吃点啥!!!!';
+        }
+
+    </script>
+</head>
+<body>
+
+<p id="pNode">hahahah</p>
+
+</body>
+</html>

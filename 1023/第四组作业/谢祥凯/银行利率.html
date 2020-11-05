@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>银行利率</title>
+		<!-- 假设银行一年的存款利率为 5%
+		编写代码，求1000块存几年能变成5000块 -->
+		<script type="text/javascript">
+			let money = +prompt('请输入您的存款金额');
+			let moneyall = +prompt('请输入您心中的理想金额');
+			let year = 0;
+			while (money < moneyall) {
+				money *= ((money * 0.05 + money) / money);
+				year++;
+			}
+			alert('需要' + year + '年变成' + moneyall);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

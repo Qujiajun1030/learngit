@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let arr = ['孙悟空', '猪八戒', '沙和尚'];
+
+        /*arr.forEach(function (item) {
+            alert(item);
+        });*/
+
+        // arr.forEach(item => alert(item));
+
+        /*
+        * 箭头函数
+        *   - 语法：
+        *        形参 => 返回值
+        *
+        *       (参数1,参数2) => 返回值
+        *
+        *       形参 => {
+        *           语句..
+        *           return 值;
+        *       }
+        *
+        *   this到底是谁？
+        *       根据函数调用的方式不同，this的值也不同：
+        *           1.以函数的形式调用，this是window
+        *           2.以方法的形式调用，this是调用方法的对象
+        *           3.以构造函数的形式调用，this是新创建的对象
+        *           4.以call和apply调用，this是它们的第一个参数
+        *           5.箭头函数的this，由外层作用域决定
+        *
+        * */
+
+        let fn = a => a + 10;
+        fn = (a, b) => a + b;
+        fn = (a, b) => {
+            console.log('hello');
+            return a + b;
+        };
+
+        fn = () => ({name: '孙悟空'});
+
+        // alert(fn());
+
+        arr = [3, 1, 2, 4, 5, 7, 8, 9, 6];
+
+        arr.sort((a, b) => a - b);
+        arr.sort((a, b) => b - a);
+
+        // console.log(arr);
+
+
+        fn = () => alert(this);
+
+        // fn();
+
+        let obj = {
+            name: '孙悟空',
+            tt: fn,
+            sayHello: function () {
+
+                /*function inner() {
+                    alert(this);
+                }*/
+
+                let inner = () => alert(this);
+
+                inner();
+
+            }
+        };
+
+        obj.sayHello();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

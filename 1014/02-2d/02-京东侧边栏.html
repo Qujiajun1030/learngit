@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+				/*
+				 i标签背景色有来无去
+				 span 背景色无来无去
+				      位移有来有去
+				 */
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.box{
+				position: fixed;
+				right:0;
+				top:50%;
+				transform: translate(0,-50%);
+			}
+			.box ul li{
+				width: 40px;
+				height: 40px;
+				
+				margin-bottom: 10px;
+				position: relative;
+				cursor: pointer;
+			}
+			.box ul li i{
+				position: absolute;
+				left: 0;
+				top: 0;
+			    width: 40px;
+				height: 40px;
+				background:#333 url(img/i1.png) no-repeat center center ;
+				border-radius: 5px 0 0 5px;
+			}
+			.box ul li span{
+				position: absolute;
+				left: 0px;
+				top: 0;
+			    width: 84px;
+				height: 40px;
+				background:#333;
+				border-radius: 5px 0 0 5px;
+				color:#fff;
+				font-size: 14px;
+				line-height: 40px;
+				padding-left: 15px;
+				box-sizing: border-box;
+				
+				transition: left .5s;
+			
+			}
+			.box ul li:hover i{
+				/* 有来无去 */
+				background-color: darkred;
+			    transition: all .5s;	
+			}
+			.box ul li:hover span{
+				/* 位移 有来有去*/
+				left:-80px;
+				/* 变色 无来无去 */
+				background-color: darkred;
+			}
+			.box ul li:nth-of-type(2) i{
+				background-image: url(img/i2.png);
+			}
+			.box ul li:nth-of-type(3) i{
+				background-image: url(img/i3.png);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li>
+					<span>购物车</span>
+					<i></i>
+				</li>
+				<li>
+					<span>收藏</span>
+					<i></i>
+				</li>
+				<li>
+					<span>历史记录</span>
+					<i></i>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

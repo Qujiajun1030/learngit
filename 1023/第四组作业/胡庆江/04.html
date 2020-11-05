@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // - 练习4：
+        //       从键盘输入小明的期末成绩:
+        //           当成绩为100时，'奖励一辆BMW'
+        // 当成绩为[80-99]时，'奖励一台iphone'
+        // 当成绩为[60-79]时，'奖励一本参考书'
+        // 其他时，什么奖励也没有
+
+        let score = +prompt('请输入[0-100]');
+        if (score <= 100 && score >0){
+            if (score === 100){
+                alert('宝马一辆')
+            }else if (score >= 80){
+                alert('苹果一个')
+            }else if (score >= 60){
+                alert('书一本')
+            }else if (score < 60){
+                alert('不及格')
+            }
+        }else {
+            alert('错误')
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

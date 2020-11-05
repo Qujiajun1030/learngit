@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        /*
+        *   break
+        *       - break可以用来结束switch和循环语句
+        *       - break一旦执行循环会立即结束
+        *       - break会离他最近的循环起作用
+        *
+        *   continue
+        *       - continue用来跳过当次循环
+        * */
+        for(let i=0; i<5; i++){
+
+            console.log('外层循环：',i);
+
+            for(let j=0; j<5; j++){
+
+                if(j === 2){
+                    continue;
+                }
+
+                console.log('\t内层循环：',j);
+            }
+        }
+
+        /*for(let i=0; i<5; i++){
+            if(i === 2){
+                continue;
+            }
+            console.log(i);
+        }*/
+
+        /*for(let i=0; i<5; i++){
+
+            console.log('外层循环：',i);
+
+            for(let j=0; j<5; j++){
+
+                if(j === 2){
+                    break;
+                }
+
+                console.log('\t内层循环：',j);
+            }
+        }*/
+
+        /*for(let i=0; i<5; i++){
+            if(i === 2){
+                break;
+            }
+            console.log(i);
+        }*/
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

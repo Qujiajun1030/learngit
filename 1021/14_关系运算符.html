@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *   关系运算符，用来比较两个值之间的关系是否成立，
+        *       成立返回true，不成立返回false
+        *   >
+        *       - 检查左侧值是否大于右侧值
+        *   <
+        *       - 检查左侧值是否小于右侧值
+        *   >=
+        *       - 检查左侧值是否大于或等于右侧值
+        *   <=
+        *       - 检查左侧值是否小于或等于右侧值
+        *
+        *   - 对于非数值类型的值进行比较运算时，
+        *       它会将其转换为数值然后再比较
+        *
+        *   - 如果比较运算符的两端都是字符串，则不会将字符串转换为数值，
+        *       而是逐位的比较字符的Unicode编码
+        *       利用这个特点，可以对文字按照字母顺序排序，
+        *           对于中文来说意义不是很大
+        *
+        *       注意：如果比较的是两个字符串类型的数字时，比较的也是编码，
+        *           有可能出现错误的比较结果
+        * */
+
+        let result = 10 > 5; // true
+        result = 10 > 100; // false
+        result = 10 > 10; // false
+        result = 10 >= 10; // true
+        result = 10 >= 5; // true
+        result = 10 >= 20; // false
+
+        //      1 < 5
+        result = true < 5; // true
+        // 1 > 5
+        result = true > 5; // false
+
+        //  1 > 0
+        result = true > null;  // true
+
+        // 1 > NaN
+        // 任何值和NaN做关系运算都是false
+        result = true > undefined; // false
+        result = NaN >= NaN; // false
+
+        //     1 > 0
+        result = true > '0'; // true
+
+        //
+        result = '1' > '5'; // false
+        //
+        result = '10' > '5'; // false
+
+        //       97  <  98
+        result = 'a' < 'b'; // true
+
+        // 98 < 97
+        result = 'b' < 'a'; // false
+
+        result = 'abcdefghijklmn' < 'b'; // true
+
+        //     33 >  37
+        result = '1' > '5'; // false
+        result = '10' > '5'; // false
+
+
+        let a = 30;
+
+        // result = 5 < a < 20;
+        result = a > 5 && a < 20;
+
+
+        console.log(result);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

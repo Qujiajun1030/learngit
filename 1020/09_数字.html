@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        let n = 10;
+
+        /*
+        *  其他进制的数字:
+        *       二进制
+        *           - 以 0b 开头
+        *       八进制
+        *           - 以 0o 开头
+        *       十六进制
+        *           - 以 0x 开头
+        * */
+
+        n = 0b1010; // 10
+        n = 0o10; // 8
+        n = 0xff; // 255
+
+        // console.log(n, typeof n);
+
+        /*
+        *   大整数(ES2020 新增的)
+        *       - 大整数以n结尾
+        *       - 使用 typeof 检查一个大整数时 会返回 bigint
+        *       - 大整数只能和大整数运算
+        *
+        * */
+        let b = 10n;
+        b = 1238237561782378426475823576327894178362794123412390478124238741293412341029342341n;
+
+        console.log(b, typeof b);
+        // console.log(b + 1n);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
