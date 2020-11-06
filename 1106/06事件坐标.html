@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body style="height: 2000px">
+<div class="box"></div>
+<script type="text/javascript">
+    window.onload = function () {
+        var boxNode = document.querySelector('.box');
+//      所谓的事件坐标 就是当这个事件发生时  鼠标所存在的位置
+        boxNode.onclick = function (event) {
+//          clientX 鼠标相对于视口左侧的距离   clientY 鼠标相对于视口顶端的距离
+            console.log('clientX:'+event.clientX,'clientY:'+event.clientY);
+//          pageX  鼠标相对于页面左侧的距离    pageY相对于页面顶端的距离
+            console.log('pageX:'+event.pageX,'pageY:'+event.pageY);
+//          offsetX和offsetY  是相对于事件源元素的位置  左上角为0,0,原点
+            console.log('offsetX:'+event.offsetX,'offsetY:'+event.offsetY)
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>1111</li>
+    <li>2222</li>
+    <li>3333</li>
+</ul>
+<script type="text/javascript">
+    window.onload = function () {
+        var list = document.querySelector('ul');
+        var liNodes = document.querySelectorAll('ul>li');
+//      事件对象在高级浏览器中会作为事件回调函数的第一个形参 供我们使用
+//      但是在低级浏览器当中  它会作为window的一个属性存在  这个属性 就叫 event
+//      事件对象上 目标元素的属性 target 也是存在兼容问题的   但是这是在高级浏览器中
+//      低级浏览器 我们需要通过事件对象上 一个叫做srcElement的属性
+//      onmouseenter和onmouseleave  绑定事件后  经过子元素 不会触发冒泡的事件流程  也找不到目标元素
+//      在onmouseenter和onmouseleave的回调函数当中 event.target和this的指向是相同的
+//      所以我们没有办法找到目标元素 就没有办法实现事件委托
+//      所以我们如果需要对移入移出事件  使用事件委托得话就用onmouseover和onmouseout
+//      事件委托
+//        list.onmouseenter = function (event) {
+//            event = event || window.event;
+//            var target = event.target || event.srcElement;
+//            target.style.background = 'pink';
+//        };
+//        list.onmouseleave = function (event) {
+//            event = event || window.event;
+//            var target = event.target || event.srcElement;
+//            target.style.background = 'none';
+//        };
+
+        list.onmouseover = function (event) {
+            event = event || window.event;
+            var target = event.target || event.srcElement;
+            if(target.nodeName === 'LI'){
+                target.style.background = 'pink';
+            }
+
+        };
+        list.onmouseout = function (event) {
+            event = event || window.event;
+            var target = event.target || event.srcElement;
+            if(target.nodeName === 'LI'){
+                target.style.background = 'none';
+            }
+
+        };
+
+
+
+//      正常绑定
+//        for (var i = 0; i < liNodes.length; i++) {
+//            liNodes[i].onmouseenter = function () {
+//                this.style.background = 'pink'
+//            };
+//            liNodes[i].onmouseleave = function () {
+//                this.style.background = 'none'
+//            };
+//            liNodes[i].onmouseover = function () {
+//                this.style.background = 'pink'
+//            };
+//            liNodes[i].onmouseout = function () {
+//                this.style.background = 'none'
+//            };
+//        }
+
+
+
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" disabled value="请阅读（10）秒">
+<script type="text/javascript">
+    window.onload = function () {
+        var inputNode = document.querySelector('input');
+        var num = 10;
+        var timer = setInterval(function () {
+            num--;
+            if(num === 0){
+//                进入这个if当中 说明倒计时结束 我们清除定时器  取消置灰状态  修改文本为关闭
+              clearInterval(timer);
+              inputNode.disabled = false;
+              inputNode.value = '关闭'
+            }else{
+                inputNode.value = '请阅读（'+num+'）秒'
+            }
+
+        },1000)
+
+    }
+</script>
+</body>
+</html>

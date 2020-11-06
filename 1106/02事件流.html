@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .laoda{
+            width: 300px;
+            height: 300px;
+            background: yellowgreen;
+        }
+        .laoer{
+            width: 200px;
+            height: 200px;
+            background: skyblue;
+        }
+        .laosan{
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<div class="laoda">
+    <div class="laoer">
+        <div class="laosan"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        var laoda = document.querySelector('.laoda');
+        var laoer = document.querySelector('.laoer');
+        var laosan = document.querySelector('.laosan');
+//      事件传播流程（事件流）是客观存在的 不论元素身上是否有事件的回调函数  回调函数只决定了  当事件触发时 是否会给与反馈
+//      捕获阶段   由外向内 进行事件传播
+//      目标阶段
+//      冒泡阶段   由目标元素的回调函数最先执行  然后逐层的向上传播(由内向外)
+//      事件传播过程当中 是相同类型的事件回调函数能够执行
+//      阻止事件冒泡    当我们在事件的传播过程中 需要禁止让事件传播得话 就需要使用事件对象上的这个方法了
+//      阻止事件冒泡  在谁的回调函数当中调用这个方法 就是阻止这个元素的事件不在向上传播
+        laoda.onclick = function () {
+            console.log('老大')
+        };
+        laoer.onclick = function (event) {
+            event.stopPropagation();
+            console.log('老二')
+        };
+        laosan.onclick = function () {
+
+            console.log('老三')
+        };
+        
+    }
+</script>
+</body>
+</html>

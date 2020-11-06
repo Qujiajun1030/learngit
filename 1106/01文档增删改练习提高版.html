@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" >
+<ul class="list">
+</ul>
+<script type="text/javascript">
+    window.onload = function () {
+//      在输入框中  按下回车之后 如果输入框中有内容  则创建一个li 将内容作为文本  然后放入到ul当中
+//      如果没有内容   则提示 请不要输入空信息
+        var inputNode = document.querySelector('input');
+        var list = document.querySelector('.list');
+        var oldLi = null;
+        var liNode = null;
+        var num = 0;
+
+//      给输入框绑定键盘抬起事件
+        inputNode.onkeyup = function (event) {
+//          判断当前是否为回车  如果是回车 我们才会执行后续的逻辑
+            if(event.keyCode == 13){
+//              只要能够进入这个if当中 说明按键式回车
+//              我们接下来就需要获取 输入框中的value 去除空格之后判断是否为空
+                var content = this.value;
+                if(content.trim()){
+//                  只要能够进入这个if当中 则说明当前输入框中的内容去除空格之后 还有文字  我们可以执行创建的逻辑
+//                  在按下回车之后  创建新的li之前 将上一次的li保存
+                    num++;
+                    oldLi = liNode;
+//                  1.创建一个新的li
+                    liNode = document.createElement('li');
+//                  2.将当前输入框的value（content）  设置给li作为文本
+                    liNode.innerHTML = content;
+//                  给新增元素绑定事件
+                    liNode.onmouseenter = function () {
+                        this.style.backgroundColor = 'pink';
+                    };
+                    liNode.onmouseleave = function () {
+                        this.style.backgroundColor = '#fff'
+                    };
+//                  3.将设置好内容的li    追加给ul
+                    list.insertBefore(liNode,oldLi);
+
+                    if(num > 5){
+                        var lastNode = list.lastElementChild;
+                        list.removeChild(lastNode);
+                    }
+
+                }else{
+                    alert('请不要输入空信息')
+                }
+//              清空输入框
+                this.value = '';
+            }
+
+        };
+//      插入的内容要以倒叙存在   当输入的内容超过10条之后  删除最早的那一条
+
+    }
+</script>
+</body>
+</html>

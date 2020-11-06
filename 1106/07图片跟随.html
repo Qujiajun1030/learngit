@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0 ;
+            padding: 0;
+            cursor: none!important;
+        }
+        img{
+            width: 100px;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background: yellowgreen;
+
+        }
+        /*.box2{*/
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*background: pink;*/
+            /*position: absolute;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<img src="1.jpg" alt="">
+<!--<div class="box1"></div>-->
+<!--<div class="box2"></div>-->
+<script type="text/javascript">
+    window.onload = function () {
+        var box1 = document.querySelector('.box1');
+        var imgNode = document.querySelector('img');
+        var num = 0;
+        setInterval(function () {
+            num++;
+            imgNode.src = num%2 + 1 +'.jpg'
+        },50);
+
+//      鼠标移动事件   在绑定了这个事件的元素内  只要移动 就会持续高频次触发  一直检测你的移动状态
+//      只要想绑定一个事件 让它在整个页面当中都可以生效 直接绑定给document
+        document.onmousemove = function (event) {
+//          console.log(event.offsetX,event.offsetY)
+//          在js当中  给元素设置值的时候  一定要注意单位问题   如果使用一些变量或者某些属性的值为元素设置样式时  记得填单位
+            imgNode.style.left = event.clientX + 'px';
+            imgNode.style.top = event.clientY + 'px';
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>11111</li>
+    <li>22222</li>
+    <li>33333</li>
+    <li>44444</li>
+    <li>55555</li>
+</ul>
+<button id="btn">按钮</button>
+<script type="text/javascript">
+    window.onload = function () {
+        var list = document.querySelector('ul');
+        var btnNode = document.getElementById('btn');
+//      event.target    事件目标     就是真正触发事件的那个 离你最近的元素  target是事件对象上的一个属性
+//      事件委托(事件委派)  就是将原本应该绑定给子元素的事件  绑定给父元素  当父元素的回调函数触发时 根据事件目标（event.target）
+//      来处理子元素的逻辑    我们能够使用事件委托  是基于事件冒泡的机制
+//      优势：  1.减少事件绑定的次数
+//              2.新增元素也有绑定过的事件相应      因为我们将事件的回调函数 设置类的哪些本就存在于页面当中的父元素或祖先元素
+        list.onclick = function (event) {
+//            this.style.background = 'pink'
+            event.target.style.background = 'pink'
+        };
+        btnNode.onclick = function () {
+          var liNode = document.createElement('li');
+          liNode.innerHTML = '我是新增的元素';
+          list.appendChild(liNode)
+        }
+
+
+    }
+</script>
+</body>
+</html>

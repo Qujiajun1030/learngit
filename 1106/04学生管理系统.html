@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>操作</td>
+        </tr>
+        <tr>
+            <td>王旭</td>
+            <td>210</td>
+            <td><button class="delBtn">删除</button></td>
+        </tr>
+        <tr>
+            <td>王旭</td>
+            <td>210</td>
+            <td><button class="delBtn">删除</button></td>
+        </tr>
+        <tr>
+            <td>王旭</td>
+            <td>210</td>
+            <td><button class="delBtn">删除</button></td>
+        </tr>
+    </table>
+    <input type="text" placeholder="请输入姓名" class="userName">
+    <input type="text" placeholder="请输入年龄" class="age">
+    <button id="sendBtn">提交</button>
+<script type="text/javascript">
+    window.onload = function () {
+//      获取两个输入框及提交按钮
+        var userName = document.querySelector('.userName');
+        var age = document.querySelector('.age');
+//      提交按钮
+        var sendBtn = document.querySelector('#sendBtn');
+        var tBodyNode = document.querySelector('table tbody');
+//      删除按钮的集合
+        var delBtns = document.querySelectorAll('.delBtn');
+//      给提交按钮绑定单击事件  然后获取两个输入框的value  判断两个输入框是否都有内容 如果都有执行创建 如果不是则提示信息
+        sendBtn.onclick = function () {
+//          获取两个输入框的值
+            var userNameText = userName.value;
+            var ageText = age.value;
+//          判断输入的内容
+            if(userNameText.trim() && ageText.trim()){
+//              根据输入的内容创建相应的结构
+                var trNode = document.createElement('tr');
+//              装名字的td
+                var tdName = document.createElement('td');
+                tdName.innerHTML = userNameText;
+//              将这个td放入到tr当中
+                trNode.appendChild(tdName);
+//              装年龄的td
+                var tdAge = document.createElement('td');
+                tdAge.innerHTML = ageText;
+                trNode.appendChild(tdAge);
+
+//              装按钮的td
+                var tdBtn = document.createElement('td');
+                var btnNode = document.createElement('button');
+                btnNode.innerHTML = '删除';
+                btnNode.className = 'delBtn';
+//              给新增的按钮绑定单击事件  执行删除的逻辑
+                btnNode.onclick = clickFn;
+//              将这个按钮放入到td中 在将这个td放入到tr中
+                tdBtn.appendChild(btnNode);
+                trNode.appendChild(tdBtn);
+//              将处理好的结构 让入到页面当中  （tbody）
+                tBodyNode.appendChild(trNode);
+            }else{
+                alert('请输入正确的内容')
+            }
+            userName.value = '';
+            age.value = '';
+        }
+
+//  删除按钮逻辑
+        for (var i = 0; i < delBtns.length; i++) {
+            delBtns[i].onclick = clickFn;
+
+        }
+        function clickFn() {
+//              根据当前删除按钮  找到当前行的tr元素
+            var trNode = this.parentNode.parentNode;
+//              获取当前行name的值    当前行的第一个子元素
+            var name = trNode.firstElementChild.innerHTML;
+
+//              提示框    提示你确定要删除xx的信息吗？
+//                confirm   传入的参数为一个字符串  为提示框的文本提示信息
+//                提示框有两个按钮   确定和取消  点击确定这个方法返回true  点击取消返回false
+//                所以我们经常直接将confirm写在if的判断条件当中 如果点击确定则执行if里边的逻辑
+            if(confirm('你确定要删除'+name+'的信息吗？')){
+//                  只要能够进入这个if当中 则说明用户点击的是确定按钮 返回值为true  我们可以直接执行删除的逻辑
+                console.log('删除');
+                tBodyNode.removeChild(trNode);
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">按钮</button>
+<script type="text/javascript">
+    window.onload = function () {
+        var time = 3;
+        var btnNode = document.querySelector('#btn');
+        btnNode.onclick = function () {
+//          如果我们想要清除定时器  就要使用相应的方法  传入要清除的定时器id
+//          定时器的id其实本质就是 通过数值去记录定时器的顺序
+//          但是我们不要使用这种方式去清除   而是使用定时器id的变量
+            clearTimeout(1)
+
+        };
+
+//      延迟定时器（单次定时器）
+//      可以设置两个参数
+//      1：回调函数     当设置的时间达到后 执行此回调函数
+//      2: 延迟时间   单位为ms  毫秒
+//      定时器的方法在执行之后 会返回一个值 我们将这个值叫做定时器ID
+//      定时器如果不设置时间 或者是设置时间为0   也是异步操作(交给别人管)  所以哈哈哈会先出来
+        var timer2 = setTimeout(function () {
+            console.log('计时完成2')
+        },0);
+        var timer1 = setTimeout(function () {
+            console.log('计时完成1')
+        });
+        console.log('哈哈哈')
+    }
+</script>
+</body>
+</html>
