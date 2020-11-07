@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 2000px;
+        }
+        #btn{
+            position: fixed;
+            bottom: 100px;
+            right:50px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">回到顶部</button>
+<script type="text/javascript">
+    window.onload = function () {
+        var btnNode = document.querySelector('#btn');
+        //  回到顶部的常见逻辑
+//        时间固定       路程越远 则速度越快       现在最常用的逻辑
+//        速度固定       路程越远 则时间越长
+//             2000        20                   2000    20        100      500                  5
+//        动画总时长   动画帧时长（30-16）    总时长 / 帧时长 = 总帧数    总偏移（就是当前浏览器的scrollTop）
+
+//        定义动画总时长
+        var time = 2000;
+//        定义动画帧时长
+        var  itemTime = 20;
+
+//      当按下按钮之后 获取当前的scrollTop值
+        btnNode.onclick = function () {
+//          获取总偏移
+            var offset = document.documentElement.scrollTop + document.body.scrollTop;
+//          计算单次偏移   =   总偏移 / ( 总时长 / 帧时长)
+            var itemOffset = offset / ( time / itemTime );
+//             2000        20                   2000    20        100      500                itemOffset  5
+//        动画总时长   动画帧时长（30-16）    总时长 / 帧时长 = 总帧数    总偏移（就是当前浏览器的scrollTop）
+            var timer = setInterval(function () {
+//              每次都在当前位置的基础之上 修改单次偏移     递减
+                offset -= itemOffset;
+                if(offset <= 0){
+                    clearInterval(timer)
+                }
+//          距离： 495   490   485
+//          时间： 20    40   60
+//              每次修改之后 我们要将修改后得值 设置给页面的滚动条  才能看到效果
+                document.documentElement.scrollTop = document.body.scrollTop = offset;
+            },itemTime);
+        }
+
+
+
+
+    }
+
+</script>
+</body>
+</html>

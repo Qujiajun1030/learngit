@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+    </style>
+</head>
+<body>
+<div class="box">哈哈哈</div>
+<script type="text/javascript">
+    window.onload = function () {
+        var box = document.querySelector('.box');
+
+//      鼠标按下事件
+        box.onmousedown = function (event) {
+            event = event || window.event;
+//          开启全局捕获   因为高版本浏览器不认识这个方法 所以我们先访问 如果存在则结果为真  我们在调用
+            box.setCapture && box.setCapture();
+            console.log('鼠标按下');
+//          获取鼠标起始坐标
+            var startX = event.clientX;
+            var startY = event.clientY;
+//          获取元素起始位置
+            var eleX = box.offsetLeft;
+            var eleY = box.offsetTop;
+            document.onmousemove = function (event) {
+                event = event || window.event;
+//              鼠标结束坐标
+                var endX = event.clientX;
+                var endY = event.clientY;
+//              鼠标距离差 = 鼠标结束坐标 - 鼠标起始坐标
+                var disX = endX - startX;
+                var disY = endY - startY;
+//              元素最终位置
+                var lastX = eleX + disX;
+                var lastY = eleY + disY;
+
+//              边界值判断的两种逻辑
+//              范围限定类：大于最大值等于最大值 小于最小值等于最小值
+//              首尾相接类：大于最大值等于最小值 小于最小值等于最大值
+                if(lastX < 10){
+                   lastX = 0;
+                }else if(lastX > document.documentElement.clientWidth - box.clientWidth -10){
+                    lastX = document.documentElement.clientWidth - box.clientWidth;
+                }
+                if(lastY < 10){
+                    lastY = 0
+                }else if(lastY > document.documentElement.clientHeight - box.clientHeight-10){
+                    lastY = document.documentElement.clientHeight - box.clientHeight;
+                }
+
+                console.log('移动');
+                box.style.left = lastX + 'px';
+                box.style.top = lastY + 'px';
+            };
+            document.onmouseup = function () {
+//          当鼠标抬起后 我们就不在需要鼠标移动事件了   所以要清除
+                console.log('鼠标抬起');
+                document.onmouseup = document.onmousemove = null;
+//              释放全局捕获
+                box.releaseCapture && box.releaseCapture();
+            };
+//          阻止默认行为
+            return false;
+        };
+
+
+
+
+
+
+    }
+</script>
+</body>
+</html>

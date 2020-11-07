@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            left:100px;
+            top:100px;
+            background: yellowgreen;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            /*padding: 50px;*/
+            padding: 30px 50px;
+            margin: 50px;
+            border: 10px solid #ccc;
+            background: pink;
+            position: absolute;
+            left:200px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="box"></div>
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        var box = document.querySelector('.box');
+//      元素的宽度与高度   clientWidth:width + paddingLeft + paddingRight
+//                         clientHeight:height + paddingTop + paddingBottom
+        console.log(box.clientWidth,box.clientHeight);
+//        offsetWidth：width + paddingLeft + paddingRight + borderLeft + borderRight
+//        offsetHeight:height + paddingTop + paddingBottom + borderTop + borderBottom
+        console.log(box.offsetWidth,box.offsetHeight);
+//      元素内容边界到内容边界的值   其实指的就是边框的宽度
+        console.log(box.clientLeft,box.clientTop);
+//      相对于包含块的偏移    就和绝对定位一样
+        console.log(box.offsetLeft,box.offsetTop);
+
+    }
+</script>
+</body>
+</html>

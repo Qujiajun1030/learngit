@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button{
+            margin-top: 300px;
+        }
+    </style>
+</head>
+<body style="height: 2000px">
+<button id="btn">按钮</button>
+<script type="text/javascript">
+    window.onload = function () {
+        var btnNode = document.getElementById('btn');
+//        scrollTop scrollLeft
+//      我们究竟通过谁的scrollTop来获取浏览器的滚动条呢？
+//         document    html  body
+//        document.documentElement    html
+//        document.body     body
+//        document.head     head
+//      我们需要获取浏览器滚动条的偏移量是  有的浏览器是使用html能够获取到值 body为0
+//      有的浏览器是使用body能够获取到值 但是html为0    它俩是一个互斥的状态  有且只有一个能够获取到值 另外一个为零
+//      所以我们通常使用的兼容方案 要么两个值相加   要么使用或运算
+        btnNode.onclick = function () {
+//          alert(document.documentElement.scrollTop + document.body.scrollTop)
+//          alert(document.documentElement.scrollTop || document.body.scrollTop)
+
+//          设置滚动条的位置 其实就是修改html或body的scrollTop的值
+//          但是情况和获取相同 不同的浏览器  需要分别通过html或body来操作
+//          所以兼容设置的方案就是两个都设置   不会有其他影响
+            document.body.scrollTop = document.documentElement.scrollTop = 200;
+        }
+    }
+</script>
+</body>
+</html>

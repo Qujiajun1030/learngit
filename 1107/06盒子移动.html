@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script type="text/javascript">
+    window.onload = function () {
+        var box = document.querySelector('.box');
+        var step = 5;
+        var startLeft = 0;
+
+        setInterval(function () {
+            startLeft += step;
+            if(startLeft > document.documentElement.clientWidth - box.clientWidth){
+                startLeft = document.documentElement.clientWidth - box.clientWidth;
+                step = -3;
+            }else if(startLeft < 0){
+               startLeft = 0;
+               step = 3;
+            }
+            box.style.left = startLeft + 'px';
+        },1)
+
+
+
+    }
+</script>
+</body>
+</html>

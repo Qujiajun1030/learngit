@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+    </style>
+</head>
+<body>
+<div class="box">哈哈哈</div>
+<script type="text/javascript">
+    window.onload = function () {
+        var box = document.querySelector('.box');
+//      为什么鼠标会脱离出元素呢？  因为我们是鼠标先移动 然后获取鼠标的坐标 然后在经过计算 最终设置元素 这种有一个过程
+//      但是呢 页面的渲染也是需要时间的    元素没有第一时间跟随鼠标移动 鼠标就脱离出来了 脱离之后 鼠标不在事件源身上
+//      我们的逻辑就失效了
+//      文字图片等内容  是能够被拖拽的  这是浏览器的默认行为
+//      其实有很多浏览器的默认行为在一些情况下会和我们的逻辑产生冲突
+//      如果发生这种情况 我们就需要阻止浏览器的默认行为   在dom0级事件当中 阻止默认行为就是在事件回调函数的结尾return false
+//      在低版本ie中  文字的拖拽不算做默认行为这个范畴之内 我们只能通过其他的方式来解决
+//      全局捕获   开启全局捕获之后 就是将后续所有的事件  都聚焦在这个元素身上 相当于 无论点哪里都是点这个元素
+//      但是切记一点    全局捕获有开启  就一定要有释放
+//      鼠标按下事件
+        box.onmousedown = function (event) {
+            event = event || window.event;
+//          开启全局捕获   因为高版本浏览器不认识这个方法 所以我们先访问 如果存在则结果为真  我们在调用
+            box.setCapture && box.setCapture();
+            console.log('鼠标按下');
+//          获取鼠标起始坐标
+            var startX = event.clientX;
+            var startY = event.clientY;
+//          获取元素起始位置
+            var eleX = box.offsetLeft;
+            var eleY = box.offsetTop;
+            document.onmousemove = function (event) {
+                event = event || window.event;
+//              鼠标结束坐标
+                var endX = event.clientX;
+                var endY = event.clientY;
+//              鼠标距离差 = 鼠标结束坐标 - 鼠标起始坐标
+                var disX = endX - startX;
+                var disY = endY - startY;
+                console.log('移动');
+                box.style.left = eleX + disX + 'px';
+                box.style.top = eleY + disY + 'px';
+            };
+            document.onmouseup = function () {
+//          当鼠标抬起后 我们就不在需要鼠标移动事件了   所以要清除
+                console.log('鼠标抬起');
+                document.onmouseup = document.onmousemove = null;
+//              释放全局捕获
+                box.releaseCapture && box.releaseCapture();
+            };
+//          阻止默认行为
+            return false;
+        };
+
+
+
+
+
+
+    }
+</script>
+</body>
+</html>

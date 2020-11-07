@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script type="text/javascript">
+    window.onload = function () {
+        var box = document.querySelector('.box');
+//      所谓的点击事件  即为一次按下+一次抬起
+//        box.onclick = function () {
+//            console.log('点击')
+//        }
+//      鼠标按下事件
+        box.onmousedown = function (event) {
+            console.log('鼠标按下');
+//          获取鼠标起始坐标
+            var startX = event.clientX;
+            var startY = event.clientY;
+//          获取元素起始位置
+            var eleX = box.offsetLeft;
+            var eleY = box.offsetTop;
+            box.onmousemove = function (event) {
+//              鼠标结束坐标
+                var endX = event.clientX;
+                var endY = event.clientY;
+//              鼠标距离差 = 鼠标结束坐标 - 鼠标起始坐标
+                var disX = endX - startX;
+                var disY = endY - startY;
+                console.log('移动');
+                box.style.left = eleX + disX + 'px';
+                box.style.top = eleY + disY + 'px';
+            };
+            box.onmouseup = function () {
+//          当鼠标抬起后 我们就不在需要鼠标移动事件了   所以要清除
+                console.log('鼠标抬起');
+                box.onmouseup = box.onmousemove = null;
+            }
+        };
+
+
+
+
+
+
+    }
+</script>
+</body>
+</html>
