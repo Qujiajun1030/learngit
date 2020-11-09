@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+        .wrap{
+            width: 100%;
+            height: 100%;
+            background: pink;
+        }
+        .scrollWrap{
+            width: 20px;
+            height: 100%;
+            background: deeppink;
+            position: fixed;
+            right:0;
+            top: 0;
+        }
+        .scrollIn{
+            width: 16px;
+            height: 100px;
+            background: yellowgreen;
+            position: absolute;
+            left:2px;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+
+    <!--自定义滚动条结构     滑槽-->
+    <div class="scrollWrap">
+        <!--滑块-->
+        <div class="scrollIn"></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+        .wrap{
+            width: 100%;
+            height: 100%;
+            background: pink;
+        }
+        .scrollWrap{
+            width: 20px;
+            height: 100%;
+            background: deeppink;
+            position: fixed;
+            right:0;
+            top: 0;
+        }
+        .scrollIn{
+            width: 16px;
+            /*height: 100px;*/
+            background: yellowgreen;
+            position: absolute;
+            left:2px;
+            top:0;
+        }
+        .content{
+            width: 100%;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <!--内容区-->
+    <div class="content">
+        <ul class="list"></ul>
+    </div>
+    <!--自定义滚动条结构     滑槽-->
+    <div class="scrollWrap">
+        <!--滑块-->
+        <div class="scrollIn"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        var scrollIn = document.querySelector('.scrollIn');
+        var list = document.querySelector('.list');
+        var content = document.querySelector('.content');
+
+        for (var i = 1; i < 200; i++) {
+            var liNode = document.createElement('li');
+            liNode.innerHTML = i;
+            list.appendChild(liNode);
+        }
+        console.log(list.offsetHeight);
+//      滑块的高度 / 屏幕的高度 = 屏幕的高度 / 内容的高度 = 滚动条的滚动距离 / 内容的滚动距离
+//      滑块的高度 / 屏幕的高度 = scale = 滚动条的滚动距离 / 内容的滚动距离
+//      滑块的高度 / 滑槽的高度 = 屏幕的高度 / 内容的高度 = 滚动条的滚动距离 / 内容的滚动距离
+//      计算比例 = 屏幕的高度 / 内容的高度
+        var scale = document.documentElement.clientHeight / list.offsetHeight;
+//      设置滑块高度   屏幕的高度* scale
+        scrollIn.style.height = document.documentElement.clientHeight * scale + 'px';
+        scrollIn.onmousedown = function (event) {
+//          鼠标起始位置
+            var startY = event.clientY;
+//          滑块起始位置
+            var eleY = scrollIn.offsetTop;
+            document.onmousemove = function (event) {
+//              鼠标结束位置
+                var endY = event.clientY;
+//              计算鼠标距离差
+                var disY = endY - startY;
+//              滑块最终位置
+                var lastY = disY + eleY;
+//              滑块范围限定
+                if(lastY < 0){
+                    lastY = 0;
+                }else if(lastY > document.documentElement.clientHeight - scrollIn.clientHeight){
+                    lastY = document.documentElement.clientHeight - scrollIn.clientHeight
+                }
+//              设置给滑块
+                scrollIn.style.top = lastY + 'px';
+//              让内容区 跟随滚动    滑块的滚动距离 / scale
+                var contentY = lastY / scale;
+                content.style.top = -contentY + 'px';
+
+            };
+            document.onmouseup = function () {
+                document.onmousemove = document.onmouseup = null;
+            }
+        }
+//      滚轮相关逻辑
+        document.addEventListener('mousewheel',fun);
+        document.addEventListener('DOMMouseScroll',fun);
+        var flag = true;
+        function fun(event) {
+            if(event.wheelDelta){
+//              if chrome
+                if(event.wheelDelta < 0){
+                   flag = false;
+                }else{
+                    flag = true;
+                }
+            }else if(event.detail){
+//              firefox
+                if(event.detail > 0){
+                   flag = false;
+                }else{
+                    flag = true;
+                }
+            }
+//          flag标记了方向    flag为true 表示向上   flag为false表示向下
+            
+            if(flag){
+//              滑块向上移动10像素      内容区 应该根据滑块的移动 更新自己的方向
+//              计算滑块位置
+                var scrollT = scrollIn.offsetTop - 10;
+                if(scrollT < 0){
+                   scrollT = 0;
+                }
+                scrollIn.style.top = scrollT  + 'px';
+                content.style.top = -scrollT / scale + 'px';
+            }else{
+//              滑块向下移动10像素
+//              计算滑块的位置
+                var scrollT = scrollIn.offsetTop + 10;
+                if(scrollT > document.documentElement.clientHeight - scrollIn.offsetHeight){
+                    scrollT = document.documentElement.clientHeight - scrollIn.offsetHeight;
+                }
+                scrollIn.style.top =  scrollT + 'px';
+                content.style.top = -scrollT / scale + 'px';
+            }
+            
+            
+            
+            
+        }
+        
+    }
+</script>
+</body>
+</html>

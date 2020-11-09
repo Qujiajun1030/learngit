@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+        img{
+            width: 150px;
+            height: 140px;
+            position: absolute;
+            left:0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="box">哈哈哈</div>
+<img src="1.jpg" alt="">
+<script type="text/javascript">
+    window.onload = function () {
+        var box = document.querySelector('.box');
+        var imgNode = document.querySelector('img');
+
+//      鼠标按下事件
+        box.onmousedown = function (event) {
+            event = event || window.event;
+//          开启全局捕获   因为高版本浏览器不认识这个方法 所以我们先访问 如果存在则结果为真  我们在调用
+            box.setCapture && box.setCapture();
+            console.log('鼠标按下');
+//          获取鼠标起始坐标
+            var startX = event.clientX;
+            var startY = event.clientY;
+//          获取元素起始位置
+            var eleX = box.offsetLeft;
+            var eleY = box.offsetTop;
+            document.onmousemove = function (event) {
+                event = event || window.event;
+//              鼠标结束坐标
+                var endX = event.clientX;
+                var endY = event.clientY;
+//              鼠标距离差 = 鼠标结束坐标 - 鼠标起始坐标
+                var disX = endX - startX;
+                var disY = endY - startY;
+//              元素最终位置
+                var lastX = eleX + disX;
+                var lastY = eleY + disY;
+
+//              边界值判断的两种逻辑
+//              范围限定类：大于最大值等于最大值 小于最小值等于最小值
+//              首尾相接类：大于最大值等于最小值 小于最小值等于最大值
+                if(lastX < 10){
+                   lastX = 0;
+                }else if(lastX > document.documentElement.clientWidth - box.clientWidth -10){
+                    lastX = document.documentElement.clientWidth - box.clientWidth;
+                }
+                if(lastY < 10){
+                    lastY = 0
+                }else if(lastY > document.documentElement.clientHeight - box.clientHeight-10){
+                    lastY = document.documentElement.clientHeight - box.clientHeight;
+                }
+
+                console.log('移动');
+                box.style.left = lastX + 'px';
+                box.style.top = lastY + 'px';
+//               getBoundingClientRect    返回结果为一个对象
+//              九宫格碰撞
+//              元素左侧边界
+//              元素当前位置+元素自身宽度 如果小于图片相对于时候左侧的位置  说明 元素一定无法碰撞到图片
+                var boxL = box.offsetLeft + box.clientWidth;
+                var imgL = imgNode.getBoundingClientRect().left;
+
+                var boxT = box.offsetTop + box.clientHeight;
+                var imgT = imgNode.getBoundingClientRect().top;
+//              元素当前的位置 如果大于图片相对于视口左侧的位+ 图片自身宽度   则说明元素一定在图片的右侧 不可能与其相邻
+                var boxR = box.offsetLeft;
+                var imgR = imgNode.getBoundingClientRect().left + imgNode.clientWidth;
+
+                var boxB = box.offsetTop;
+                var imgB = imgNode.getBoundingClientRect().top + imgNode.clientHeight;
+
+//              将所有不相邻的条件判断   通过或运算  全部写在if当中 如果都不满足  则说明一定相邻
+                if(boxL < imgL || boxT < imgT || boxR > imgR || boxB > imgB){
+//                  如果有任一条件成立  则保持原图不变
+                    imgNode.src = '1.jpg';
+                }else{
+                    imgNode.src = '2.jpg';
+                }
+
+
+
+
+
+
+            };
+            document.onmouseup = function () {
+//          当鼠标抬起后 我们就不在需要鼠标移动事件了   所以要清除
+                console.log('鼠标抬起');
+                document.onmouseup = document.onmousemove = null;
+//              释放全局捕获
+                box.releaseCapture && box.releaseCapture();
+            };
+//          阻止默认行为
+            return false;
+        };
+
+
+
+
+
+
+    }
+</script>
+</body>
+</html>

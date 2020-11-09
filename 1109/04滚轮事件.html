@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            margin-top: 150px;
+            background: pink;
+        }
+    </style>
+</head>
+<body >
+<div class="box"></div>
+<script type="text/javascript">
+    window.onload = function () {
+//        onmousewheel  既能使用dom0绑定  也能使用dom2绑定
+//        DOMMouseScroll  只能使用dom2绑定
+//        document.onmousewheel = function () {
+//
+//        }
+        var box = document.querySelector('.box');
+        var flag = true;// true 代表向上 false代表向下
+//        chrome IE  支持
+        document.addEventListener('mousewheel',fun);
+//        firefox 支持
+        document.addEventListener('DOMMouseScroll',fun);
+//      虽然绑定事件时   需要根据不同的浏览器 绑定不同的事件 不过我们在事件回调函数当中处理的逻辑相同
+//      所以 我们将事件的回调函数  单独定义成有名函数   同时指定给两个事件
+//      滚轮事件是可以给元素使用的   只是实际的应用场景不多而已  大多数情况下 都是在整个页面当中操作
+        function fun(event) {
+//          因为fun函数指定给了两个事件作为回调函数 所以event上用于判断滚轮滚动方向所使用的属性不同
+//          我们通过判断   究竟是哪个属性存在 就相当于判断了浏览器
+            if(event.wheelDelta){
+//              ie/chrome     负值向下  正值向上
+//                console.log(event.wheelDelta)
+                if(event.wheelDelta < 0){
+                    // 向下
+                    flag = false;
+                }else{
+//                   向上
+                    flag = true;
+                }
+            }else if(event.detail){
+//              firefox       正值向下  负值向上
+//                console.log(event.detail)
+                if(event.detail > 0){
+                   // 向下
+                    flag = false;
+                }else{
+                    flag = true
+                }
+            }
+//          代码执行到此处   究竟哪个事件生效   通过那个属性判断 对我们来说  不重要了
+//          我们只需要知道 当前flag   帮我们标记了 方向
+
+            if(flag){
+//                每向上一次  元素高度减少10像素
+                box.style.height = box.offsetHeight - 10 + 'px';
+            }else{
+//                每向向下一次  元素高度增加10像素
+                box.style.height = box.offsetHeight + 10 + 'px';
+            }
+
+
+        }
+    }
+</script>
+</body>
+</html>
