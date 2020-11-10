@@ -19,10 +19,10 @@
             overflow: hidden;
         }
         .list{
-            width: 3000px;
+            width: 4200px;
             height: 100%;
             position: absolute;
-            left:0;
+            left:-600px;
             top:0;
         }
         .list li{
@@ -82,11 +82,13 @@
 <body>
     <div class="container">
         <ul class="list">
+            <li><img src="img/5.jpg" alt=""></li>
             <li><img src="img/1.jpg" alt=""></li>
             <li><img src="img/2.jpg" alt=""></li>
             <li><img src="img/3.jpg" alt=""></li>
             <li><img src="img/4.jpg" alt=""></li>
             <li><img src="img/5.jpg" alt=""></li>
+            <li><img src="img/1.jpg" alt=""></li>
         </ul>
         <a href="javascript:;" class="prev"> < </a>
         <a href="javascript:;" class="next"> > </a>
@@ -107,27 +109,75 @@
         var points = document.querySelectorAll('.pointsDiv span');
 //      获取图片容器    我们轮播图的本质就是通过修改list的left值  来实现的图片切换
         var list = document.querySelector('.list');
+//      获取显示区域容器   移入停止自动轮播  移出重新启动自动轮播
+        var container = document.querySelector('.container');
 //      定义动画总时长
         var time = 3000;
 //      定义动画帧时长        动画总时长 / 动画帧时长 = 总帧数
         var itemTime = 30;
 //      定义图片宽度
         var PAGE_WIDTH = 600;
+//      定义显示图片张数 = 小圆点长度
+        var imgNum = points.length;
+//      记录页面初始的索引
+        var index = 0;
+//      定义标识变量  标记当前页面是否正在执行动画的过程当中
+        var isMovIng = false;
 
 //      点击按钮实现图片切换   点击左侧按钮（前一页）    是在当前位置的基础之上 left值+ 600
         prevBtn.onclick = function () {
             nextPage(false);
+//            upDate(false);
         };
-//                             点击右侧按钮（后一页）    是在当前位置                     基础之上 left值 - 600
+//                             点击右侧按钮（后一页）    是在当前位置IDE基础之上 left值 - 600
         nextBtn.onclick = function () {
             nextPage(true);
+//            upDate(true);
         };
+//      小圆点点击
+        for (var i = 0; i < points.length; i++) {
+            points[i].index = i;
+            points[i].onclick = function () {
+                var targetIndex= this.index;
+                console.log(targetIndex);
+                nextPage(targetIndex)
+            }
+        }
+//      自动轮播
+        var timer = setInterval(function () {
+            nextPage(true)
+        },3000);
+//      鼠标移入 停止自动轮播
+        container.onmouseenter = function () {
+            clearInterval(timer)
+        };
+//      鼠标离开   重新启动自动轮播
+        container.onmouseleave = function () {
+            timer = setInterval(function () {
+                nextPage(true)
+            },3000)
+        }
+
+
 //      翻页动画函数
 //      用于判断方向的参数  next：为false则说明点击了prev按钮  去上一页（+600）
 //                          next：为true 则说明点击了next按钮  去下一页（-600）
+//      当前next形参有两种情况 1：布尔值 为点击左右按钮 调用的函数  2：数值（索引值）点击小圆点调用的函数
         function nextPage(next) {
+//            isMovIng = false
+            if(isMovIng){
+                return;
+            }
+//            alert(111)
+            isMovIng = true;
+//           next =  false
 //          之后点击按钮  调用了nextPage这个函数 我们通过next形参 才能够知道当前的偏移到底是正600还是负600
-            var offset = next ? -PAGE_WIDTH : PAGE_WIDTH;
+            if(typeof next === 'boolean'){
+                var offset = next ? -PAGE_WIDTH : PAGE_WIDTH;
+            }else{
+                var offset = -(next - index) * PAGE_WIDTH;
+            }
+
 //            console.log(offset)
 //          计算单次偏移(±6 ) =   总偏移 / ( 总时长 / 帧时长 );
             var itemoffset = offset / ( time / itemTime );
@@ -140,20 +190,52 @@
             var timer = setInterval(function () {
                 left += itemoffset;
                 if(left == targetLeft){
-                   clearInterval(timer)
+                   clearInterval(timer);
+                   isMovIng = false;
+//                 首尾相接判断
+//                 真的第五张（实际排列的倒数第二张）的left = 实际显示图片张数 * 600（图片宽度）
+                    if(left == 0){
+//                      能够进入这个if当中 则说明  你到达了假的第五张（实际排列第一张）
+//                      我们需要将位置修正为真的第五张
+                        left = -imgNum * PAGE_WIDTH;
+                    }else if(left == -(imgNum + 1) * PAGE_WIDTH){
+//                       倒数第二张 再多向后走一张  则为倒数第一张
+                        left = -PAGE_WIDTH;
+                    }
                 }
 
                 list.style.left = left + 'px';
 
             },itemTime);
-
-
-
-            
-          
+            upDate(next);
+        }
+//      小圆点更新函数
+        function upDate(next) {
+//          计算索引  如果next为true则说明点击的是下一页按钮  则在当前索引的基础之上+ 1   反之-1
+//          参数类型判断
+            if(typeof next === 'boolean'){
+                var targetIndex = next ? index + 1 : index - 1;
+            }else{
+                var targetIndex = next;
+            }
+//          边界判断   首尾相接的逻辑：小于最小值等于最大值  大于最大值等于最小值
+            if(targetIndex < 0){//  说明当前在第一页 又向前翻了一页   所以我们要将高亮切换到最后一个小圆点
+                targetIndex = imgNum - 1;
+            }else if(targetIndex > imgNum - 1){// 说明当前在最后一页 又向后翻了一页 所以我们要将高亮切换到第一个小圆点
+                targetIndex = 0;
+            }
+//            targetIndex 对应的小圆点  添加active     index对应的删除active
+            points[index].className = '';
+            points[targetIndex].className = 'active';
+//          因为index 应该一直对应当前正在显示的那个小圆点的索引  当我们完成一次切换之后 targetIndex对应的才是正在现实的
+//          更新索引
+            index = targetIndex;
         }
 
     }
+
+
+
 </script>
 </body>
 </html>
