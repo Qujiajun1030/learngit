@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .container{
+            width: 600px;
+            height: 400px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .list{
+            width: 3000px;
+            height: 100%;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        .list li{
+            float: left;
+        }
+        .list li img{
+            display: block;
+        }
+        a{
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 36px;
+            color: #fff;
+            font-size: 36px;
+            top:50%;
+            margin-top: -20px;
+            text-decoration: none;
+            background-color: rgba(0,0,0,0.5);
+            opacity: 0;
+            transition: 0.5s;
+        }
+        .prev{
+            left:30px;
+        }
+        .next{
+            right:30px;
+        }
+        .container:hover a{
+            opacity: 1;
+        }
+        .pointsDiv{
+            position: absolute;
+            /*width: 200px;*/
+            /*height: 30px;*/
+            /*background: pink;*/
+            bottom:30px;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        .pointsDiv span{
+            float: left;
+            width: 16px;
+            height: 16px;
+            background: pink;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .pointsDiv span.active{
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="list">
+            <li><img src="img/1.jpg" alt=""></li>
+            <li><img src="img/2.jpg" alt=""></li>
+            <li><img src="img/3.jpg" alt=""></li>
+            <li><img src="img/4.jpg" alt=""></li>
+            <li><img src="img/5.jpg" alt=""></li>
+        </ul>
+        <a href="javascript:;" class="prev"> < </a>
+        <a href="javascript:;" class="next"> > </a>
+        <div class="pointsDiv">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+<script type="text/javascript">
+    window.onload = function () {
+//      获取左右按钮    绑定单击事件  向上或向下切换一张图片
+        var prevBtn = document.querySelector('.prev');
+        var nextBtn = document.querySelector('.next');
+//      获取小圆点集合      1.切换图片 小圆点跟随高亮切换    2.点击小圆点跳转到对应的图片
+        var points = document.querySelectorAll('.pointsDiv span');
+//      获取图片容器    我们轮播图的本质就是通过修改list的left值  来实现的图片切换
+        var list = document.querySelector('.list');
+//      定义动画总时长
+        var time = 3000;
+//      定义动画帧时长        动画总时长 / 动画帧时长 = 总帧数
+        var itemTime = 30;
+//      定义图片宽度
+        var PAGE_WIDTH = 600;
+
+//      点击按钮实现图片切换   点击左侧按钮（前一页）    是在当前位置的基础之上 left值+ 600
+        prevBtn.onclick = function () {
+            nextPage(false);
+        };
+//                             点击右侧按钮（后一页）    是在当前位置                     基础之上 left值 - 600
+        nextBtn.onclick = function () {
+            nextPage(true);
+        };
+//      翻页动画函数
+//      用于判断方向的参数  next：为false则说明点击了prev按钮  去上一页（+600）
+//                          next：为true 则说明点击了next按钮  去下一页（-600）
+        function nextPage(next) {
+//          之后点击按钮  调用了nextPage这个函数 我们通过next形参 才能够知道当前的偏移到底是正600还是负600
+            var offset = next ? -PAGE_WIDTH : PAGE_WIDTH;
+//            console.log(offset)
+//          计算单次偏移(±6 ) =   总偏移 / ( 总时长 / 帧时长 );
+            var itemoffset = offset / ( time / itemTime );
+//          获取当前list的left值
+//          0   -600   -1200  -1800  -2400
+            var left = list.offsetLeft;
+//          计算目的地位置   =  当前位置 + 总偏移
+            var targetLeft = left + offset;
+
+            var timer = setInterval(function () {
+                left += itemoffset;
+                if(left == targetLeft){
+                   clearInterval(timer)
+                }
+
+                list.style.left = left + 'px';
+
+            },itemTime);
+
+
+
+            
+          
+        }
+
+    }
+</script>
+</body>
+</html>
