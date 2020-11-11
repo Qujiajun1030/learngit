@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+//    var a = 10;
+//    var b = 20;
+//    function fn() {
+//      var a = 100;
+//      b = 200;
+//      function fn1() {
+//        var c = 300;
+//        console.log(b,c);//  100 200 300
+//      }
+//      fn1();
+//    }
+//    fn();
+//    console.log(a,b,c)//  10 200 und
+//  程序的执行和代码的执行 是一个概念么？
+//  全局执行上下文环境  函数执行上下文环境
+//   1.收集变量生成变量对象  (预解析)
+//   2.确定this指向（确定执行者）
+//   3.确定当前环境的作用域链
+
+//function a() {
+//
+//}
+//var a
+//a = 10;
+//    console.log(a)
+//var x = 10;
+//function fn() {
+//    console.log(x);
+//}
+//function show(f) {
+//    var x = 20;
+//    f();
+//}
+//show(fn);
+//function a() {}
+//var a;
+//
+//
+//console.log(typeof a)
+//if (!(b in window)) {
+//    var b = 1;
+//}
+//console.log(b)//
+//function c(c) {
+//    console.log(c)
+//    var c = 3
+//}
+//var c
+//
+//c = 1;
+//
+//c(2)
+
+//var fn = function () {
+//    console.log(fn)
+//}
+//fn()
+//function fn(){console.log(fn)};
+//fn();
+
+  //   1  2    3    und
+var obj = {
+    fn2: function () {
+
+        console.log(this.fn2)//
+    }
+}
+obj.fn2()
+function fun(n, o) {
+    console.log(o)
+    return {
+        fun: function (m) {
+            return fun(m, n)
+        }
+    }
+var a = fun(0)
+a.fun(1)
+a.fun(2)
+a.fun(3)
+var b = fun(0).fun(1).fun(2).fun(3)
+</script>
+</body>
+</html>

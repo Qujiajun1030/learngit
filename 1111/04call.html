@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function Obj1(name) {
+//      this  指向obj1的实例
+        this.name = name;
+//        console.log(this)
+    }
+    function Obj2(name) {
+//       this  指向obj2的实例
+        Obj1.call(this,name);
+        this.test = 'test'
+    }
+    var obj2 = new Obj2('hahaha');
+    console.log(obj2)
+</script>
+</body>
+</html>

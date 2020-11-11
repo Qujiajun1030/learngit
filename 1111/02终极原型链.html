@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function Computer(name,price,brand,color) {
+//      构造函数当中  this指向当前的实例化对象
+        this.name = name;
+        this.price = price;
+        this.brand = brand;
+        this.color = color;
+    }
+//  显式原型对象
+    Computer.prototype.playGame = function () {
+        console.log('玩游戏');
+    };
+    console.log(Computer.prototype)
+    var c1 = new Computer('macBook',18000,'Apple','silver');
+//    console.log(c1)
+    c1.playGame();
+//    专门用来构造函数类型的 构造函数
+//    new Function
+    console.log(Function.prototype === Function.__proto__)
+</script>
+</body>
+</html>

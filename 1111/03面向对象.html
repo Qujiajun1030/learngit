@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //    面向对象语言三大基本特征 封装  继承  多态
+    //    类    严格意义上来说 js当中是没有类的概念的   但是我们可以将构造函数当做类来使用
+    //    到了es6的版本  才有了class  类的关键字  起始本质es6的class  也是构造函数  就是个语法糖
+    //    父类
+    function Dog(name, age, color) {
+        this.name = name;
+        this.age = age;
+        this.color = color;
+    }
+
+    Dog.prototype.run = function () {
+        console.log('跑得快')
+    }
+
+    //  子类
+    function Taidi(name, age, color) {
+//        this.name = name;
+//        this.age = age;
+//        this.color = color;
+//      劫持this的指向
+//      第一个参数  就是你说调用的函数的 this的新指向
+//      借助构造函数继承   用于子类继承父类的属性
+        Dog.call(this, name, age, color);
+    }
+
+//  原型继承
+//  让子类的原型对象  =  父类的一个实例化对象
+//  通过子类的实例化对象（t1） 调用一个方法  自己没有  顺着原型链找到了其构造函数（Taidi）的显示原型对象（prototype）
+//  但是现在构造函数的显示原型 被我们指向父类的实例  所以就相当于：
+//  通过子类的实例化对象（t1）调用一个方法 自己没有 顺着原型链找到了Dog的实例化对象
+//  如果这个Dog的实例化对象也没有这个方法   则会顺着自己的隐试原型   找到Dog的显示原型
+//  这种方式只能继承方法
+    Taidi.prototype = new Dog();
+    //  需要手动给这个父类的实例添加一个构造器属性
+    Taidi.prototype.constructor = Taidi;
+    //  混合继承  就是将原型继承 和 构造函数继承  一起用
+    var d1 = new Dog('wangcai', 3, 'black');
+    console.log(d1);
+    d1.run();
+    var t1 = new Taidi('ritian', 1, 'brown');
+    console.log(t1)
+    t1.run();
+</script>
+</body>
+</html>
