@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+//    var name = "The Window";
+//    var object = {
+//        name: "My Object",
+//        getNameFunc: function () {
+//
+//            return function () {
+//                return this.name;
+//            };
+//        }
+//    };
+//    console.log(object.getNameFunc()());
+//
+//
+//    var name2 = "The Window";
+//    var object2 = {
+//        name2: "My Object",
+//        getNameFunc: function () {
+//            var that = this;
+//            return function () {
+//                return that.name2;
+//            };
+//        }
+//    };
+//    console.log(object2.getNameFunc()());
+
+
+function fun(n, o) {
+//    n = 0  o = und
+//    n = 1  o = 0;
+//    n = 2  o = 1;
+    console.log(o)
+    return {
+        fun: function (m) {
+//          m = 3
+            return fun(m, n)
+        }
+    }
+}
+//  und  0  1  2
+var b = obj3.fun(3)
+//  fun(0)  的执行环境   a的fun方法 形成了闭包    n = 0  o = und
+//   fun(1,0)  的执行环境    和新返回的  对象当中的fun方法形成了闭包   n = 1  o = 0;
+//  a = obj
+//var a = fun(0);//und
+//a.fun(1);//0
+//a.fun(2);//0
+//a.fun(3);//0
+
+</script>
+</body>
+</html>

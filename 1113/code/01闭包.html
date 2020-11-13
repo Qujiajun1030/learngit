@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function fn() {
+        var a = 0;
+        var b = 10;
+        var c = 100;
+        function fn1() {
+            a++;
+            console.log(a)
+        }
+//        fn1()
+        return fn1;
+    }
+//  fn的第一次执行 和fn1的第一次执行 形成了闭包
+//        fn();  //1
+//        fn();  //1
+//        fn();  //1
+    var f = fn();
+    f();//   1
+    f();//   2
+    f();//   3
+//   闭包的三大要素
+//   1.函数存在嵌套关系0
+//   2.内部函数必须引用外部函数的局部变量
+//   3.外部函数必须调用      内部函数作为外部函数的返回值    内部函数直接在外部函数中调用
+//   究竟存在几套闭包机制  取决于外部函数执行了几次
+//   能在函数外部 操作函数内部的数据(变量)
+//   延长外部函数的生命周期
+//   滥用闭包的坏处
+//   内存溢出： 分配的内存无法收回
+//   内存泄漏： 内存被撑爆了
+//   所以有的时候我们需要手动解除闭包
+//    f = null;
+
+
+
+//    function fn() {
+//       var a = 0;
+//       a++;
+////       console.log(a);
+//        function fn1() {
+//          console.log(a)
+//        }
+//        return fn1;
+//    }
+//    var f = fn();
+//    f();
+//    f();
+//    f();
+
+
+
+
+</script>
+</body>
+</html>

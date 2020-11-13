@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    console.log('今天晚上吃点啥');
+//    var a = 0;
+//    for (var i = 0; i < 30000; i++) {
+//        for (var j = 0; j < 30000; j++) {
+//            a++
+//        }
+//    }
+//    构造函数调用  传入用于启动分线程的文件路径
+    var myWorker = new Worker('mywork.js');
+//  postMessage 由主线程 向子线程  传输数据
+    myWorker.postMessage(50000);
+//  主线程接收子线程 传回来的数据
+    myWorker.onmessage = function (event) {
+      console.log(event.data);
+    }
+</script>
+</body>
+</html>
