@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body style="height: 2000px">
+<div class="wrap">
+    <!--头部-->
+    <div class="header">
+        <!--上半部  头部导航-->
+        <div class="top">
+            <!--上半部内容区   版心-->
+            <div class="topMain">
+                <div class="login">
+                    <h5>欢迎来到尚品汇！&nbsp;&nbsp;&nbsp;请</h5>
+                    <p>
+                        <a href="##">登录</a>
+                        <a href="##">注册</a>
+                    </p>
+                </div>
+                <!--导航究竟是使用ulli的结构 还是直接使用a标签  要根据当前这个导航究竟是静态导航还是动态导航来区分-->
+                <nav>
+                    <a href="##">我的订单</a>
+                    <a href="##">我的购物车</a>
+                    <a href="##">我的尚品汇</a>
+                    <a href="##">尚品汇会员</a>
+                    <a href="##">企业采购</a>
+                    <a href="##">关注尚品汇</a>
+                    <a href="##">合作招商</a>
+                    <a href="##">商家后台</a>
+                </nav>
+            </div>
+        </div>
+        <!--下半部  logo,搜索区域-->
+        <div class="bottom">
+            <div class="bottomMain">
+                <!--logo-->
+                <h1>
+                    <a href="##">
+                        <img src="images/Logo.png" alt="">
+                    </a>
+                </h1>
+                <!--搜索-->
+                <div class="search">
+                    <input type="text"><button>搜索</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--商品导航分类-->
+    <div class="typeNav">
+        <div class="navMain">
+            <h3>全部商品分类</h3>
+            <div>
+                <a href="##">服装城</a>
+                <a href="##">美妆馆</a>
+                <a href="##">尚品汇超市</a>
+                <a href="##">全球购</a>
+                <a href="##">闪购</a>
+                <a href="##">团购</a>
+                <a href="##">有趣</a>
+                <a href="##">秒杀</a>
+            </div>
+        </div>
+    </div>
+    <!--商品内容-->
+    <div class="main">
+        <!--版心-->
+        <div class="mainCon">
+            <!--路径导航-->
+            <div class="conPoin">
+                <!--<a href="##">手机、数码、通讯</a>-->
+                <!--<i>/</i>-->
+                <!--<a href="##">手机</a>-->
+                <!--<i>/</i>-->
+                <!--<a href="##">Apple苹果</a>-->
+                <!--<i>/</i>-->
+                <!--<a>iphone 6S系类</a>-->
+            </div>
+            <!--商品区域-->
+            <div class="infoWrap">
+                <!--放大镜区域-->
+                <div class="previwWrap">
+                    <!--放大镜-->
+                    <div class="previw">
+                        <!--小图容器  小图-->
+                        <div class="zoomImgBox">
+                            <img src="images/s1.png" alt="">
+                        </div>
+                        <!--蒙版-->
+                        <!--大图图容器  大图-->
+                    </div>
+                    <!--缩略图-->
+                    <div class="thumbnail">
+                        <a href="javascript:;" class="prev">&lt;</a>
+                        <div class="itemWrap">
+                            <ul class="list">
+                                <!--<li><img src="images/s1.png" alt=""></li>-->
+                                <!--<li><img src="images/s2.png" alt=""></li>-->
+                                <!--<li><img src="images/s3.png" alt=""></li>-->
+                                <!--<li><img src="images/s1.png" alt=""></li>-->
+                                <!--<li><img src="images/s2.png" alt=""></li>-->
+                                <!--<li><img src="images/s3.png" alt=""></li>-->
+                                <!--<li><img src="images/s1.png" alt=""></li>-->
+                                <!--<li><img src="images/s2.png" alt=""></li>-->
+                                <!--<li><img src="images/s3.png" alt=""></li>-->
+                                <!--<li><img src="images/s1.png" alt=""></li>-->
+                            </ul>
+                        </div>
+                        <a href="javascript:;" class="next">&gt;</a>
+                    </div>
+                </div>
+                <!--商品详情-->
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+//     缩略图点击索引
+        var previwId = 0;
+//      路径导航数据渲染
+        conPoin();
+        function conPoin() {
+//          获取当前路径导航的数据
+            var path = goodData.path;
+//          获取父元素
+            var conPoin = document.querySelector('.wrap .main .mainCon .conPoin');
+//            console.log(path)
+//            forEach   数组遍历方法   传入一个回调函数  回调函数当中可以接受三个参数
+//            参数1：当前遍历的元素值    参数2：当前的索引值  参数3：遍历的数组本身（当前数组）
+            path.forEach(function (item,index) {
+                if(index === path.length-1){
+//                  最后一个   只需要创建一个a标签 没有斜线 没有href
+                    var aNode  = document.createElement('a');
+                    aNode.innerHTML = item.title;
+                    conPoin.appendChild(aNode);
+                }else{
+//                  不是最后一个 创建一个A标签  设置item的title为文本 设置item的url为href属性的值  在创建一个i标签放斜线
+                    var aNode = document.createElement('a');
+                    aNode.innerHTML = item.title;
+                    aNode.href = item.url;
+                    conPoin.appendChild(aNode);
+                    var iNode = document.createElement('i');
+                    iNode.innerHTML = '/';
+                    conPoin.appendChild(iNode);
+
+                }
+            })
+        }
+        previw();
+        function previw() {
+//          获取父元素
+           var previwNode = document.querySelector('.wrap .main .mainCon .infoWrap .previwWrap .previw');
+//          获取小图容器
+            var smallBox = document.querySelector('.wrap .main .mainCon .infoWrap .previwWrap .previw .zoomImgBox');
+            var imgSrc = goodData.imagessrc;
+//          获取小图
+            var smallImg = document.querySelector('.wrap .main .mainCon .infoWrap .previwWrap .previw .zoomImgBox>img');
+            smallImg.src = imgSrc[0].s;
+            var maskNode = null;
+            var bigImgBox = null;
+            var bigImg = null;
+
+            previwNode.onmouseenter = function () {
+                console.log('移入');
+//              创建动态元素  要有一个前提  就是当前页面当中没有这个元素 才能创建
+                if(!maskNode){
+//                创建蒙版  大图容器  大图
+                    maskNode = document.createElement('div');
+//              给蒙版元素  添加提前准备好的类名
+                    maskNode.className = 'mask';
+//              将蒙版元素放入到页面当中
+                    smallBox.appendChild(maskNode);
+//                  创建大图容器
+                    bigImgBox = document.createElement('div');
+                    bigImgBox.className = 'bigImgBox';
+                    previwNode.appendChild(bigImgBox);
+//                  创建大图
+                    bigImg = new Image();
+//                    bigImg = document.createElement('img');
+                    bigImg.src = imgSrc[previwId].b;
+                    bigImgBox.appendChild(bigImg);
+                }
+                smallBox.onmousemove = function (event) {
+//                  控制蒙版移动    让大图同步移动到对应区域    并且对蒙版做范围限定
+//                    console.log('移动')
+//                    蒙版最终位置 =  鼠标的x坐标 - 蒙版宽度的一半 - 父容器距离视口左侧的距离
+                    var maskPosition = {
+                        left:event.clientX - maskNode.offsetWidth / 2 - previwNode.getBoundingClientRect().left,
+                        top:event.clientY - maskNode.offsetHeight / 2 - previwNode.getBoundingClientRect().top
+                    };
+//                  范围限定
+                    if(maskPosition.left < 0){
+                       maskPosition.left = 0;
+                    }else if(maskPosition.left > previwNode.clientWidth - maskNode.offsetWidth){
+                        maskPosition.left = previwNode.clientWidth - maskNode.offsetWidth
+                    }
+                    if(maskPosition.top < 0){
+                      maskPosition.top = 0;
+                    }else if(maskPosition.top > previwNode.clientHeight - maskNode.offsetHeight){
+                        maskPosition.top = previwNode.clientHeight - maskNode.offsetHeight;
+                    }
+//                    console.log(maskPosition)
+//                    设置蒙版位置
+                    maskNode.style.left = maskPosition.left + 'px';
+                    maskNode.style.top = maskPosition.top + 'px';
+//                  计算移动比
+                    var scale = (previwNode.clientWidth - maskNode.offsetWidth) / (bigImg.offsetWidth - bigImgBox.clientWidth);
+                    var bigImgPosition = {
+                        left:maskPosition.left / scale,
+                        top:maskPosition.top / scale
+                    };
+                    bigImg.style.marginLeft = -bigImgPosition.left + 'px';
+                    bigImg.style.marginTop = -bigImgPosition.top + 'px';
+                };
+                previwNode.onmouseleave = function () {
+//                    删除蒙版    删除大图  大图容器
+                    smallBox.removeChild(maskNode);
+                    previwNode.removeChild(bigImgBox);
+//                  删除元素后  重置变量状态
+                    maskNode = null;
+                    bigImgBox = null;
+                    bigImg = null;
+                    console.log('离开');
+                    smallBox.onmousemove = previwNode.onmouseleave = null;
+                }
+            }
+        }
+//      缩略图
+        thumbnail();
+        function thumbnail() {
+//          左右按钮
+            var prevNode = document.querySelector('.wrap .main .mainCon .infoWrap .previwWrap .thumbnail > a.prev');
+            var nextNode = document.querySelector('.wrap .main .mainCon .infoWrap .previwWrap .thumbnail > a.next');
+//          图片容器
+            var list = document.querySelector('.wrap .main .mainCon .infoWrap .previwWrap .thumbnail .itemWrap .list');
+//          数据动态渲染
+            var imgSrc = goodData.imagessrc;
+//            console.log(imgSrc[0].s)
+            imgSrc.forEach(function (item) {
+//                item 就是这个数组当中的每一个对象 有两个属性 b属性对应大图的路径 s属性对应小图和缩略图的路径
+                var liNode = document.createElement('li');
+                var imgNode = new Image();
+                imgNode.src = item.s;
+                liNode.appendChild(imgNode);
+                list.appendChild(liNode);
+            });
+//          图片集合
+            var items = document.querySelectorAll('.wrap .main .mainCon .infoWrap .previwWrap .thumbnail .itemWrap .list>li');
+//          图片总数
+            var imgNum = items.length;
+//          定义显示张数
+            var showNum = 5;
+//          定义移动张数
+            var moveNum = 2;
+//          每一次点击按钮  正常是移动两张  但是当剩余的张数不够时  剩多少走多少
+//          单次移动的值  =    移动张数 * （ 图片宽度+ 图片右外边距）
+            var itemLeft = moveNum * (items[0].offsetWidth + 20);
+//            console.log(itemLeft)
+//          总路程   =   （图片总数 - 显示张数） * （ 图片宽度 + 图片右外边距）
+            var countLeft = (imgNum - showNum) * ( items[0].offsetWidth + 20);
+//          记录已走距离
+            var tempLeft = 0;
+
+            nextNode.onclick = function () {
+//              只有已走路程 小于 总路程   才可以点击
+                if(tempLeft < countLeft){
+//                  剩余距离 = 总路程 - 已走路程
+//                  如果剩余距离 > 单次偏移  正常移动   如果剩余距离 < 单次偏移  走剩余的
+                    if(countLeft - tempLeft > itemLeft){
+                        tempLeft += itemLeft;
+                    }else{
+//                      只要能够进入这个else当中 则说明当前所有空间都移动完成 所以直接赋值总路程即可
+//                        tempLeft += countLeft - tempLeft;
+                        tempLeft = countLeft;
+                    }
+                    list.style.left = -tempLeft + 'px';
+                }
+            };
+            prevNode.onclick = function () {
+//              点击next按钮 移动过的距离tempLeft    对于prev按钮来说  就是可以移动的总路程
+                if(tempLeft > 0){
+//                  剩余路程 > 单次偏移  则可以移动两张
+                    if(tempLeft > itemLeft){
+                        tempLeft -= itemLeft;
+                    }else{
+                        tempLeft = 0;
+                    }
+                    list.style.left = -tempLeft +'px';
+                }
+            }
+        }
+//      缩略图点击
+        thumbnailClick();
+        function thumbnailClick() {
+//          获取缩略图集合
+            var items = document.querySelectorAll('.wrap .main .mainCon .infoWrap .previwWrap .thumbnail .itemWrap .list > li');
+            var smallImg = document.querySelector('.wrap .main .mainCon .infoWrap .previwWrap .previw .zoomImgBox img');
+            var imgSrc = goodData.imagessrc;
+            for (var i = 0; i < items.length; i++) {
+                items[i].index = i;
+                items[i].onclick = function () {
+//                  根据当前点击li的索引  去数据当中找到对应的对象 然后s属性设置给小图 b属性设置给大图
+//                    console.log(imgSrc[this.index]);
+                    smallImg.src = imgSrc[this.index].s;
+                    previwId = this.index;
+                    console.log(previwId)
+
+                }
+
+            }
+
+
+        }
+    }
+</script>
+</body>
+</html>
